@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Intel&reg; 網路介面卡快速安裝指南</title>
+</head>
+<body>
+
+<h1>Intel<sup>&reg;</sup> 網路介面卡安裝</h1>
+<hr>
+
+<h2>安裝 Intel<sup>&reg;</sup> 乙太網路介面卡</h2>
+
+<h3>安裝介面卡</h3>
+    <ol>
+      <li>關掉電腦並拔下電源線。如果執行「隨插即用」安裝的話，請先參考您的伺服器說明文件。</li>
+      <li>移除電腦外殼，並從符合介面卡的插槽移除介面卡插槽鐵片。您可以使用比介面卡連接器還要長的插槽，這樣不會造成任何傷害，但是請不要嘗試把長度大於插槽的連接器安裝到插槽中。</li>
+      <li>穩固地將介面卡插入插槽，並固定框架。</li>
+      <li>將電腦外殼裝回原位。插入電源線。</li>
+    </ol>
+
+<h3>安裝夾層卡</h3>
+<ol>
+      <li>關掉電腦並拔下電源線。 </li>
+      <li>移除電腦外殼。 </li>
+      <li>將夾層卡上的 PCIe 連接器與主機板上的連接器和四個塑膠固定座對齊。</li>
+      <li>將主機板往下壓直到完全插入 MB 連接器以及卡入四個固定座為止。 </li>
+      <li>將電腦外殼裝回原位。插入電源線。 </li>
+</ol>
+
+
+<h2>接上網路纜線</h2>
+<h3>銅線介面卡：</h3>
+
+<p>若是 10 Mbps 網路，請使用「類別 3、4、或 5」的「雙絞線乙太網路」(TPE) 網路纜線。<br>
+若是 100 或 1000 Mbps 網路，以及其他住宅用網路，請使用「類別 5 (4 對)」纜線。<br>
+若是 10 Gbps 網路，請使用「類別 6」、「類別 6a」、或「類別 7」乙太網路纜線連接。</p>
+
+<h3>含 SC 接頭的光纖介面卡： </h3>
+<p>拆下並妥為存放光纖連接器外殼。將以 1000 為基礎的 SX 雙用類型 SC 光纖接頭插入配接卡框架上的 TX/RX 連接埠內。
+
+<h3>含 LC 接頭的光纖介面卡：</h3>
+<p>拆下並妥為存放光纖連接器外殼。將 LC 接頭插入介面卡，並且應該使用適用於您的介面卡的纜線連接。如果纜線的規格與配接卡相符 (包括長度規格)，則可參考將纜線換成其他接頭類型 (例如 SC)。
+   
+<h3>SFP+ 可插入光纖： </h3>
+<p>根據模組製造廠商的說明來安裝模組並連接纜線。
+
+<h3>CX4 接頭：</h3>
+<p>實體纜線必須符合 IEEE Std 802.3ak, Clause 54 (第 54 款) 規格。規定的纜線接頭是 IEC 61076-3-113 所定義的 MDI 彈簧鎖類型插座 (latch-type receptacle)。
+<p>啟動電腦並遵照以下的驅動程式安裝說明執行。
+
+<hr>
+
+<h2>安裝驅動程式</h2>
+<h3>Microsoft* Windows* 作業系統</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>注意：</strong>
+      <ul>
+        <li>安裝驅動程式需要有作業系統的管理員權限。</li>
+        <li>如需支援的作業系統，請參考「介面卡指南」的「系統要求」頁面。</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>當 Windows 啟動時，介面卡會被偵測為新硬體。要安裝正確的驅動程式。</p>
+<ol>
+  <li>請從 <a href="https://www.intel.com.tw/content/www/tw/zh/support.html">https://www.intel.com.tw/content/www/tw/zh/support.html</a>下載最新的驅動程式套件。 </li>
+  <li>如果<b>「尋找新增硬體」</b>精靈啟動時，請按「取消」按鈕。</li>
+  <li>請從驅動程式套件啟動<b>「Intel 網路連線」</b>自動執行程式。 </li>
+  <li>按一下<b>「安裝驅動程式和軟體」</b>按鈕。</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>若要建立此驅動程式的二進位 RPM* 封包，請執行&nbsp;'rpmbuild -tb &lt;filename.tar.gz&gt;'。用該驅動程式的確實檔名來取代 &lt;filename.tar.gz&gt;。</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>注意：</b> 
+	<ul>
+		<li>要使建立適當作業，目前執行的核心與安裝的核心來源版本及組態一定要相符。如果您剛重新編譯核心，請馬上重新啟動系統。</li>
+		<li>RPM 的功能性僅在 Red Hat 傳遞版本中測試過。</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>將基礎驅動程式 tar 檔案移到您選擇的目錄中。例如，使用「/home/username/e1000e」或「/usr/local/src/ixgb」。 </li>
+  <li>解 tar/解壓縮該記錄檔，此處的 &lt;x.x.x&gt; 是驅動程式 tar 檔案的版本號碼： 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>變更為驅動程式 src 目錄，其中 &lt;x.x.x&gt; 是驅動程式 tar 的版次號碼： 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/  </code>
+  </blockquote></li>
+  <li>編譯驅動程式模組： 
+  <blockquote>
+    <code>make install  </code>
+  </blockquote>
+  <p>此二進位檔案將被安裝為：</p>
+  <blockquote>
+    <code>/lib/modules/&lt;kernel_version&gt;/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>上列的安裝位置是預設的位置。那些位置對某些特定的 Linux 傳遞版本來說可能不正確。 </p></li>
+  <li>安裝模組： 
+  <blockquote>
+    <code>modprobe e1000e &lt;parameter&gt;=&lt;value&gt;  </code>
+  </blockquote></li>
+  <li>輸入以下指令來指派介面的 IP 位址，其中 &lt;x&gt; 是介面號碼： 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;IP_address&gt;  </code>
+  </blockquote>
+  </li>
+  <li>確定介面可以適當作業。輸入以下指令，其中 &lt;IP_address&gt; 是介面經過測試後，在同一子遮罩上的另外一部電腦的 IP 位址： 
+  <blockquote>
+    <code>ping &lt;IP_address&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>這個驅動程式的開發是為了配合 FreeBSD 核心，第 4.8 或更新的版本使用的。</p>
+<table class="note">
+  <tr>
+    <td valign="top">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>注意：</b>您一定要安裝核心來源才能編譯驅動程式模組。</td>
+  </tr>
+</table>
+
+<p>在下面的說明中，x.x.x 是驅動程式 tar 檔案的名稱中的驅動程式版本。</p>
+
+<ol>
+  <li>將基礎驅動程式 tar 檔案移到您選擇的目錄中。例如，使用 /home/username/ixgb 或 /usr/local/src/ixgb。</li>
+  
+  <li>解除 tar/解壓縮該記錄檔：
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>如此會建立一個 <code>ixgb-x.x.x </code>目錄。</li>
+  
+  <li>要安裝說明頁：
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>要將驅動程式載入到執行的系統中，請執行以下的步驟：
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>或者</p>
+    <blockquote>
+     	<code>cd ixgb-&lt;x.x.x&gt;/src/<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>要指派 IP  位址到介面卡，請輸入： 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;interface_num&gt; &lt;IP_address&gt;</code>
+	</blockquote></li>
+    
+	<li>確定介面可以適當作業。輸入以下指令，其中 &lt;IP_address&gt; 是介面經過測試後，在同一子遮罩上的另外一部電腦的 IP 位址：
+    <blockquote>
+    	<code>ping &lt;IP_address&gt;</code>
+    </blockquote></li>
+    
+	<li>如果您要驅動程式在系統啟動時自動載入的話：
+	<blockquote>
+    	<code>cd ixgb-&lt;x.x.x&gt;/src/<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>編輯 /boot/loader.conf，新增下行：</p>
+    <blockquote>
+		<code>if_ixgb_load="YES"</code>
+	</blockquote>
+    <p>或者</p>
+    <p>將驅動程式編譯到核心 (請參閱項目 8)。編輯 /etc/rc.conf，然後建立適當的 ifconfig_ixgb&lt;interface_num&gt; 項目：</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;interface_num&gt;="&lt;ifconfig_settings&gt;"</code>
+    </blockquote>
+	<p>使用範例：</p>
+    <blockquote>
+		<code>ifconfig_ixgb0="inet 192.168.10.1 netmask 255.255.255.0"</code>
+    </blockquote>
+	</li>
+	
+	<li>如果您要將驅動程式編譯到核心中的話，請輸入：
+    <blockquote>
+		<code>cd ixgb-&lt;x.x.x&gt;/src/<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>編輯 /usr/src/sys/conf/files.i386 檔案，然後新增下行：</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_ee.c optional ixgb<br>
+        dev/ixgb/if_ixgb.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>從 /usr/src/sys/conf/files.i386 檔案移除以下各行，如果它們存在的話：</p>
+    <blockquote>
+    	<code>/dev/ixgb/if_ixgb_fx_hw.c optional ixgb<br>
+        /dev/ixgb/if_ixgb_phy.c optional ixgb
+		</code>
+    </blockquote>
+	<p>編輯核心組態檔案 (例如，GENERIC 或 MYKERNEL) in/usr/src/sys/i386/conf，確定下行存在：</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>編譯並安裝核心。系統必須重新開機才能讓核心更新生效。</p></li>
+</ol>
+
+<p>若需編譯核心的其他資訊，請參考 FreeBSD 作業系統說明文件。</p>
+
+<h2>更新資訊 </h2>
+<p>若需更多資訊，請參閱 Intel 支援網站上的<i>《介面卡使用者指南》</i>： <a href="https://www.intel.com.tw/content/www/tw/zh/support.html" class=NoIndex target=_blank>https://www.intel.com.tw/content/www/tw/zh/support.html</a>。</p>
+
+<hr>
+<h2>安裝 Intel&reg; PROSet (僅限 Windows)</h2>
+<p>Intel&reg; PROSet 的安裝程序與這些驅動程式的安裝方法一樣。在「安裝精靈」的「設定選項」對話方塊中，選取 Intel&reg; PROSet 和「進階網路服務」。</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*法律資訊</a></p>
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+******************************************************************************
+**                            INTEL CONFIDENTIAL                            **
+**                                                                          **
+**        Copyright 2016 Intel Corporation All Rights Reserved.             **
+**                                                                          **
+**  The material contained or described herein and all documents related    **
+**  to such material ("Material") are owned by Intel Corporation or its     **
+**  suppliers or licensors. Title to the Material remains with Intel        **
+**  Corporation or its suppliers and licensors. The Material contains trade **
+**  secrets and proprietary and confidential information of Intel or its    **
+**  suppliers and licensors. The Material is protected by worldwide         **
+**  copyright and trade secret laws and treaty provisions. No part of the   **
+**  Material may be used, copied, reproduced, modified, published,          **
+**  uploaded, posted, transmitted, distributed, or disclosed in any way     **
+**  without Intel’s prior express written permission.                       **
+**                                                                          **
+**  No license under any patent, copyright, trade secret or other           **
+**  intellectual property right is granted to or conferred upon you by      **
+**  disclosure or delivery of the Materials, either expressly, by           **
+**  implication, inducement, estoppel or otherwise. Any license under such  **
+**  intellectual property rights must be express and approved by Intel in   **
+**  writing.                                                                **
+******************************************************************************
+-->
+
+
+<ProfileList>
+  <!--Standard Profile-->
+  <Profile id="10gig_standard">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="DCB">0</Setting>
+    <Setting id="ITR">65535</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis640">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis640.x552">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis650">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis660">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis670">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_standard.ndis680">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="DCB">0</Setting>
+    <Setting id="ITR">65535</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis630.X710.no_npar">
+    <Setting id="*RSSProfile">1</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis640">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis640.X710.no_npar">
+    <Setting id="*RSSProfile">1</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis640.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis650">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis650.X710.no_npar">
+    <Setting id="*RSSProfile">1</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis660">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis660.X710.no_npar">
+    <Setting id="*RSSProfile">1</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis660.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis670">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis670.X710.no_npar">
+    <Setting id="*RSSProfile">1</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis670.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis680">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis680.X710.no_npar">
+    <Setting id="*RSSProfile">1</Setting>
+  </Profile>
+  <Profile id="40gig_standard.ndis680.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <!--Web Server Profile-->
+  <Profile id="10gig_web">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*VMQ">0</Setting>
+    <Setting id="DCB">0</Setting>
+    <Setting id="ITR">65535</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis640">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis640.x552">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis650">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis660">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis670">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="10gig_web.ndis680">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*VMQ">0</Setting>
+    <Setting id="DCB">0</Setting>
+    <Setting id="ITR">65535</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis630.X710.no_npar">
+    <Setting id="*RSSProfile">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis640">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis640.X710.no_npar">
+    <Setting id="*RSSProfile">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis640.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis650">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis650.X710.no_npar">
+    <Setting id="*RSSProfile">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis660">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis660.X710.no_npar">
+    <Setting id="*RSSProfile">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis660.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis670">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis670.X710.no_npar">
+    <Setting id="*RSSProfile">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis670.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis680">
+    <Setting id="*RSSProfile">3</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">16</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis680.X710.no_npar">
+    <Setting id="*RSSProfile">4</Setting>
+  </Profile>
+  <Profile id="40gig_web.ndis680.X722">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <!--HYPER-V Profile-->
+  <Profile id="10gig_hyperv">
+    <Setting id="*MaxRssProcessors">4</Setting>
+    <Setting id="*VMQ">1</Setting>
+    <Setting id="DCB">0</Setting>
+    <Setting id="ITR">65535</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis630">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis640">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis640.X552">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis650">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis660">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis670">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_hyperv.ndis680">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv">
+    <Setting id="*MaxRssProcessors">4</Setting>
+    <Setting id="*VMQ">1</Setting>
+    <Setting id="DCB">0</Setting>
+    <Setting id="ITR">65535</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis630">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis640">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis640.X722">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis650">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis660">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis660.X722">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis670">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis670.X722">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis680">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_hyperv.ndis680.X722">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">4</Setting>
+  </Profile>
+  <!--Storage Profile-->
+  <Profile id="10gig_storage">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*VMQ">0</Setting>
+    <Setting id="DCB">1</Setting>
+    <Setting id="ITR">488</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storage.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storage.ndis640">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storage.ndis650">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storage.ndis660">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storage.ndis670">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storage.ndis680">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*VMQ">0</Setting>
+    <Setting id="DCB">5</Setting>
+    <Setting id="ITR">488</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage.ndis640">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage.ndis650">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage.ndis660">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage.ndis670">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storage.ndis680">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">0</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <!--Low Latency Profile-->
+  <Profile id="10gig_lowlatency">
+    <Setting id="ITR">0</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="10gig_lowlatency.ndis630">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_lowlatency.ndis640">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_lowlatency.ndis650">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_lowlatency.ndis660">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_lowlatency.ndis670">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_lowlatency.ndis680">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency">
+    <Setting id="ITR">0</Setting>
+    <Setting id="*NumRssQueues">2</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis630">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis640">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis650">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis660">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis670">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis680">
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis630.X710">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis640.X710">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis650.X710">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis660.X710">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis670.X710">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_lowlatency.ndis680.X710">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <!--Storage + Virtualization Profile-->
+  <Profile id="10gig_storagevirtualization">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*VMQ">1</Setting>
+    <Setting id="DCB">1</Setting>
+    <Setting id="ITR">488</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storagevirtualization.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storagevirtualization.ndis640">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storagevirtualization.ndis650">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storagevirtualization.ndis660">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storagevirtualization.ndis670">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="10gig_storagevirtualization.ndis680">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization">
+    <Setting id="*MaxRssProcessors">16</Setting>
+    <Setting id="*VMQ">1</Setting>
+    <Setting id="DCB">5</Setting>
+    <Setting id="ITR">488</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization.ndis630">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization.ndis640">
+    <Setting id="*RSSProfile">1</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization.ndis650">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization.ndis660">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization.ndis670">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+  <Profile id="40gig_storagevirtualization.ndis680">
+    <Setting id="*RSSProfile">4</Setting>
+    <Setting id="*Sriov">1</Setting>
+    <Setting id="*NumRssQueues">8</Setting>
+  </Profile>
+</ProfileList>

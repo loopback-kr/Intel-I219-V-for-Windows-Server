@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2299" MadCap:lastWidth="1134" MadCap:conditions="Default.IntelOnly">
+    <head>
+    </head>
+    <body>
+        <h1><a name="RDMA"></a>RDMA (Remote Direct Memory Access) für Intel Ethernet</h1>
+        <p>Remote Direct Memory Access oder RDMA ermöglicht einem Computer den Zugriff auf den Arbeitsspeicher eines anderen Computers, ohne dass dabei eine Interaktion mit den Datenpuffern des Betriebssystems der beiden Computer stattfindet. Dadurch werden Netzwerkgeschwindigkeit und Durchsatz erhöht.</p>
+        <p>Informationen zur RDMA-Installation und -Konfiguration unter Linux finden Sie in der README-Datei des Treibers in der tarball-Datei des Treibers für das Intel Ethernet-Gerät, das RDMA unterstützt.</p>
+        <p>Informationen zur RDMA-Installation und -Konfiguration unter FreeBSD finden Sie in der README-Datei des Treibers in der tarball-Datei des Treibers für das Intel Ethernet-Gerät, das RDMA unterstützt.</p>
+        <h2>RDMA für Network Direct (ND) Benutzermodusanwendungen</h2>
+        <p>Über Network Direct (ND) erhalten Benutzermodusanwendungen Zugriff auf RDMA-Funktionen.</p>
+        <table class="note">
+            <tr>
+                <td align="left" valign="top"><img border="0" src="Resources/Graphics/note.gif" width="17" height="17"></img></td>
+                <td>
+                    <p><b>HINWEIS:</b> Benutzermodusanwendungen setzten möglicherweise Komponenten wie Microsoft HPC Pack oder Intel MPI Library voraus. Weitere Einzelheiten finden Sie in der Dokumentation zu Ihrer Anwendung.</p>
+                </td>
+            </tr>
+        </table>
+        <h3>RDMA Benutzermodusinstallation</h3>
+        <p>Der Intel® Ethernet User Mode RDMA Provider wird von Microsoft* Windows Server* 2012 R2 und höher unterstützt.</p>
+        <p>Zur Installation der Network Direct-Funktionen für den Benutzermodus gehen Sie wie folgt vor.</p>
+        <ol>
+            <li>Führen Sie auf dem Installationsdatenträger die Datei „Autorun.exe“ aus, um das Installationsprogramm zu starten. Wählen Sie „Install Drivers and Software“ (Treiber und Software installieren) und akzeptieren Sie den Lizenzvertrag.</li>
+            <li>Wählen Sie im Bildschirm „Setupoptionen“ die Option „Intel® Ethernet User Mode RDMA Provider“.</li>
+            <li>Wählen Sie im Bildschirm „RDMA Configuration Options“ (iWARP Konfigurationsoptionen) ggf. die Option „Enable RDMA routing across IP Subnets“ (iWARP-Routing in IP-Subnetzen aktivieren). Beachten Sie, dass diese Option auch dann bei der Installation der Basistreiber angezeigt wird, wenn RDMA für den Benutzermodus nicht gewählt wurde. Der Grund ist, dass diese Option ebenfalls bei der Funktionalität Network Direct Kernel zur Verfügung steht.</li>
+            <li>Falls Windows-Firewall installiert und aktiviert ist, wählen Sie „Create an Intel® Ethernet RDMA Port Mapping Service rule in Windows Firewall“ (Regel für Intel® Ethernet iWARP Port Mapping Service in Windows-Firewall anlegen) und dann die Netzwerke, für die die Regel gelten soll.<table class="note"><tr><td align="left" valign="top"><img border="0" src="Resources/Graphics/note.gif" width="17" height="17"></img></td><td><p><b>HINWEIS:</b> Falls Windows-Firewall deaktiviert ist oder Sie eine Firewall eines Drittanbieters verwenden, müssen Sie diese Regel manuell hinzufügen.</p></td></tr></table></li>
+            <li>Fahren Sie mit der Treiber- und Softwareinstallation fort.</li>
+        </ol>
+        <h2>RDMA Network Direct Kernel (NDK)</h2>
+        <p>Die RDMA Network Direct Kernel-(NDK-)Funktionalität ist in den Basisnetzwerktreibern von Intel enthalten. Es müssen zu diesem Zweck keine weiteren Funktionen installiert werden.</p>
+        <h3>RDMA-Routing über IP-Subnetze</h3>
+        <p>Wenn Sie die NDK RDMA-Funktionalität in Subnetzen freischalten möchten, müssen Sie bei der Installation der Basistreiber im Bildschirm „RDMA Configuration Options“ (RDMA Konfigurationsoptionen) die Option „Enable RDMA routing across IP Subnets“ (RDMA-Routing in IP-Subnetzen aktivieren) wählen.</p>
+        <h3>Überprüfen der RDMA-Funktion mit Microsoft* PowerShell*</h3>
+        <p>Mit dem folgenden Microsoft* PowerShell*-Befehl können Sie überprüfen, ob RDMA auf den Netzwerkschnittstellen aktiviert ist:</p>
+        <p><code>Get-NetAdapterRDMA</code></p>
+        <p>Mit dem folgenden PowerShell-Befehl können Sie überprüfen, ob die Netzwerkschnittstellen RDMA unterstützen und Multichannel aktiviert ist:</p>
+        <p><code>Get-SmbClientNetworkInterface</code></p>
+        <p>Mit dem folgenden PowerShell-Befehl können Sie überprüfen, ob Network Direct im Betriebssystem aktiviert ist:</p>
+        <p><code>Get-NetOffloadGlobalSetting | NetworkDirect auswählen</code></p>
+        <p>Mit netstat können Sie sicherstellen, dass jede RDMA-fähige Netzwerkschnittstelle an Port 445 einen Listener hat (Windows Client-Betriebssysteme mit RDMA-Unterstützung posten unter Umständen keine Listener). Zum Beispiel:</p>
+        <p><code>netstat.exe -xan | ? {$_ -match &quot;445&quot;}</code></p>
+        <h2>RDMA für virtualisierte Umgebungen</h2>
+        <p>Um die RDMA-Funktionalität auf mit einem VMSwitch verbundenen virtuellen Adaptern zu aktivieren, müssen die erweiterten Eigenschaften SRIOV (Single Root IO Virtualization) und VMQ (Virtual Machine Queues) auf jedem Porttreiber aktiviert sein. Es kann vorkommen, dass diese Einstellungen standardmäßig deaktiviert sind. Diese Optionen können in der Registerkarte „Erweitert“ der Adaptereigenschaften manuell konfiguriert werden. Alternativ können die folgenden Powershell-Befehle verwendet werden:</p>
+        <p><code>Set-NetAdapterAdvancedProperty -Name &lt;nic_name&gt; -RegistryKeyword *SRIOV -RegistryValue 1</code></p>
+        <p><code>Set-NetAdapterAdvancedProperty -Name &lt;nic_name&gt; -RegistryKeyword *VMQ -RegistryValue 1</code></p>
+        <h3>Konfiguration von iWARP Guest Support (NDK-Modus 3)</h3>
+        <p>Im NDK-Modus 3 können Windows-Komponenten im Kernelmodus auf iWARP-Funktionen in Hyper-V-Gastpartitionen zugreifen. So wird NDK-Modus 3 auf einem Intel Ethernetgerät aktiviert:</p>
+        <ol>
+            <li>Aktivieren Sie SR-IOV im BIOS oder UEFI Ihres Systems.</li>
+            <li>Aktivieren Sie die erweiterte Einstellung für SR-IOV auf dem Gerät.</li>
+            <li>Aktivieren Sie SR-IOV auf dem mit dem Gerät verbundenen VMSwitch, indem Sie für alle physischen Funktionen auf demselben Gerät die folgenden Schritte durchführen:<br /><code>New-VMSwitch -Name &lt;Switchname&gt; -NetAdapterName &lt;Gerätename&gt;</code><br /><code>-EnableIov $true</code></li>
+            <li>Konfigurieren Sie die Anzahl der virtuellen Funktionen (VF) für RDMA auf dem Gerät über die erweiterte Einstellung „RdmaMaxVfsEnabled“. Alle physischen Funktionen müssen auf den gleichen Wert gesetzt werden. Der Wert ist die maximale Anzahl von VF mit gleichzeitiger RDMA-Unterstützung für das gesamte Gerät. Wenn mehr VF aktiviert werden, stehen begrenzte RDMA-Ressourcen aus physischen Funktionen (PF) und anderen VF zur Verfügung.<br /><code>Set-NetAdapterAdvancedProperty -Name &lt;Gerätename&gt; -RegistryKeyword RdmaMaxVfsEnabled -RegistryValue &lt;Value: 0 – 32&gt;</code></li>
+            <li>Deaktivieren Sie alle PF-Adapter auf dem Host und aktivieren Sie sie neu. Dies ist erforderlich, wenn das Registrierungs-Schlüsselwort „RdmaMaxVfsEnabled“ geändert oder ein VMSwitch erstellt oder verworfen wird.<br /><code>Get-NetAdapterRdma | Disable-NetAdapter</code><br /><code>Get-NetAdapterRdma | Enable-NetAdapter</code></li>
+            <li>Erstellen Sie VM Netzwerkadapter für VM, die RDMA VF-Unterstützung erfordern.<br /><code>Add-VMNetworkAdapter -VMName &lt;VM-Name&gt; -VMNetworkAdapterName &lt;Gerätename&gt; -SwitchName &lt;Switchname&gt;</code></li>
+            <li>Falls Sie die Verwendung von Microsoft Windows 10 Creators Update (RS2) oder höher auf einer Gastpartition planen, setzen Sie das RDMA-Weight auf dem VM-Netzwerkadapter, indem Sie den folgenden Befehl auf dem Host eingeben:<br /><code>Set-VMNetworkAdapterRdma -VMName &lt;VM-Name&gt; -VMNetworkAdapterName &lt;Gerätename&gt; -RdmaWeight 100</code></li>
+            <li>Setzen Sie das SR-IOV-Weight auf dem VM-Netzwerkadapter (Hinweis: SR-IOV-Weight muss auf 0 gesetzt werden, bevor RdmaWeight auf 0 gesetzt wird):<br /><code>Set-VMNetworkAdapter -VMName &lt;VM-Name&gt; -VMNetworkAdapterName &lt;Gerätename&gt; -IovWeight 100</code></li>
+            <li>Installieren Sie den VF-Netzwerkadapter mit dem PROSET Installer in der VM.</li>
+            <li>Aktivieren Sie RDMA auf dem VF-Treiber und Hyper-V-Netzwerkadapter über PowerShell in der VM:<br /><code>Set-NetAdapterAdvancedProperty -Name &lt;Gerätename&gt; -RegistryKeyword RdmaVfEnabled -RegistryValue 1</code><br /><code>Get-NetAdapterRdma | Enable-NetAdapterRdma</code></li>
+        </ol>
+        <h2>RDMA für NDK-Funktionen wie SMB Direct (Server Message Block)</h2>
+        <p>NDK ermöglicht die Verwendung von RDMA-Funktionen (wie SMB Direct Storage) durch Windows Komponenten.</p>
+        <h3>Testen von NDK: Microsoft* Windows* SMB Direct with DiskSPD</h3>
+        <p>In diesem Abschnitt wird die empfohlene Methode beschrieben, um die Funktionalität und Leistung von RDMA für Intel Ethernet auf Microsoft* Windows* Betriebssystemen zu testen.</p>
+        <p>SMB Direct ist eine Speicherworkload. Daher kann es vorkommen, dass die Leistung der Benchmark auf die Geschwindigkeit des Speichergeräts anstatt der getesteten Netzwerkschnittstelle begrenzt ist. Intel empfiehlt die Verwendung des schnellstmöglichen Speichersystems, um die echte Leistungsfähigkeit der untersuchten Netzwerkgeräte zu testen.</p>
+        <p>Testanleitung</p>
+        <ol>
+            <li>Konfigurieren und verbinden Sie mindestens zwei Server, auf denen ein unterstütztes Microsoft* Windows* Server-Betriebssystem ausgeführt wird, mit mindestens einem RDMA-fähigen Intel® Ethernet-Gerät pro Server.</li>
+            <li>Richten Sie auf dem als SMB Server vorgesehenen Server eine SMB-Freigabe ein. Es kann vorkommen, dass die Leistung der Benchmark auf die Geschwindigkeit des Speichergeräts anstatt der getesteten Netzwerkschnittstelle begrenzt ist. Die Einrichtung des Speichersystems wird in diesem Dokument nicht behandelt. Sie können den folgenden PowerShell-Befehl verwenden:<br />New-SmbShare -Name &lt;SMBsharename&gt; -Path &lt;SMBsharefilepath&gt; -FullAccess &lt;domainname&gt;\Administrator,Everyone<br /><br />Zum Beispiel:<br />New-SmbShare -Name RAMDISKShare -Path R:\RAMDISK -FullAccess group\Administrator,Everyone<br /><br /></li>
+            <li>Laden Sie unter folgendem Link das Microsoft-Dienstprogramm Diskspd herunter: https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223</li>
+            <li>Wählen Sie mit CMD oder Powershell den Ordner DiskSpd und führen Sie Tests aus. (Einzelheiten zu den Parametern finden Sie in der Dokumentation zu Diskspd)<br /><br />Beispiel: Setzen Sie die Blockgröße auf 4K, lassen Sie den Test 60 Sekunden lang laufen, deaktivieren Sie sämtliches Hardware- und Software-Caching, messen und zeigen Sie Latenzstatistiken an, verwenden Sie 16 sich überlappende IOs und 16 Threads pro Target, 0% wahlfreie Lesezugriffe und 100% Schreibzugriffe und erstellen Sie eine 10-GB-Testdatei unter „\\&lt;SMBserverX722IP&gt;\&lt;SMBsharename&gt;\test.dat“:<br />.\diskspd.exe –b4K -d60 -h -L –o16 -t16 –r –w0 -c10G \\&lt;SMBserverX722IP&gt;\&lt;SMBsharename&gt;\test.dat<br /><br /></li>
+            <li>Kontrollieren Sie mit Perfmon-Zählern wie „RDMA Activity“ und „SMB Direct Connection“, dass RDMA-Traffic läuft. Weitere Informationen finden Sie in der Dokumentation von Microsoft.</li>
+        </ol>
+        <div MadCap:conditions="Default.iwarp_doc_only">
+            <h2>Kunden-Support</h2>
+            <ul>
+                <li>Allgemeine Intel Support-Website: http://support.intel.com</li>
+                <li>Informationen zu Netzwerkprodukten: http://www.intel.com/network</li>
+            </ul>
+            <h2>Rechtliche Hinweise und Haftungsausschlüsse</h2>
+            <p>Copyright (C) 2019, Intel Corporation. Alle Rechte vorbehalten.</p>
+            <p>Intel Corporation übernimmt keine Verantwortung für Fehler oder Auslassungen in diesem Dokument. Außerdem macht Intel keinerlei Zusagen, dessen Inhalt zu aktualisieren.</p>
+            <p>Intel ist eine Marke der Intel Corporation in den USA und/oder anderen Ländern.</p>
+            <p>*Andere Marken oder Produktnamen sind Eigentum der jeweiligen Inhaber.</p>
+            <p>Diese Software wird unter Lizenz bereitgestellt und darf nur unter Beachtung der Bestimmungen dieser Lizenz genutzt oder kopiert werden. Die Informationen in diesem Dokument dienen nur der Information. Sie können ohne Vorankündigung geändert werden und sind nicht als Zusage oder verpflichtende Aussage seitens der Intel Corporation zu verstehen. Die Intel Corporation übernimmt keine Verantwortung oder Haftung für Fehler oder Ungenauigkeiten in diesem Dokument oder jeglicher Software, die in Zusammenhang mit diesem Dokument bereitgestellt wird. Sofern nicht durch eine solche Lizenz gestattet, darf kein Teil dieses Dokuments ohne ausdrückliche schriftliche Zustimmung der Intel Corporation reproduziert, in einem Datenabfragesystem gespeichert oder in beliebiger Form und auf beliebigem Weg übertragen werden.</p>
+        </div>
+    </body>
+</html>

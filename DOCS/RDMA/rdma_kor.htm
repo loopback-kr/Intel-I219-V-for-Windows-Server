@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2299" MadCap:lastWidth="1134" MadCap:conditions="Default.IntelOnly">
+    <head>
+    </head>
+    <body>
+        <h1><a name="RDMA"></a>인텔 이더넷용 RDMA(Remote Direct Memory Access)</h1>
+        <p>RDMA(Remote Direct Memory Access)를 사용하면 컴퓨터가 컴퓨터 운영 체제 데이터 버퍼를 거치지 않고 다른 컴퓨터의 메모리에 액세스할 수 있어 네트워크 속도와 처리량이 증가합니다.</p>
+        <p>Linux RDMA 설치 및 구성 정보는 RDMA를 지원하는 인텔 이더넷 장치용 드라이버 tarball의 드라이버 README 파일에 제공됩니다.</p>
+        <p>FreeBSD RDMA 설치 및 구성 정보는 RDMA를 지원하는 인텔 이더넷 장치용 드라이버 tarball의 드라이버 README 파일에 제공됩니다.</p>
+        <h2>ND(Network Direct) 사용자 모드 애플리케이션용 RDMA</h2>
+        <p>ND(Network Direct)는 사용자 모드 애플리케이션에 의한 RDMA 기능 사용을 허용합니다.</p>
+        <table class="note">
+            <tr>
+                <td align="left" valign="top"><img border="0" src="Resources/Graphics/note.gif" width="17" height="17"></img></td>
+                <td>
+                    <p><b>참고:</b> 사용자 모드 애플리케이션은 Microsoft HPC Pack 또는 Intel MPI Library와 같은 전제 조건을 가질 수도 있습니다. 자세한 내용은 애플리케이션 문서를 참조하십시오.</p>
+                </td>
+            </tr>
+        </table>
+        <h3>RDMA 사용자 모드 설치</h3>
+        <p>Intel® Ethernet User Mode RDMA Provider는 Microsoft* Windows Server* 2012 R2 이상에서 지원됩니다.</p>
+        <p>사용자 모드 ND(Network Direct) 기능을 설치하려면 아래 단계를 따르십시오.</p>
+        <ol>
+            <li>설치 매체에서 Autorun.exe를 실행하여 설치 프로그램을 시작한 후 &quot;Install Drivers and Software(드라이버와 소프트웨어 설치)&quot;를 선택하고 라이센스 계약을 수락합니다.</li>
+            <li>Setup Options(설정 옵션) 화면에서 &quot;Intel® Ethernet User Mode RDMA Provider&quot;를 선택합니다.</li>
+            <li>원하는 경우 RDMA Configuration Options(RDMA 구성 옵션) 화면에서 &quot;Enable RDMA routing across IP Subnets(IP 서브넷에서 RDMA 라우팅 사용)&quot;을 선택합니다. 이 옵션은 Network Direct Kernel 기능에도 적용될 수 있으므로 사용자 모드 RDMA가 선택되어 있지 않아도 기본 드라이버 설치 도중 표시된다는 점에 유의하십시오.</li>
+            <li>Windows 방화벽이 설치되어 있고 활성 상태이면 &quot;Create an Intel® Ethernet RDMA Port Mapping Service rule in Windows Firewall(Windows 방화벽에서 인텔® 이더넷 RDMA 포트 매핑 서비스 규칙 만들기)&quot;와 해당 규칙을 적용할 네트워크를 선택합니다.<table class="note"><tr><td align="left" valign="top"><img border="0" src="Resources/Graphics/note.gif" width="17" height="17"></img></td><td><p><b>참고:</b> Windows 방화벽이 비활성화되어 있거나 타사 방화벽을 사용 중이면 수동으로 이 규칙을 추가해야 합니다.</p></td></tr></table></li>
+            <li>드라이버 및 소프트웨어 설치를 진행하십시오.</li>
+        </ol>
+        <h2>RDMA NDK(Network Direct Kernel)</h2>
+        <p>RDMA NDK(Network Direct Kernel) 기능은 인텔 기반 네트워킹 드라이버에 포함되며 추가적인 기능을 설치할 필요가 없습니다.</p>
+        <h3>IP 서브넷에서 RDMA 라우팅</h3>
+        <p>서브넷에서 NDK의 RDMA 기능을 허용하려면 기본 드라이버 설치 도중 RDMA Configuration Options 화면에서 &quot;Enable RDMA routing across IP Subnets(IP 서브넷에서 RDMA 라우팅 활성화)&quot;를 선택해야 합니다.</p>
+        <h3>Microsoft* PowerShell*을 사용한 RDMA 작동 검증</h3>
+        <p>다음 Microsoft* PowerShell* 명령을 사용하여 네트워크 인터페이스에서 RDMA가 활성화되어 있는지 확인할 수 있습니다.</p>
+        <p><code>Get-NetAdapterRDMA</code></p>
+        <p>네트워크 인터페이스가 RDMA를 지원하고 멀티채널이 활성화되어 있는지 확인하려면 다음 PowerShell 명령을 사용합니다.</p>
+        <p><code>Get-SmbClientNetworkInterface</code></p>
+        <p>Network Direct가 운영 체제에서 활성화되어 있는지 확인하려면 다음 PowerShell 명령을 사용합니다.</p>
+        <p><code>Get-NetOffloadGlobalSetting | Select NetworkDirect</code></p>
+        <p>각 RDMA 지원 네트워크 인터페이스가 포트 445에 리스너를 가지고 있는지 확인하려면 netstat를 사용합니다(RDMA를 지원하는 Windows Client OS가 리스너를 게시하지 않을 수도 있음). 예를 들면 다음과 같습니다.</p>
+        <p><code>netstat.exe -xan | ? {$_ -match &quot;445&quot;}</code></p>
+        <h2>가상화된 환경용 RDMA</h2>
+        <p>VMSwitch에 연결된 가상 어댑터에서 RDMA 기능을 활성화하려면, SRIOV(Single Root IO Virtualization)와 VMQ(Virtual Machine Queues) 고급 속성이 각 포트에서 활성화되어 있어야 합니다. 특정 상황에서 이러한 설정은 기본적으로 비활성화되었을 수 있습니다. 이러한 옵션은 어댑터 속성 대화 상자의 고급 탭에서 수동으로 또는 다음 Powershell 명령을 사용해서 설정할 수 있습니다.</p>
+        <p><code>Set-NetAdapterAdvancedProperty -Name &lt;nic_name&gt; -RegistryKeyword *SRIOV -RegistryValue 1</code></p>
+        <p><code>Set-NetAdapterAdvancedProperty -Name &lt;nic_name&gt; -RegistryKeyword *VMQ -RegistryValue 1</code></p>
+        <h3>iWARP 게스트 지원 구성(NDK 모드 3)</h3>
+        <p>NDK 모드 3을 사용하면 커널 모드 Windows 구성 요소가 Hyper-V 게스트 파티션 내에서 iWARP 기능을 사용할 수 있습니다. 인텔 이더넷 장치에서 NDK 모드 3을 활성화하려면 다음 절차를 따르십시오.</p>
+        <ol>
+            <li>시스템 BIOS 또는 uEFI에서 SR-IOV를 활성화합니다.</li>
+            <li>장치에서 SR-IOV 고급 설정을 활성화합니다.</li>
+            <li>동일한 장치의 모든 물리 기능에 대해 다음 작업을 수행하여 장치에 바운드된 VMSwitch에서 SR-IOV를 활성화합니다<br /><code>New-VMSwitch -Name &lt;switch_name&gt; -NetAdapterName &lt;device_name&gt;</code><br /><code>-EnableIov $true</code></li>
+            <li>“RdmaMaxVfsEnabled&quot; 고급 설정을 설정하여 장치에서 RDMA 가상 기능(VF) 수를 구성합니다. 모든 물리 기능은 동일한 값으로 설정해야 합니다. 값은 전체 장치에 대해 한 번에 RDMA가 가능한 최대 VF 수입니다. 더 많은 VF를 활성화하면 물리 기능(PF)과 다른 VF에서 RDMA 리소스가 제한됩니다.<br /><code>Set-NetAdapterAdvancedProperty -Name &lt;device_name&gt; -RegistryKeyword RdmaMaxVfsEnabled -RegistryValue &lt;Value: 0 – 32&gt;</code></li>
+            <li>호스트에서 모든 PF 어댑터를 비활성화했다가 다시 활성화합니다. 이 작업은 레지스트리 키워드 “RdmaMaxVfsEnabled”가 변경되었거나  VMSwitch 생성 또는 파괴할 때 필요합니다.<br /><code>Get-NetAdapterRdma | Disable-NetAdapter</code><br /><code>Get-NetAdapterRdma | Enable-NetAdapter</code></li>
+            <li>RDMA VF 지원이 필요한 VM에 대해 VM 네트워크 어댑터를 생성합니다.<br /><code>Add-VMNetworkAdapter -VMName &lt;vm_name&gt; -VMNetworkAdapterName &lt;device_name&gt; -SwitchName &lt;switch_name&gt;</code></li>
+            <li>게스트 파티션에서 Microsoft Windows 10 Creators Update(RS2) 이상을 사용하려는 경우에는 호스트에서 다음 명령을 입력하여 VM Network Adapter에서의 RDMA 가중치를 설정하십시오.<br /><code>Set-VMNetworkAdapterRdma -VMName &lt;vm_name&gt; -VMNetworkAdapterName &lt;device_name&gt; -RdmaWeight 100</code></li>
+            <li>VM 네트워크 어댑터에서 SR-IOV 가중치를 설정합니다(참고: RdmaWeight를 0으로 설정하기 전에 SR-IOV 가중치를 0으로 설정해야 함).<br /><code>Set-VMNetworkAdapter -VMName &lt;vm_name&gt; -VMNetworkAdapterName &lt;device_name&gt; -IovWeight 100</code></li>
+            <li>VM에 PROSET Installer와 함께 VF 네트워크 어댑터를 설치합니다.</li>
+            <li>VM에서 PowerShell을 사용하여 VF 드라이버와 Hyper-V 네트워크 어댑터의 RDMA를 활성화합니다.<br /><code>Set-NetAdapterAdvancedProperty -Name &lt;device_name&gt; -RegistryKeyword RdmaVfEnabled -RegistryValue 1</code><br /><code>Get-NetAdapterRdma | Enable-NetAdapterRdma</code></li>
+        </ol>
+        <h2>NDK용 RDMA 기능. 예: SMB Direct(Server Message Block)</h2>
+        <p>NDK는 Windows 구성 요소(예: SMB Direct 스토리지)가 RDMA 기능을 사용할 수 있도록 지원합니다.</p>
+        <h3>NDK 테스트: DiskSPD 포함 Microsoft* Windows* SMB Direct</h3>
+        <p>이 섹션에서는 RDMA 테스트를 통해 인텔 이더넷 기능을 확인하는 권장되는 방법과 Microsoft* Windows* 운영 체제에서의 성능에 대해 간략히 설명합니다.</p>
+        <p>SMB Direct는 스토리지 워크로드이므로 벤치마크의 성능이 테스트 대상 네트워크 인터페이스가 아닌 스토리지 장치의 속도로 제한될 수도 있다는 점에 유의하십시오. 인텔에서는 테스트 대상 네트워크 장치의 진정한 성능을 테스트할 수 있도록 가능한 한 가장 빠른 스토리지를 사용하도록 권장합니다.</p>
+        <p>테스트 지침:</p>
+        <ol>
+            <li>적어도 하나의 RDMA 지원 인텔® 이더넷 장치가 서버에 있는 상태에서, 지원되는 Microsoft* Windows* 운영 체제가 실행되는 2개 이상의 서버를 설정하고 연결합니다.</li>
+            <li>SMB 서버로 지정된 시스템에서 SMB 공유를 설정합니다. 벤치마크의 성능이 테스트 대상 네트워크 인터페이스가 아닌 스토리지 장치의 속도로 제한될 수도 있다는 점에 유의하십시오. 스토리지 설정은 이 문서의 범위를 벗어납니다. 다음 PowerShell 명령을 사용할 수 있습니다.<br />New-SmbShare -Name &lt;SMBsharename&gt; -Path &lt;SMBsharefilepath&gt; -FullAccess &lt;domainname&gt;\Administrator,Everyone<br /><br />예를 들면 다음과 같습니다.<br />New-SmbShare -Name RAMDISKShare -Path R:\RAMDISK -FullAccess group\Administrator,Everyone<br /><br /></li>
+            <li>Diskspd Microsoft 유틸리티를  https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223에서 다운로드해서 설치합니다.</li>
+            <li>CMD 또는 Powershell을 사용하여 DiskSpd 폴더로 이동하고 테스트를 실행합니다. (매개변수에 대한 자세한 내용은 Diskspd 문서를 참조하십시오)<br /><br />예: 블록 크기를 4K로 설정하고, 60초 동안 테스트를 실행한 후, 모든 하드웨어 및 소프트웨어 캐싱을 비활성화하고 지연 시간 통계를 측정 및 표시합니다. 그리고 나서 타겟당 16개의 오버래핑된 IO와 16개의 스레드에 대한 평균을 내고 0% 쓰기와 100% 읽기를 무작위 실행하고 “\\&lt;SMBserverX722IP&gt;\&lt;SMBsharename&gt;\test.dat”에 10GB 테스트 파일을 만듭니다:<br />.\diskspd.exe –b4K -d60 -h -L –o16 -t16 –r –w0 -c10G \\&lt;SMBserverX722IP&gt;\&lt;SMBsharename&gt;\test.dat<br /><br /></li>
+            <li>RDMA 트래픽이 “RDMA Activity” 및 “SMB Direct Connection”과 같은 perfmon 카운터를 사용해서 실행되고 있는지 확인합니다. 자세한 내용은 Microsoft 문서를 참조하십시오.</li>
+        </ol>
+        <div MadCap:conditions="Default.iwarp_doc_only">
+            <h2>고객 지원</h2>
+            <ul>
+                <li>기본 인텔 웹 지원 사이트: http://www.intel.com/p/ko_KR/support/</li>
+                <li>네트워크 제품 정보: https://www-ssl.intel.com/content/www/kr/ko/communications/network-transformation.html</li>
+            </ul>
+            <h2>법률 / 고지 사항</h2>
+            <p>Copyright (C) 2019, 인텔사. 모든 권한은 인텔사에 있습니다.</p>
+            <p>인텔사는 이 문서의 오류나 누락에 대한 책임을 지지 않습니다. 인텔은 여기에 수록된 정보를 업데이트한다는 약속을 하지 않습니다.</p>
+            <p>인텔은 미국 및/또는 기타 국가에서 인텔사의 상표입니다.</p>
+            <p>*다른 이름과 브랜드는 다른 회사의 소유일 수 있습니다.</p>
+            <p>본 소프트웨어는 라이센스 하에서 공급되며 라이센스 계약 내용에 따라서만 사용하거나 복사할 수 있습니다. 본 설명서의 정보는 정보 제공 목적으로만 제공되며 예고 없이 바뀔 수 있습니다. 또한 이 정보를 인텔사에서 확인한 내용으로 간주해서는 안 됩니다. 인텔사는 본 문서 또는 본 문서와 관련하여 제공되었을 수 있는 소프트웨어에 나타날 수 있는 오류나 부정확성에 대한 책임을 지지 않습니다. 해당 라이센스에서 허용하는 경우를 제외하고 인텔사의 명시적인 서면 동의 없이는 어떠한 수단으로도 본 문서의 어떠한 부분도 재생산하거나 검색 시스템에 저장하거나 전송하면 안 됩니다.</p>
+        </div>
+    </body>
+</html>

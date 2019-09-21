@@ -1,0 +1,139 @@
+;-------------------------------------------------------------------------
+; indv2.INF -- Intel(R) Ethernet iWARP Protocol Driver
+;
+; Copyright (c) 2003, Microsoft Corporation
+; Copyright (c) 2013-2019, Intel Corporation
+;-------------------------------------------------------------------------
+
+
+; The next sections follow the same order as described in
+; http://msdn.microsoft.com/en-us/library/windows/hardware/ff547465%28v=vs.85%29.aspx
+
+
+;-------------------------------------------------------------------------
+; Version Section
+;-------------------------------------------------------------------------
+[Version]
+Signature   = "$Windows NT$"
+Class       = NetTrans
+ClassGUID   = {4d36e975-e325-11ce-bfc1-08002be10318}
+Provider    = %Intel%
+CatalogFile = indv2.cat
+DriverVer=05/13/2019,2.1.104.0
+
+;-------------------------------------------------------------------------
+; SourceDiskNames Section
+;-------------------------------------------------------------------------
+[SourceDisksNames]
+1=%DiskDescription%,"",,
+
+;-------------------------------------------------------------------------
+; SourceDiskFiles Sections
+;-------------------------------------------------------------------------
+[SourceDisksFiles]
+indv2.sys=1
+irdma.dll=1
+irdmamsg.dll=1
+
+[SourceDisksFiles.amd64]
+indv2.sys=1
+irdma.dll=1
+irdmamsg.dll=1
+
+;-------------------------------------------------------------------------
+; DestinationDirs Section
+;-------------------------------------------------------------------------
+[DestinationDirs]
+indv2.CpySysFiles  = 12   ; Drivers
+indv2.CpyDllFiles  = 11   ; System32
+
+;-------------------------------------------------------------------------
+; DDInstall Section
+;-------------------------------------------------------------------------
+[DefaultInstall]
+AddReg=indv2.Inst_Ndi
+Characteristics=0x0
+CopyFiles=indv2.CpyDllFiles
+AddReg=indv2.ProviderRegistration
+CopyFiles=indv2.CpySysFiles
+
+[DefaultInstall.ntamd64]
+AddReg=indv2.Inst_Ndi
+Characteristics=0x0
+CopyFiles=indv2.CpyDllFiles
+AddReg=indv2.ProviderRegistration
+CopyFiles=indv2.CpySysFiles
+
+;-------------------------------------------------------------------------
+; DDInstall.Services Section
+;-------------------------------------------------------------------------
+[DefaultInstall.Services]
+AddService=indv2, 0x800,indv2.Service_Inst,EventLog
+; DelService=indv2, 0x200
+
+[DefaultInstall.ntamd64.Services]
+AddService=indv2, 0x800,indv2.Service_Inst,EventLog
+; DelService=indv2, 0x200
+
+;-------------------------------------------------------------------------
+; NetworkDirect service Installation
+;-------------------------------------------------------------------------
+[indv2.Service_Inst]
+DisplayName     = %indv2_Desc%
+ServiceType     = 1 ;SERVICE_KERNEL_DRIVER
+StartType       = 1 ;SERVICE_AUTO_START
+ErrorControl    = 1 ;SERVICE_ERROR_NORMAL
+ServiceBinary   = %12%\indv2.sys
+LoadOrderGroup  = ndis
+Description     = %indv2_Desc%
+
+
+[EventLog]
+AddReg = AddEventLog
+
+;-------------------------------------------------------------------------
+; Ndi installation support
+;-------------------------------------------------------------------------
+[indv2.Inst_Ndi]
+HKLM,Software\Microsoft\Windows\CurrentVersion\RunOnce,,0x00020000,"%%SystemRoot%%\system32\rundll32 %%SystemRoot%%\system32\irdma.dll,DllRegisterServer"
+HKR,Ndi,Service,,"indv2"
+HKR,Ndi,HelpText,,%indv2_HelpText%
+
+
+[indv2.ProviderRegistration]
+HKLM,Software\Microsoft\Windows\CurrentVersion\RunOnce,,0x00020000,"%%SystemRoot%%\system32\rundll32 %%SystemRoot%%\system32\irdma.dll,DllRegisterServer"
+
+[AddEventLog]
+HKR,, EventMessageFile, 0x00020000, %EventLogMessageDllPath%
+HKR,, TypesSupported,   0x00010001, 7
+
+; [DefaultUninstall.Services]
+; DelService=indv2,0x200
+; DelFiles=%12%\indv2.sys
+; DelFiles=%11%\i40wb.dll
+
+;-------------------------------------------------------------------------
+; Files to Copy/Delete - Referenced by Install and Remove sections above
+;-------------------------------------------------------------------------
+[indv2.CpySysFiles]
+indv2.sys,,,2
+
+[indv2.CpyDllFiles]
+irdma.dll,,,2
+irdmamsg.dll,,,2
+
+;-------------------------------------------------------------------------
+; Call the OLE control's DllRegisterServer function
+;-------------------------------------------------------------------------
+; [indv2.dllregister]
+; 11,,irdma.dll,1
+
+;-------------------------------------------------------------------------
+; Strings
+;-------------------------------------------------------------------------
+[Strings]
+Intel = "Intel"
+DiskDescription = "Intel(R) Ethernet iWARP Protocol Driver Disk"
+indv2_Desc = "Intel(R) Ethernet Driver for NDv2 RDMA support"
+indv2_HelpText = "Intel(R) Ethernet Driver to support NDv2 RDMA"
+EventLogMessageDllPath = "%SystemRoot%\System32\irdmamsg.dll;%SystemRoot%\System32\drivers\indv2.sys"

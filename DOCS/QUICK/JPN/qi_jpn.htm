@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=shift_jis">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> インテル(R) ネットワーク・アダプター・クイック・インストール・ガイド</title>
+</head>
+<body>
+
+<h1>インテル<sup>&reg;</sup> ネットワーク・アダプターのインストール</h1>
+<hr>
+
+<h2>インテル<sup>&reg;</sup> イーサネット・アダプターのインストール</h2>
+
+<h3>アダプターのインストール</h3>
+    <ol>
+      <li>コンピューターの電源を切り、電源コードをコンセントから抜きます。「ホットプラグ」インストールを行う場合は、最初にサーバーのマニュアルを参照してください。</li>
+      <li>コンピューターのカバーを外し、アダプターに該当するスロットからアダプター・スロットカバーを取り外します。アダプターのコネクターより長いスロットを使用しても問題はありませんが、コネクターより短いスロットには取り付けないでください。</li>
+      <li>アダプターをスロットにしっかりと差し込み、ブラケットを固定します。</li>
+      <li>コンピューターのカバーを取り付けます。電源コードをコンセントに差し込みます。</li>
+    </ol>
+
+<h3>メザニンカードのインストール</h3>
+<ol>
+      <li>コンピューターの電源を切り、電源コードをコンセントから抜きます。 </li>
+      <li>コンピューターのカバーを取り外します。 </li>
+      <li>メザニンボードの PCIe* コネクターをマザーボード上のコネクターと 4 つのプラスチックのスタンドオフに揃えます。</li>
+      <li>アダプターがメザニンボード・コネクターに完全に挿入され 4 つのスタンドオフに嵌るまでアダプターを押します。 </li>
+      <li>コンピューターのカバーを取り付けます。電源コードをコンセントに差し込みます。 </li>
+</ol>
+
+
+<h2>ネットワーク・ケーブルの接続</h2>
+<h3>銅線アダプター：</h3>
+
+<p>10 Mbps ネットワークには、カテゴリー 3、4、5 ツイスト・ペア・イーサネット (TPE) ネットワーク・ケーブルを使用してください。<br>
+100 Mbps または 1000 Mbps ネットワークおよびあらゆるホーム・ネットワークには、カテゴリー 5 (4 ペア) ケーブルを使用してください。<br>
+10 Gbps ネットワークには、カテゴリー 6、カテゴリー 6a、またはカテゴリー 7 イーサネット・ケーブルを使用してください。</p>
+
+<h3>SC コネクター付きのファイバーアダプター： </h3>
+<p>光ファイバーコネクターのカバーを外して保管します。1000Base-SX 二重通信方式 SC 光ファイバーコネクターをアダプターブラケットの TX/RX ポートに差し込みます。
+
+<h3>LC コネクター付きのファイバーアダプター：</h3>
+<p>光ファイバーコネクターのカバーを外して保管します。使用するアダプター用の正しいケーブルを使用して、LC コネクターをアダプターに差し込みます。長さの制限を含め、光ファイバーの仕様にケーブルが準拠する場合は、SC 等のほかのタイプのコネクターに変換ケーブルを使用することができます。
+   
+<h3>SFP+ (Small Form-Factor Pluggable Plus) Optics： </h3>
+<p>モジュール製造元の指示に従ってモジュールをインストールしてケーブルを接続します。
+
+<h3>CX4 コネクター：</h3>
+<p>物理的なケーブルは、IEEE Std 802.3ak、Clause 54 の仕様に合っていなければなりません。必要なケーブルのコネクターは、IEC 61076-3-113 で定義されている MDI ラッチタイプのソケットです。
+<p>コンピューターを起動し、次のドライバー・インストール手順に従います。
+
+<hr>
+
+<h2>ドライバーのインストール</h2>
+<h3>Microsoft* Windows* オペレーティング・システム</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>注：</strong>
+      <ul>
+        <li>ドライバーをインストールするには、オペレーティング・システムに対する管理者権限が必要です。</li>
+        <li>サポートされているオペレーティング・システムについては、アダプターガイドの「システム要件」のページを参照してください。</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>Windows* を起動すると、アダプターが新しいハードウェアとして検出されます。次の手順に従って、適切なドライバーをインストールします。</p>
+<ol>
+  <li><a href="http://www.intel.com/p/ja_JP/support/">http://www.intel.com/p/ja_JP/support/</a> から最新のドライバーパッケージをダウンロードしてください。 </li>
+  <li><b>新しいハードウェアの検出</b>ウィザードが開始された場合は、[キャンセル] ボタンを押します。</li>
+  <li>ドライバーパッケージから<b>インテル&reg; ネットワーク・コネクション</b>の autorun プログラムを開始します。 </li>
+  <li>[<b>ドライバーとソフトウェアのインストール</b>] ボタンをクリックします。</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>このドライバーのバイナリー RPM* パッケージを構築するには、'rpmbuild -tb &lt;filename.tar.gz&gt;&rsquo; を実行します。&lt;filename.tar.gz&gt; をドライバー固有のファイル名で置き換えます。</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>注：</b> 
+	<ul>
+		<li>ビルドが正しく機能するには、現在実行中のカーネルのバージョンとインストールされたカーネルソースの設定が一致する必要があります。カーネルを再コンパイルしたばかりの場合は、システムを再起動してください。</li>
+		<li>RPM 機能は Red Hat* でのみテストされています。</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>任意のディレクトリーにベース ドライバーの tar ファイルを移動します。例えば、「/home/username/e1000e」 または「/usr/local/src/ixgb」を使用します。 </li>
+  <li>次のコマンドを使用して、アーカイブを解凍します。&lt;x.x.x&gt; の部分にはドライブの tar ファイルのバージョン番号を入れます。 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>ドライバーの src ディレクトリーに変更します。(&lt;x.x.x&gt; は、ドライバー tar のバージョン番号です。) 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/  </code>
+  </blockquote></li>
+  <li>ドライバーモジュールをコンパイルします。 
+  <blockquote>
+    <code>make install  </code>
+  </blockquote>
+  <p>バイナリーは次のようにインストールされます。</p>
+  <blockquote>
+    <code>/lib/modules/[カーネルバージョン]/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>上に示したのは、デフォルトのインストール場所です。使用している Linux* によっては、上のインストール場所が使用されない場合もあります。 </p></li>
+  <li>モジュールをインストールします。 
+  <blockquote>
+    <code>modprobe e1000e &lt;パラメータ&gt;=&lt;値&gt;  </code>
+  </blockquote></li>
+  <li>以下のように入力してインターフェイスに IP アドレスを割り当てます。(&lt;x&gt; はインターフェイス番号です。) 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;IP アドレス&gt;  </code>
+  </blockquote>
+  </li>
+  <li>インターフェイスが機能することを確認します。以下のように入力します。(&lt;IP  アドレス&gt; はテストするインターフェイスと同一のサブネット上にある別のコンピュータの IP アドレスです。) 
+  <blockquote>
+    <code>ping &lt;IP アドレス&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>このドライバーは、FreeBSD* カーネル、バージョン 4.8 以降で使用するように作られています。</p>
+<table class="note">
+  <tr>
+    <td valign="top">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>注：</b>ドライバーモジュールをコンパイルするには、カーネルソースがインストールされていることが必要です。</td>
+  </tr>
+</table>
+
+<p>以下の手順で、x.x.x はドライバーのバージョンを表示します。ドライバーのバージョンは tar ファイルの名前で確認できます。</p>
+
+<ol>
+  <li>任意のディレクトリーにベース ドライバーの tar ファイルを移動します。例えば、/home/username/ixgb または /usr/local/src/ixgb を使用します。</li>
+  
+  <li>アーカイブを解凍します。
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>これによって、<code>ixgb-x.x.x</code> ディレクトリーが作成されます。</li>
+  
+  <li>man ページをインストールします。
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>ドライバーを実行中のシステムにロードするには、次の手順に従います。
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>または</p>
+    <blockquote>
+     	<code>cd ixgb-x.x.x/src<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>インターフェイスの IP アドレスを割り当てるには、次のように入力します。 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;インターフェイス番号&gt;&lt;IP アドレス&gt;</code>
+	</blockquote></li>
+    
+	<li>インターフェイスが機能することを確認します。以下のように入力します。(&lt;IP アドレス&gt; はテストするインターフェイスと同一のサブネット上にある別のコンピューターの IP アドレスです。)
+    <blockquote>
+    	<code>ping &lt;IP アドレス&gt;</code>
+    </blockquote></li>
+    
+	<li>システムの起動時にドライバーを自動的にロードするには、次のように入力します。
+	<blockquote>
+    	<code>cd ixgb-x.x.x/src<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>/boot/loader.conf を編集して、次の行を追加します。</p>
+    <blockquote>
+		<code>if_ixgb_load="YES"</code>
+	</blockquote>
+    <p>または</p>
+    <p>カーネルにドライバーをコンパイルします (アイテム 8 を参照)。/etc/rc.conf を変更して、適切な ifconfig_ixgb&lt;interface_num&gt; エントリーを作成します：</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;interface_num&gt;="&lt;ifconfig_settings&gt;"</code>
+    </blockquote>
+	<p>使用例：</p>
+    <blockquote>
+		<code>ifconfig_ixgb0="inet 192.168.10.1 netmask 255.255.255.0"</code>
+    </blockquote>
+	</li>
+	
+	<li>ドライバーをカーネルにコンパイルするには、次のように入力します。
+    <blockquote>
+		<code>cd ixgb-x.x.x/src<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>/usr/src/sys/conf/files.i386 ファイルを編集して、次の行を追加します。</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_ee.c optional ixgb<br>
+        dev/ixgb/if_ixgb.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>/usr/src/sys/conf/files.i386 ファイルに次の行がある場合は、それらの行を削除します。</p>
+    <blockquote>
+    	<code>/dev/ixgb/if_ixgb_fx_hw.c optional ixgb<br>
+        /dev/ixgb/if_ixgb_phy.c optional ixgb
+		</code>
+    </blockquote>
+	<p>/usr/src/sys/i386/conf でカーネル設定ファイル (すなわち GENERIC または MYKERNEL) を編集して、次の行があることを確認します：</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>カーネルをコンパイルしてインストールします。カーネルの更新を有効にするには、システムを再起動する必要があります。</p></li>
+</ol>
+
+<p>カーネルのコンパイルの詳細については、FreeBSD オペレーティング・システムのマニュアルを参照してください。</p>
+
+<h2>詳細情報 </h2>
+<p>詳細については、インテルのサポート・ウェブサイト：<a href="http://www.intel.com/p/ja_JP/support" class=NoIndex target=_blank>http://www.intel.com/p/ja_JP/support</a> で<i>アダプターのユーザーガイド</i>を参照してください。</p>
+
+<hr>
+<h2>インテル&reg; PROSet のインストール (Windows* のみ)</h2>
+<p>インテル&reg; PROSet は、ドライバーをインストールする際に使用されたプロセスと同じプロセスでインストールされます。インストール・ウィザードの [セットアップ・オプション] ダイアログでインテル&reg; PROSet と アドバンスト・ネットワーク・サービスを選択してください。</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*法務情報</a></p>
+
+</body>
+</html>

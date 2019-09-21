@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Guia de instalação rápida dos adaptadores de rede Intel(R)</title>
+</head>
+<body>
+
+<h1>Instalação do adaptador de rede Intel<sup>&reg;</sup></h1>
+<hr>
+
+<h2>Instale o adaptador Ethernet Intel<sup>&reg;</sup> </h2>
+
+<h3>Instalar um adaptador</h3>
+    <ol>
+      <li>Desligue o computador e desconecte o cabo de alimentação. Se estiver fazendo uma instalação "hot plug", consulte primeiro a documentação do servidor.</li>
+      <li>Remova a tampa do computador e a tampa do slot correspondente ao seu adaptador. Você pode usar um slot mais comprido que o conector de seu adaptador, mas não tente instalar o adaptador em um slot mais curto que o conector.</li>
+      <li>Insira firmemente o adaptador no slot e prenda a braçadeira.</li>
+      <li>Recoloque a tampa do computador. Ligue o fio de eletricidade.</li>
+    </ol>
+
+<h3>Instalar uma placa mezanino</h3>
+<ol>
+      <li>Desligue o computador e desconecte o cabo de alimentação. </li>
+      <li>Remova a tampa do computador. </li>
+      <li>Alinhe o conector PCIe da placa mezanino com o conector e os quatro pinos plásticos da motherboard.</li>
+      <li>Pressione o adaptador até que ele fique totalmente inserido no conector da motherboard e se encaixe nos quatro pinos. </li>
+      <li>Recoloque a tampa do computador. Ligue o fio de eletricidade. </li>
+</ol>
+
+
+<h2>Conectar o cabo de rede</h2>
+<h3>Adaptadores de cobre:</h3>
+
+<p>Em redes de 10 Mbps, use cabos de rede de par trançado Categoria 3, 4 ou 5.<br>
+Em redes de 100 ou 1000 Mbps e em redes residenciais, use cabos Categoria 5 (4 pares).<br>
+Em redes de 10 Gbps, use cabos Ethernet Categoria 6, Categoria 6a ou Categoria 7.</p>
+
+<h3>Adaptadores de fibra com conector SC: </h3>
+<p>Remova e guarde a tampa do conector de fibra óptica. Insira um conector de fibra ótica SC do tipo 1000Base-SX duplex nas portas TX/RX da braçadeira do adaptador.
+
+<h3>Adaptadores de fibra com conector LC:</h3>
+<p>Remova e guarde a tampa do conector de fibra óptica. Insira um conector LC no adaptador, com o cabeamento correto para o seu tipo de adaptador. Podem ser usados cabos de conversão para outros tipos de conectores (como, por exemplo, SC) se o cabeamento corresponder às especificações óticas do adaptador, inclusive as limitações de comprimento.
+   
+<h3>Dispositivos ópticos plugáveis SFP+: </h3>
+<p>Instale o módulo e conecte o cabo de acordo com as instruções do fabricante.
+
+<h3>Conector CX4:</h3>
+<p>Os cabos físicos precisam atender à norma IEEE 802.3ak, cláusula 54. O conector de cabo necessário é um receptáculo do tipo trava MDI, como definido pelo IEC 61076-3-113.
+<p>Ligue o computador e siga as instruções de instalação do driver conforme abaixo.
+
+<hr>
+
+<h2>Instale os drivers</h2>
+<h3>Sistemas operacionais Microsoft* Windows*</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>NOTAS:</strong>
+      <ul>
+        <li>A instalação dos drivers exige direitos de administrador no sistema operacional.</li>
+        <li>Consulte a página 'Requisitos do sistema' no guia do adaptador para saber quais são os sistemas operacionais suportados.</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>O adaptador será detectado como novo hardware quando o Windows for inicializado. Para instalar o driver correto:</p>
+<ol>
+  <li>Faça o download do pacote de drivers mais recente em <a href="https://www.intel.com.br/content/www/br/pt/support.html">https://www.intel.com.br/content/www/br/pt/support.html</a>. </li>
+  <li>Se o assistente <b>Novo hardware encontrado</b> for inicializado, pressione o botão Cancelar.</li>
+  <li>Inicie o programa de execução automática <b>Conexões de rede Intel&reg;</b> do pacote de drivers. </li>
+  <li>Clique no botão <b>Instalar drivers e software</b>.</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>Para construir um pacote RPM* binário deste driver, execute&nbsp;'rpmbuild -tb &lt;filename.tar.gz&gt;'. Substitua &lt;filename.tar.gz&gt; pelo nome de arquivo específico do driver.</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>NOTAS:</b> 
+	<ul>
+		<li>Para o build funcionar corretamente, o kernel em execução PRECISA corresponder à versão e à configuração da origem de kernel instalada. Se você tiver recompilado o kernel, reinicialize agora o sistema.</li>
+		<li>A funcionalidade RPM só foi testada nas distribuições Red Hat.</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>Mova o arquivo tar do driver básico para o diretório de sua escolha. Por exemplo, use '/home/username/e1000e' ou '/usr/local/src/ixgb'. </li>
+  <li>Extraia/deszipe o arquivo, onde &lt;x.x.x&gt; é o número de versão para o arquivo tar do driver: 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>Mude para o diretório src, onde &lt;x.x.x&gt; representa o número da versão para o tar do driver: 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/  </code>
+  </blockquote></li>
+  <li>Compile o módulo do driver: 
+  <blockquote>
+    <code>make install  </code>
+  </blockquote>
+  <p>O binário será instalado como:</p>
+  <blockquote>
+    <code>/lib/modules/&lt;kernel_version&gt;/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>Os locais da instalação listados acima são os locais padrão. Eles não podem corrigir certas distribuições de Linux. </p></li>
+  <li>Instale o módulo: 
+  <blockquote>
+    <code>modprobe e1000e &lt;parameter&gt;=&lt;value&gt;  </code>
+  </blockquote></li>
+  <li>Atribua um endereço IP à interface, digitando a seguinte informação, onde &lt;x&gt; representa o número da interface: 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;IP_address&gt;  </code>
+  </blockquote>
+  </li>
+  <li>Verifique se a interface funciona. Digite a seguinte informação, observando que &lt;endereço_IP&gt; refere-se ao endereço IP de outro computador na mesma sub-rede da interface que está sendo testada: 
+  <blockquote>
+    <code>ping &lt;IP_address&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>Esse driver foi desenvolvido para ser usado com o kernel FreeBSD, versões 4.8 e posteriores.</p>
+<table class="note">
+  <tr>
+    <td valign="top">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>NOTA:</b> Você deve ter as fontes do kernel instaladas a fim de compilar o módulo do driver.</td>
+  </tr>
+</table>
+
+<p>Nas instruções abaixo, x.x.x é a versão do driver que está indicada no nome do arquivo .tar do driver.</p>
+
+<ol>
+  <li>Mova o arquivo tar do driver básico para o diretório de sua escolha. Por exemplo, use /home/username/ixgb ou /usr/local/src/ixgb.</li>
+  
+  <li>Descompacte o arquivo:
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>Essa ação criará um diretório <code>ixgb-x.x.x</code>.</li>
+  
+  <li> Para instalar a página man:
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>Para carregar o driver em um sistema em funcionamento, execute os passos a seguir:
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>OU</p>
+    <blockquote>
+     	<code>cd ixgb-&lt;x.x.x&gt;/src/<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>Digite o seguinte para atribuir um endereço IP à interface: 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;interface_num&gt; &lt;IP_address&gt;</code>
+	</blockquote></li>
+    
+	<li>Verifique se a interface funciona. Digite o seguinte, onde &lt;IP_address&gt; é o endereço IP de uma outra máquina na mesma sub-rede da interface que está sendo testada:
+    <blockquote>
+    	<code>ping &lt;IP_address&gt;</code>
+    </blockquote></li>
+    
+	<li>Se quiser que o driver seja carregado automaticamente quando o sistema for inicializado:
+	<blockquote>
+    	<code>cd ixgb-&lt;x.x.x&gt;/src/<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>Edite o /boot/loader.conf e adicione a seguinte linha:</p>
+    <blockquote>
+		<code>if_ixgb_load="YES"</code>
+	</blockquote>
+    <p>OU</p>
+    <p>compile o driver no kernel (veja o item 8). Edite o /etc/rc.conf e crie a entrada ifconfig_ixgb&lt;interface_num&gt; adequada:</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;interface_num&gt;="&lt;ifconfig_settings&gt;"</code>
+    </blockquote>
+	<p>Exemplo de uso:</p>
+    <blockquote>
+		<code>ifconfig_ixgb0="inet 192.168.10.1 netmask 255.255.255.0"</code>
+    </blockquote>
+	</li>
+	
+	<li>Para compilar o driver no kernel, digite:
+    <blockquote>
+		<code>cd ixgb-&lt;x.x.x&gt;/src/<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp if_ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>Edite o arquivo /usr/src/sys/conf/files.i386 e adicione a seguinte linha:</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_hw.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>Remova as seguintes linhas do arquivo /usr/src/sys/conf/files.i386, se elas existirem:</p>
+    <blockquote>
+    	<code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_hw.c optional ixgb
+		</code>
+    </blockquote>
+	<p>Edite o arquivo de configuração do kernel (isto é, GENERIC ou MYKERNEL) em/usr/src/sys/i386/conf e confirme que a seguinte linha está presente:</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>Compile e instale o kernel. O sistema deve ser reinicializado para que as atualizações do kernel tenham efeito.</p></li>
+</ol>
+
+<p>Para obter informações adicionais sobre a compilação do kernel, consulte a documentação do sistema operacional FreeBSD.</p>
+
+<h2>Mais informações </h2>
+<p>Para obter mais informações, consulte o <i>Guia do Usuário do Adaptador</i> no site de suporte da Intel: <a href="https://www.intel.com.br/content/www/br/pt/support.html" class=NoIndex target=_blank>https://www.intel.com.br/content/www/br/pt/support.html</a>.</p>
+
+<hr>
+<h2>Instale o Intel&reg; PROSet (Somente Windows)</h2>
+<p>O Intel&reg; PROSet é instalado com o mesmo processo utilizado para instalar drivers. Selecione Intel&reg; PROSet e Serviços avançados de rede no diálogo Opções de instalação do Assistente de instalação (Install Wizard).</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*Assuntos legais</a></p>
+
+</body>
+</html>

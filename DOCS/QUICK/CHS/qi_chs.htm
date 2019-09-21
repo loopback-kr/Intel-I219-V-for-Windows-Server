@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> 英特尔(R) 网络适配器快速安装指南</title>
+</head>
+<body>
+
+<h1>英特尔<sup>&reg;</sup> 网络适配器安装</h1>
+<hr>
+
+<h2>安装英特尔<sup>&reg;</sup> 以太网适配器</h2>
+
+<h3>安装适配器</h3>
+    <ol>
+      <li>关机并拔出电源线。如果进行“热插”安装，请首先参见您的服务器文档。</li>
+      <li>卸下计算机机盖，拆卸与适配器相配的插槽的槽盖。您可以使用一个比适配器接头长的插槽而不会有任何问题，但是不要试图安装到一个比该接头短的插槽中。</li>
+      <li>将适配器稳固地插入插槽，并固定支架。</li>
+      <li>装回机盖。插入电源线。</li>
+    </ol>
+
+<h3>安装夹层卡</h3>
+<ol>
+      <li>关机并拔出电源线。 </li>
+      <li>卸下计算机箱盖。 </li>
+      <li>将夹层卡上的 PCIe 接头与连接器和主板上的四个塑料支架对齐。</li>
+      <li>将适配器向下按，直至其完全插入主板连接器，并卡入四个支架。 </li>
+      <li>装回机盖。插入电源线。 </li>
+</ol>
+
+
+<h2>连接网络电缆</h2>
+<h3>铜质适配器：</h3>
+
+<p>对 10 Mbps 网络使用 3 类、4 类或 5 类双绞线以太网（TPE）网络缆线。<br>
+对 100 或 1000 Mbps 网络和任何住宅网络，使用 5 类（4 对）缆线。<br>
+对 10 Gbps 网络，使用 6 类、6a 类，或 7 类以太网缆线。</p>
+
+<h3>带 SC 连接器的光纤适配器： </h3>
+<p>卸下并保留光纤连接器盖。将 1000Base-SX 双工 SC 型光纤连接器插入适配器支架上的 TX/RX 端口。
+
+<h3>带 LC 连接器的光纤适配器：</h3>
+<p>卸下并保留光纤连接器盖。将 LC 连接器插入适配器，其布线应与适配器相配。如果布线与适配器的光学规格相配，包括长度限制，则可使用其他类型连接器（如　SC）的转换电缆。
+   
+<h3>带 SFP+ 可插拔光纤： </h3>
+<p>遵照模块制造商的指示安装模块和连接电缆。
+
+<h3>CX4 连接器：</h3>
+<p>物理布线必须符合 IEEE Std 802.3ak，条款 54 的规格。要求的电缆接头应该是 MDI 卡扣型插孔（如 IEC 61076-3-113 所定义）。
+<p>启动计算机并按照以下驱动程序安装指示操作。
+
+<hr>
+
+<h2>安装驱动程序</h2>
+<h3>Microsoft* Windows* 操作系统</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>注意：</strong>
+      <ul>
+        <li>安装驱动程序要求对操作系统有管理员权限。</li>
+        <li>有关受支持的操作系统，请参阅《适配器指南》的“系统要求”页。</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>Windows 启动时会检测到作为新硬件的适配器。要安装正确的驱动程序：</p>
+<ol>
+  <li>从 <a href="http://www.intel.com/p/zh_CN/support ">http://www.intel.com/p/zh_CN/support </a>下载最新的驱动程序包。 </li>
+  <li>如果<b>发现新硬件向导</b>启动，按“取消”按钮。</li>
+  <li>从驱动程序包中启动<b>英特尔网络连接</b>自动运行程序。 </li>
+  <li>单击<b>安装驱动程序和软件</b>按钮。</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>若要为此驱动程序生成二进制 RPM* 程序包，请运行&nbsp;‘rpmbuild -tb &lt;filename.tar.gz&gt;&rsquo;。以驱动程序的特定文件名称取代 &lt;filename.tar.gz&gt;。</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>注意：</b> 
+	<ul>
+		<li>要使编译版本正确运行，当前运行的内核的版本和配置必须与安装的内核源相符。如果刚重新编译了内核，现在则应重新引导系统。</li>
+		<li>RPM 功能仅在 Red Hat 发布上测试过。</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>将基本驱动程序的 tar 文件移往您选择的目录。例如，使用 '/home/username/e1000e' or '/usr/local/src/ixgb'。 </li>
+  <li>解压缩该档案文件，其中 &lt;x.x.x&gt; 是驱动程序压缩文件的版本号： 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>切换到驱动程序 src 目录下，其中 &lt;x.x.x&gt; 是驱动程序压缩文件的版本号： 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/  </code>
+  </blockquote></li>
+  <li>编译驱动程序模块： 
+  <blockquote>
+    <code>make install  </code>
+  </blockquote>
+  <p>二进制文件将安装为：</p>
+  <blockquote>
+    <code>/lib/modules/&lt;kernel_version&gt;/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>以上列出的安装位置为默认位置。它们对某些 Linux 发布来说不一定正确。 </p></li>
+  <li>安装模块： 
+  <blockquote>
+    <code>modprobe e1000e &lt;参数&gt;=&lt;值&gt;  </code>
+  </blockquote></li>
+  <li>用下列命令指派 IP 地址至接口卡，其中，&lt;x&gt; 是接口卡号： 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;IP 地址&gt;  </code>
+  </blockquote>
+  </li>
+  <li>验证接口卡正常工作。输入以下命令。其中，&lt;IP 地址&gt;是与被测接口卡位于同一子网的另一台计算机的 IP 地址： 
+  <blockquote>
+    <code>ping &lt;IP_address&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>此驱动程序为用于 FreeBSD 内核，版本 4.8 和更新而开发。</p>
+<table class="note">
+  <tr>
+    <td valign="top">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>注意：</b>必须安装内核源以便编译驱动程序模块。</td>
+  </tr>
+</table>
+
+<p>在以下指示中，xxx 为驱动程序版本，如在驱动程序 tar 文件名称中所表明。</p>
+
+<ol>
+  <li>将基本驱动程序的 tar 文件移往您选择的目录。例如，使用/home/username/ixgb 或 /usr/local/src/ixgb。</li>
+  
+  <li>解压缩该档案文件：
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>这将创建一个 <code>ixgb-x.x.x</code> 目录。</li>
+  
+  <li>要安装 man 页：
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>要将驱动程序加载到正在运行的系统上，执行以下步骤：
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>或</p>
+    <blockquote>
+     	<code>cd ixgb-x.x.x/src<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>要为接口指定 IP 地址,输入以下命令： 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;interface_num&gt; &lt;IP_address&gt;</code>
+	</blockquote></li>
+    
+	<li>验证接口卡正常工作。输入以下命令。其中，&lt;IP_address&gt;是与被测接口卡位于同一子网的另一台计算机的 IP 地址：
+    <blockquote>
+    	<code>ping &lt;IP_address&gt;</code>
+    </blockquote></li>
+    
+	<li>如果要在系统引导时自动加载驱动程序：
+	<blockquote>
+    	<code>cd ixgb-x.x.x/src<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>编辑 /boot/loader.conf，并添加以下一行：</p>
+    <blockquote>
+		<code>if_ixgb_load="YES"</code>
+	</blockquote>
+    <p>或</p>
+    <p>将驱动程序编译入内核（参阅第 8 项）。编辑 /etc/rc.conf，并创建合适的 ifconfig_ixgb&lt;interface_num&gt; 条目：</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;interface_num&gt;="&lt;ifconfig_settings&gt;"</code>
+    </blockquote>
+	<p>用法示例：</p>
+    <blockquote>
+		<code>ifconfig_ixgb0="inet 192.168.10.1 netmask 255.255.255.0"</code>
+    </blockquote>
+	</li>
+	
+	<li>如果要将驱动程序编译入内核，输入：
+    <blockquote>
+		<code>cd ixgb-x.x.x/src<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>编辑 /usr/src/sys/conf/files.i386 文件，并添加以下：</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_ee.c optional ixgb<br>
+        dev/ixgb/if_ixgb.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>从 /usr/src/sys/conf/files.i386 文件文件移除以下各行（如果存在）：</p>
+    <blockquote>
+    	<code>/dev/ixgb/if_ixgb_fx_hw.c optional ixgb<br>
+        /dev/ixgb/if_ixgb_phy.c optional ixgb
+		</code>
+    </blockquote>
+	<p>编辑  /usr/src/sys/i386/conf 中的内核配置文件（例如：GENERIC 或 MYKERNEL），并确保以下一行存在：</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>编译，并安装内核。必须重新引导系统方能使内核更新生效。</p></li>
+</ol>
+
+<p>有关编译内核的更多信息，请查询 FreeBSD 操作系统文档。</p>
+
+<h2>更多信息 </h2>
+<p>有关更多信息，请参阅英特尔支持网站上的<i>适配器用户指南:</i> <a href="http://www.intel.com/p/zh_CN/support" class=NoIndex target=_blank>http://www.intel.com/p/zh_CN/support</a>。</p>
+
+<hr>
+<h2>安装英特尔&reg; PROSet（仅 Windows）</h2>
+<p>英特尔&reg; PROSet 已用安装驱动程序的相同过程安装。在安装程序的“安装选项”对话框中选择英特尔&reg; PROSet 和高级网络服务。</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*法律信息</a></p>
+
+</body>
+</html>

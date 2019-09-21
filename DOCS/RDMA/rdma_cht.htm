@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="10" MadCap:lastHeight="2299" MadCap:lastWidth="1134" MadCap:conditions="Default.IntelOnly">
+    <head>
+    </head>
+    <body>
+        <h1><a name="RDMA"></a>適用於 Intel 乙太網路的 RDMA (遠端直接記憶體存取)</h1>
+        <p>「遠端直接記憶體存取」或稱 RDMA，可讓電腦存取另一部電腦的記憶體，而不需與此兩部電腦的作業系統資料緩衝區互動，因此能夠提高網路連線速度和輸出量。</p>
+        <p>支援 RDMA 之適用於 Intel 乙太網路裝置的 Tarball 驅動程式的 README 驅動程式檔案中提供 Linux RDMA 安裝和組態資訊。</p>
+        <p>支援 RDMA 之適用於 Intel 乙太網路裝置的 Tarball 驅動程式的 README 驅動程式檔案中提供 FreeBSD RDMA 安裝和組態資訊。</p>
+        <h2>適用於 Network Direct (ND) 使用者模式應用程式的 RDMA</h2>
+        <p>使用 Network Direct (ND)，使用者模式應用程式就可以使用 RDMA 功能。</p>
+        <table class="note">
+            <tr>
+                <td align="left" valign="top"><img border="0" src="Resources/Graphics/note.gif" width="17" height="17"></img></td>
+                <td>
+                    <p><b>請注意：</b>使用者模式應用程式可能有預先安裝的要求條件，例如 Microsoft HPC Pack 或 Intel MPI Library，請參考您的應用程式說明文件來了解詳細資料。</p>
+                </td>
+            </tr>
+        </table>
+        <h3>安裝 RDMA 使用者模式</h3>
+        <p>「Intel® 乙太網路使用者模式 RDMA Provider」受到 Microsoft* Windows Server* 2012 R2 或更新版本的支援。</p>
+        <p>請遵照下面的步驟來安裝使用者模式的 Network Direct (ND) 功能。</p>
+        <ol>
+            <li>從安裝媒體執行 Autorun.exe 來啟動該安裝程式，然後選擇「Install Drivers and Software」(安裝驅動程式和軟體) ，然後接受授權合約書。</li>
+            <li>在 Setup Options (設定選項) 螢幕選取「Intel® Ethernet User Mode RDMA Provider」(Intel® 乙太網路使用者模式 RDMA Provider)。</li>
+            <li>在 RDMAP Configuration Options 螢幕，依您的需求選取「Enable RDMA routing across IP Subnets」。請注意，即使您沒有選取使用者模式的 RDMA，這個選項也會在基本驅動程式安裝期間出現，因為這個選項也適用於 Network Direct Kernel 功能。</li>
+            <li>如果有安裝「Windows 防火牆」，且該防火牆也在作用中，請選取「Create an Intel® Ethernet RDMA Port Mapping Service rule in Windows Firewall」(在「Windows 防火牆」建立一條「Intel® 乙太網路 RDMA 連接埠對應服務」規則) 以及要套用此規則的網路。<table class="note"><tr><td align="left" valign="top"><img border="0" src="Resources/Graphics/note.gif" width="17" height="17"></img></td><td><p><b>請注意：</b>如果「Windows 防火牆」已停用或者您使用的是第三方的防火牆，就需要以手動方式來新增這條規則。</p></td></tr></table></li>
+            <li>繼續進行驅動程式和軟體安裝。</li>
+        </ol>
+        <h2>RDMA Network Direct Kernel (NDK)</h2>
+        <p>RDMA Network Direct Kernel (NDK) 功能已經包括在 Intel 基礎網路驅動程式，而且不需安裝其它功能。</p>
+        <h3>在整個 IP 子網路中啟用 RDMA 路由功能</h3>
+        <p>如果您要讓所有的子網路都能使用 NDK 的 RDMA 功能，就需要在基礎驅動程式安裝期間，於 RDMA Configuration Options (RDMA 組態選項) 螢幕選取「Enable RDMA routing across IP Subnets」(在所有的 IP 子網路啟用 RDMA 路由)。</p>
+        <h3>利用 Microsoft* PowerShell* 來確認 RDMA 作業</h3>
+        <p>您可以使用下面的 Microsoft* PowerShell* 指令來確定網路介面上的 RDMA 是否已經啟動：</p>
+        <p><code>Get-NetAdapterRDMA</code></p>
+        <p>請使用以下的 PowerShell 指令來檢查網路介面是否具備 RDMA 功能，並且已經啟用多通道：</p>
+        <p><code>Get-SmbClientNetworkInterface</code></p>
+        <p>請使用以下的 PowerShell 指令來檢查作業系統中的 Network Direct 是否已經啟用：</p>
+        <p><code>Get-NetOffloadGlobalSetting | 選取 NetworkDirect</code></p>
+        <p>請使用 netstat 來檢查每個具備 RDMA 功能的網路介面在第 445 連接埠有一個接聽程式 (支援 RDMA 的 Windows 用戶端 OS 可能不會公布接聽程式)。例如：</p>
+        <p><code>netstat.exe -xan | ? {$_ -match &quot;445&quot;}</code></p>
+        <h2>適用於虛擬化環境的 RDMA</h2>
+        <p>如果您想在連接至 VMSwitch 的虛擬介面卡上啟用 RDMA 功能，一定要在每個連接埠程式啟用 SRIOV (單一根目錄 IO 虛擬化) 和 VMQ (虛擬機器佇列) 進階屬性。在特定的情況下，這些設定的預設是停用。您可以在介面卡內容對話方塊的進階標籤手動設定這些選項，或者使用下面的 Powershell 指令：</p>
+        <p><code>Set-NetAdapterAdvancedProperty -Name &lt;nic_name&gt; -RegistryKeyword *SRIOV -RegistryValue 1</code></p>
+        <p><code>Set-NetAdapterAdvancedProperty -Name &lt;nic_name&gt; -RegistryKeyword *VMQ -RegistryValue 1</code></p>
+        <h3>設定 iWARP 訪客支援 (NDK 模式 3)</h3>
+        <p>「NDK 模式 3」可讓核心模式 Windows 元件使用  Hyper-V 訪客分割區內的 iWARP 功能。若要在 Intel Ethernet 裝置上啟用NDK模式 3，請執行以下的步驟：</p>
+        <ol>
+            <li>在您的系統的 BIOS 或 UEFI 上啟用 SR-IOV。</li>
+            <li>在裝置上啟用 SR-IOV 進階設定。</li>
+            <li>在同一裝置上的所有實體功能都執行以下的指令就可以將與該裝置綁定之 VMSwitch 上的 SR-IOV 啟用：<br /><code>New-VMSwitch -Name &lt;switch_name&gt; -NetAdapterName &lt;device_name&gt;</code><br /><code>-EnableIov $true</code></li>
+            <li>利用設定 RdmaMaxVfsEnabled 進階設定值來設定裝置上的 RDMA 虛擬功能 (VF) 數。所有的實體功能都必需設定成相同的值。該值代表在整個裝置中，一次能夠進行 RDMA 的最高 VF 數。啟用較多的 VF 會限制實體功能 (PF) 和其它 VF 的 RDMA 資源。<br /><code>Set-NetAdapterAdvancedProperty -Name &lt;device_name&gt; -RegistryKeyword RdmaMaxVfsEnabled -RegistryValue &lt;Value: 0 – 32&gt;</code></li>
+            <li>在主機上停用所有的 PF 介面卡後再將它們重新啟用。如果「RdmaMaxVfsEnabled」這個登錄關鍵字變更或者是在建立或破壞一個 VMSwitch 時就需要進行此作業。<br /><code>Get-NetAdapterRdma | Disable-NetAdapter</code><br /><code>Get-NetAdapterRdma | Enable-NetAdapter</code></li>
+            <li>為需要 Rdma VF 支援的 VM 建立「VM 網路介面卡」。<br /><code>Add-VMNetworkAdapter -VMName &lt;vm_name&gt; -VMNetworkAdapterName &lt;device_name&gt; -SwitchName &lt;switch_name&gt;</code></li>
+            <li>如果您打算在客體分割區使用 Microsoft Windows 10 Creators Update (RS2) 或更新的版本，請在主機輸入下面指令來設定「VM 網路介面卡」上 RDMA 的權數：<br /><code>Set-VMNetworkAdapterRdma -VMName &lt;vm_name&gt; -VMNetworkAdapterName &lt;device_name&gt; -RdmaWeight 100</code></li>
+            <li>在「VM 網路介面卡」設定 SR-IOV 的權數 (請注意：一定要先將 RdmaWeight 設為 0 後才能將 SR-IOV 的權數設為 0)：<br /><code>Set-VMNetworkAdapter -VMName &lt;vm_name&gt; -VMNetworkAdapterName &lt;device_name&gt; -IovWeight 100</code></li>
+            <li>用 VM 中的 PROSET Installer 來安裝 VF 網路介面卡。</li>
+            <li>使用 VM 中的 PowerShell 來啟用 VF 驅動程式上的 RDMA 和「Hyper-V 網路介面卡」：<br /><code>Set-NetAdapterAdvancedProperty -Name &lt;device_name&gt; -RegistryKeyword RdmaVfEnabled -RegistryValue 1</code><br /><code>Get-NetAdapterRdma | Enable-NetAdapterRdma</code></li>
+        </ol>
+        <h2>適用於 NDK 的 RDMA 功能，例如 SMB 直接傳輸 (伺服器訊息區)</h2>
+        <p>NDK 可讓 Windows 元件 (例如「SMB 直接傳輸」儲存) 使用 RDMA 功能。</p>
+        <h3>測試 NDK：搭載 DiskSPD 的 Microsoft* Windows* SMB 直接傳輸</h3>
+        <p>這個區段介紹了適用於測試 Intel 乙太網路功能性的 RDMA 和 Microsoft* Windows* 作業系統效能的建議方法。</p>
+        <p>請注意，因為「SMB 直接傳輸」是一種儲存負載，其效能指標可能會受到儲存裝置的限制，而不是受限於被測試的網路介面。Intel 建議使用最快的儲存，這樣測試出受測之網路裝置的真實功能。</p>
+        <p>測試說明：</p>
+        <ol>
+            <li>至少將兩個執行支援 Microsoft* Windows* Server 作業系統的伺服器設定完成並連線，而且每個伺服器至少要有一個必須具備 RDMA 功能的 Intel® 乙太網路裝置。</li>
+            <li>在指定為 SMB 伺服器使用的系統上，要設定一個 SMB 分享。請注意，效能指標可能會受到儲存裝置速度的限制，而不是受限於被測試的網路介面。儲存設定不在本文件的說明範圍內。您可以使用以下的 PowerShell 指令：<br />New-SmbShare -Name &lt;SMBsharename&gt; -Path &lt;SMBsharefilepath&gt; -FullAccess &lt;domainname&gt;\Administrator,Everyone<br /><br />例如：<br />New-SmbShare -Name RAMDISKShare -Path R:\RAMDISK -FullAccess group\Administrator,Everyone<br /><br /></li>
+            <li>請從此處下載並安裝 Diskspd Microsoft 公用程式： https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223</li>
+            <li>使用 CMD 或 Powershell，cd 到 DiskSpd 資料夾，然後執行測試。(請參考 Diskspd 說明文件以了解參數的詳細資料)<br /><br />範例：將區塊大小設定為 4K，執行 60 秒的測試、停用所有的硬體和軟體快取、測量並顯示延遲性統計數據、每個目標應用 16 個重疊的 IO 和 16 個執行緒、隨機 0% 寫入和 100% 讀取，然後到此建立一個 10GB 的測試檔案「\\&lt;SMBserverX722IP&gt;\&lt;SMBsharename&gt;\test.dat」：<br />.\diskspd.exe –b4K -d60 -h -L –o16 -t16 –r –w0 -c10G \\&lt;SMBserverX722IP&gt;\&lt;SMBsharename&gt;\test.dat<br /><br /></li>
+            <li>使用「RDMA Activity」和「SMB 直接連線傳輸」之類的 perfmon 計數器來確認 RDMA 流量確實在執行中。請參考 Microsoft 說明文件以了解更多詳細資料。</li>
+        </ol>
+        <div MadCap:conditions="Default.iwarp_doc_only">
+            <h2>客戶支援</h2>
+            <ul>
+                <li>主要的 Intel 支援網站：http://www.intel.com.tw/content/www/tw/zh/support.html</li>
+                <li>網路產品資訊：https://www-ssl.intel.com/content/www/tw/zh/communications/network-transformation.html</li>
+            </ul>
+            <h2>法律聲明/免責聲明</h2>
+            <p>著作權 (C) 2019, Intel Corporation.版權所有。</p>
+            <p>Intel 公司不對本文件中的錯誤或疏失負責。Intel 亦不對此處包含的資訊做任何更新承諾。</p>
+            <p>Intel 是 Intel Corporation 在美國及其他國家的商標。</p>
+            <p>* 其他的名稱和品牌可能業經宣告為其他所有者之財產。</p>
+            <p>本軟體係根據授權提供，且只得根據本授權的條款進行使用或複製。本手冊中的資訊僅以資訊使用目的提供、可能在不另行通知的情況下修改、並且不應被讀解為 Intel Corporation 的承諾。對於本文件或與本文件相關而提供之任何軟體中若有任何錯誤或不正確之處，Intel Corporation 不承擔任何責任或義務。除了此授權許可的部份外，事先未經 Intel Corporation 的明確書面同意，不得以任何格式或方法對本文件的任何部份進行複製、儲存在可擷取的系統中、或傳輸。</p>
+        </div>
+    </body>
+</html>

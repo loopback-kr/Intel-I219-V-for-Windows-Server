@@ -1,0 +1,173 @@
+﻿.legaldis {
+	font-family: Helvetica;
+	font-size: 7pt;
+	color: #555555;
+	align: justify;
+	}
+BODY
+	{
+	BACKGROUND-COLOR: #ffffff;
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt;
+	COLOR: black
+	}
+.nav	{background-color: #ddeeFF}
+
+a:link	
+	{color:#001060}
+
+a:visited 
+	{color:#800080}
+
+a:hover	
+	{color:#800000}
+
+H1
+ 	{
+	MARGIN-TOP:14;MARGIN-BOTTOM:0;
+	FONT-SIZE: 18pt;
+	FONT-WEIGHT: bold;
+	COLOR:#0860A8
+	}
+H2
+ 	{
+	MARGIN-TOP:14;MARGIN-BOTTOM:0;
+	FONT-SIZE: 14pt;
+	FONT-WEIGHT: bold;
+	COLOR:#0860A8
+	}
+H3
+ 	{
+	MARGIN-TOP:14;MARGIN-BOTTOM:0;
+	FONT-SIZE: 12pt;
+	FONT-WEIGHT: bold;
+	COLOR:#0860A8
+	}
+
+H4
+	{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold
+	}
+
+H5
+ 	{
+	MARGIN-LEFT:14;
+	MARGIN-TOP:2;
+	MARGIN-BOTTOM:0;
+	font-size:10pt;
+	FONT-WEIGHT: bold
+	}
+
+P
+	{
+	MARGIN-TOP:10;MARGIN-BOTTOM:0;
+	}
+blockquote 
+	{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt
+	}
+ol
+	{
+	MARGIN-TOP:10;MARGIN-BOTTOM:0;
+	}
+ul
+	{
+	MARGIN-TOP:0;MARGIN-BOTTOM:0;
+	}
+li
+	{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt;
+	margin-top: 6px;
+	}
+TH
+	{
+	COLOR: black;
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold
+	}
+TD
+	{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 10pt
+	}
+.top
+	{MARGIN-LEFT:12;}
+
+
+.contents 
+	{
+	FONT-SIZE: 10pt;
+	MARGIN-BOTTOM: 6px;
+	MARGIN-LEFT: 20px;
+	MARGIN-TOP: 6px;
+	TEXT-INDENT: -20px
+	}
+.gui	
+{
+	FONT-SIZE: 9pt;
+	FONT-WEIGHT: bold
+	}
+.inentry 
+	{
+	MARGIN-BOTTOM: 3px;
+	MARGIN-TOP: 0px;
+	WORD-SPACING: 0px
+	}
+.monospace 
+	{
+	FONT-FAMILY: Courier New, Courier;
+	FONT-SIZE: 10pt
+	}
+.numlst
+	{
+	LIST-STYLE: decimal;
+	MARGIN-BOTTOM: 8px;
+	MARGIN-LEFT: 5px;
+	MARGIN-RIGHT: 0px;
+	TEXT-ALIGN: left;
+	TEXT-INDENT: 0px;
+	WORD-SPACING: 0px
+	}
+.r	{
+	font-size: 11pt
+	}
+.small
+	{
+	FONT-FAMILY: Arial, sans-serif;
+	FONT-SIZE: 7pt;
+	color:#505050}
+.warning 
+	{
+	FONT-STYLE: italic;
+	FONT-WEIGHT: bold
+	}
+.toc_head 
+	{
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold;
+	MARGIN-BOTTOM: 1px;
+	MARGIN-LEFT: 0px;
+	MARGIN-TOP: 6px;
+	TEXT-INDENT: 0px;
+	}
+.toc_level1 
+	{
+	FONT-SIZE: 9pt;
+	MARGIN-BOTTOM: 1px;
+	MARGIN-LEFT: 15px;
+	MARGIN-TOP: 1px;
+	TEXT-INDENT: -10px
+	}
+.toc_level2
+	{
+	FONT-SIZE: 9pt;
+	MARGIN-BOTTOM: 1px;
+	MARGIN-LEFT: 30px;
+	MARGIN-TOP: 1px;
+	TEXT-INDENT: -10px
+	}

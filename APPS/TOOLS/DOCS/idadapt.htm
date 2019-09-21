@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+
+<head>
+
+<meta name="keywords" contents="utility, PCI NIC ">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Adapter ID Tool</title>
+</head>
+
+<BODY>
+
+<h1>IDAdapt.exe - Intel PCI NIC Identification Utility</h1>
+<h2>Contents</h2>
+<ul>
+  <li>
+    <p class="numlst" 
+><a href="#OVERVIEW">Overview</a></li>
+  <li>
+    <p class="numlst" 
+><a href="#RUNNING THE UTILITY">Running the Utility</a></li>
+  <li>
+    <p class="numlst" 
+><a href="#USAGE NOTES">Usage Notes</a></li>
+  <li>
+    <p class="numlst" 
+><a href="#EXAMPLES">Examples</a></li>
+  <li>
+    <p class="numlst" 
+><a href="#LIMITATIONS">Limitations</a></li>
+  <li>
+    <p class="numlst" 
+><a href="#DRIVER TO PCI ID CROSS REFERENCE">Driver-to-PCI ID Cross Reference</a></li>
+</ul>
+<h2><a name="OVERVIEW">Overview</a></h2>
+<p>The Intel PCI NIC Identification Utility identifies Intel PCI NIC adapters and
+provides adapter properties and assigned resources. You can readily use this
+information in batch, script and configuration files for automation purposes. 
+
+<p>The utility returns the following values:
+<ul>
+  <li>
+    <p class="numlst"><b>SLOT </b>(Slot number in decimal). The PCI logical slot 
+    number reported by the adapter, in decimal format. Not related to the 
+    physical slot number on the motherboard.</li>
+  <li>
+    <p class="numlst"><b>SLOTX </b>(Slot number in hexadecimal, for Gigabit 
+    solutions). The PCI logical slot number
+reported by the adapter, in hexadecimal format. Not related to
+the physical slot number on the motherboard.</li>
+  <li>
+    <p class="numlst"><b>PCI ID (</b>PCI device ID<b>)</b>. Adapters sharing the same PCI 
+    ID can use the same driver. See the table at the end of this document
+showing the relationship between drivers and PCI IDs.</li>
+  <li>
+    <p class="numlst"><b>SSID </b>(Sub System ID). The PCI subsystem ID and 
+    subvendor ID, displayed in hexadecimal. Each adapter model has a different SSID. 
+    The PCI ID identifies the adapter family; the SSID identifies
+the specific model.</li>
+	<li>
+    <p class="numlst"><b>RevID</b> (PCI Revision ID). The PCI Revision ID 
+	reported by the adapter, in decimal format. The PCI Revision ID can be the 
+	only difference between some adapter SKUs.</li>
+  <li>
+    <p class="numlst"><b>MAC </b>(MAC address). The 12-digit Ethernet ID assigned to the
+adapter. This number is also printed on the adapter label.</li>
+</ul>
+<h2><a name="RUNNING THE UTILITY">Running the Utility</a></h2>
+<p>To run IDADAPT.EXE, you must start the computer in MS-DOS 6.22 or above. This utility should
+not be run from a Windows Command Prompt within any version of Microsoft Windows*, or in
+any other non-DOS operating systems.
+<p>IDADAPT.EXE can be run with no command line options, or with either of the
+following command line options:
+<table border="0" cellspacing="0" cellpadding="0"
+>
+  <tr>
+    <td valign="top">
+      <p class="numlst">/?
+    </td>
+    <td valign="top">
+      <p class="numlst">Displays help information
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p class="numlst">/B:<i>&lt;filename&gt;</i>
+    </td>
+    <td valign="top">
+      <p class="numlst">Creates a file called <i>&lt;filename&gt; </i>and stores the 
+      adapter's properties in it. The file is formatted as a DOS batch file, and 
+      can be executed as such if <i>&lt;filename&gt; </i>ends in .BAT. Executing it will 
+      create environment variables from the adapter properties. Usage examples are
+      listed below.
+    </td>
+  </tr>
+</table>
+<h2><a name="USAGE NOTES">Usage Notes</a></h2>
+<p>Running the utility with no command line parameters displays the adapter
+properties on the screen. For example, if you enter IDADAPT in a computer with 2
+Intel PCI adapters installed, the display would resemble the following:
+<pre>NIC1 SLOT=43 SLOTX=0068 PCI ID=1229 SSID=10118086 MAC=0002B31FE072 RevID=4
+NIC2 SLOT=47 SLOTX=0069 PCI ID=1031 SSID=10118086 MAC=0090270AAF73 RevID=4</pre>
+
+
+<p>In this example, the first adapter has the following properties:
+<ul>
+  <li>
+    <p class="numlst">Logical slot number is 43 (decimal)</li>
+  <li>
+    <p class="numlst">Logical slot number is 0068 (hexadecimal)</li>
+  <li>
+    <p class="numlst">PCI device ID is 1229</li>
+  <li>
+    <p class="numlst">Sub System ID is 10118086</li>
+	<li>
+    <p class="numlst">PCI Revision ID is 4</li>
+  <li>
+    <p class="numlst">MAC address is 0002B31FE072</li>
+</ul>
+<p>If the utility does not find any adapters, it reports &quot;No supported
+adapters were found&quot; and returns an error level of 1. You can use the error
+level for conditional branching in batch files.
+<p>If you run the utility using /B:&lt;filename&gt;, it creates a file with the
+name you specified. This file contains adapter properties in a batch file
+format. This is an example batch file:
+<pre>SET NIC1_SLOT=43
+SET NIC1_SLOTX=0068
+SET NIC1_PCIID=1229
+SET NIC1_SSID=10118086
+SET NIC1_MAC=0002B31FE072
+SET NIC1_REVID=4
+SET NIC2_SLOT=47
+SET NIC2_SLOTX=0069
+SET NIC2_PCIID=1031
+SET NIC2_SSID=10118086
+SET NIC2_MAC=0090270AAF73
+SET NIC2_REVID=4</pre>
+
+
+<p><span id="lbDetails0">When the name you assign to the file ends in .BAT, it 
+can be executed in MS-DOS</span>.
+Executing the file sets environment variables for each property of each adapter.
+<p>Once the environment variables are created by the batch file, you can insert
+the values into configuration files as needed. See examples below.
+<p>When using this batch file, remember that about 64 bytes of environment space
+will be needed for each adapter port found. Ensure that you make sufficient
+environment space available in your configuration.
+To set the available environment space in DOS, use the <b>shell=</b> command in the 
+CONFIG.SYS file. For example, to set the environment space to 2048 bytes, you 
+would use the following line in the CONFIG.SYS file (assuming you are booting 
+from the A drive):<p>SHELL=A:\command.com 
+a:\ /e:2048 /P
+<p><b>Important note concerning slot numbering
+
+</b>
+<p>The decimal slot number (SLOT) returned by the utility is formatted in
+conventional style for both 10/100 and 10/100/1000 adapters. The conventional
+style consists of the PCI bus number plus the PCI device number. This will work
+in the PROTOCOL.INI for the NDIS 2 driver for both adapter families. However,
+this will not work for the DOS ODI driver for 1Gigabit capable adapters, or
+second port of a multiport 1Gigabit capable adapter in the PROTOCOL.INI for NDIS
+2 drivers.
+<p>The hexadecimal slot number (SLOTX) returned by the utility is formatted
+differently for 1 Gigabit capable adapters. This newer format takes the
+conventional style and left-shifts it 3 bits. The low order 3 bits are used to
+specify the port number on multiport 1 Gigabit capable adapters.
+<p>You should always use the SLOTX parameter in the NET.CFG for the DOS ODI
+driver for 1 Gigabit capable adapters (E1000ODI.COM). Use of the SLOTX parameter
+in the PROTOCOL.INI for the NDIS 2 driver for the 1 Gigabit capable adapters
+(E1000.DOS) is optional unless attempting to use the second port of a multiport
+adapter.
+<p>When using the slot number in a PROTOCOL.INI, remember that the usage rules
+are different for hexadecimal values as opposed to decimal values. When using a
+hexadecimal value, the number must be preceded by 0x.
+<p>PROTOCOL.INI
+decimal value example:
+
+
+<pre>Drivername = E1000$
+SLOT =&nbsp; 47</pre>
+
+
+<p>PROTOCOL.INI hexadecimal value example:
+
+
+<pre>Drivername = E1000$
+SLOT =&nbsp; 0x0138</pre>
+
+
+<p>NET.CFG example<pre>LINK DRIVER E1000
+SLOT 0138</pre>
+
+
+<h2><a name="EXAMPLES">Examples</a></h2>
+<blockquote>
+<p>1. To create a startup disk that loads a Packet Driver named PCKTDRVR.COM on the
+second-found NIC, the AUTOEXEC.BAT file<br>
+&nbsp;&nbsp;&nbsp; might contain the following:
+  <blockquote>
+<pre>IDADAPT /B:INTELSET.BAT
+IF ERRORLEVEL 1 GOTO NO_NIC
+CALL INTELSET.BAT
+PCKTDRVR 0x60 %NIC2_SLOT%
+GOTO END
+:NO_NIC
+ECHO NO ADAPTER FOUND!!
+PAUSE
+:END</pre>
+  </blockquote>
+<p>2. To create a startup disk that automatically detects the adapter model and
+loads the proper DOS ODI driver, the AUTOEXEC.BAT<br>
+&nbsp;&nbsp;&nbsp; file might contain the
+following:
+  <blockquote>
+<pre>IDADAPT /B:INTELSET.BAT
+IF ERRORLEVEL 1 GOTO NO_NIC
+CALL INTELSET.BAT
+LSL
+IF &quot;%NIC1_PCIID%&quot; == &quot;1229&quot; GOTO PRO100
+IF &quot;%NIC1_PCIID%&quot; == &quot;2449&quot; GOTO PRO100
+IF &quot;%NIC1_PCIID%&quot; == &quot;1000&quot; GOTO PRO1000
+IF &quot;%NIC1_PCIID%&quot; == &quot;1001&quot; GOTO PRO1000
+IF &quot;%NIC1_PCIID%&quot; == &quot;1002&quot; GOTO PRO1000
+IF &quot;%NIC1_PCIID%&quot; == &quot;1003&quot; GOTO PRO1000
+IF &quot;%NIC1_PCIID%&quot; == &quot;1004&quot; GOTO PRO1000
+GOTO NO_NIC
+:PRO100
+E100BODI
+GOTO CONTINUE
+:PRO1000
+E1000ODI
+GOTO CONTINUE
+:CONTINUE
+IPXODI
+VLM /V4
+GOTO END
+:NO_NIC
+ECHO !! NO SUITABLE ADAPTER FOUND !!
+PAUSE
+:END</pre>
+  </blockquote>
+</blockquote>
+<h2><a name="LIMITATIONS">Limitations</a></h2>
+<p>This utility does not work with any Intel PCMCIA, ISA, EISA or MCA bus
+adapters, or Intel network adapters of any architecture released prior to 1996.
+<p>IDADAPT.EXE will detect and return information on a maximum of sixteen adapter
+ports
+in a computer.
+<p><span id="lbDetails">IDADAPT.EXE will not work if EMM386.EXE or a similar 
+upper memory manager is loaded.</span>&nbsp; If you must use EMM386 in
+your boot disk configuration due to memory limitations, you can set up your boot
+diskette to boot without EMM386, run IDADAPT and build a batch file with the
+adapter information, then change your configuration files to include EMM386 and
+reboot. Then run the resulting batch file to set the environment variables.
+<h2><a name="DRIVER TO PCI ID CROSS REFERENCE">Driver-to-PCI ID Cross Reference</a></h2>
+<p>See <a href="idadapt.txt">idadapt.txt</a>.</p>
+
+<hr color="#00b0b0" size="1">
+<p class="small"><code>Last modified on <!--$$Modtime:--> 3/13/09 12:49p <!-- $--> Revision <!--$$Revision: 1.1 $--></code>
+
+</body>
+
+</HTML>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Guía rápida de instalación de adaptadores de red Intel(R)</title>
+</head>
+<body>
+
+<h1>Instalación de adaptadores de red Intel<sup>&reg;</sup></h1>
+<hr>
+
+<h2>Instale el adaptador de Ethernet Intel<sup>&reg;</sup> </h2>
+
+<h3>Instalación de un adaptador</h3>
+    <ol>
+      <li>Apague su PC y desconecte el cable de energía. Si va a realizar una instalación de "conexión en funcionamiento", consulte primero la documentación de su servidor.</li>
+      <li>Quite la cubierta del sistema y la cubierta de la ranura del adaptador en la ranura que corresponde al adaptador. Puede utilizar una ranura más larga que el conector del adaptador sin problemas, pero no intente realizar la instalación en una ranura más corta que el conector.</li>
+      <li>Coloque de manera segura el adaptador en la ranura y asegure el soporte.</li>
+      <li>Vuelva a colocar la cubierta de su PC. Conecte el cable de energía.</li>
+    </ol>
+
+<h3>Instalación de una tarjeta Mezzanine</h3>
+<ol>
+      <li>Apague su PC y desconecte el cable de energía. </li>
+      <li>Desmonte la cubierta de su PC. </li>
+      <li>Alinee el conector PCIe en la placa mezzanine con el conector y cuatro sujetadores en la placa base.</li>
+      <li>Presione el adaptador hasta que se haya insertado por completo en el conector MB y quede encajado en los cuatro sujetadores. </li>
+      <li>Vuelva a colocar la cubierta de su PC. Conecte el cable de energía. </li>
+</ol>
+
+
+<h2>Conexión del cable de red</h2>
+<h3>Adaptadores de cobre:</h3>
+
+<p>Para redes de 10 Mbps, utilice un cable de red Ethernet (TPE) de par trenzado de Categoría 3, 4 o 5. <br>
+Para redes de 100 o 1000 Mbps y para redes residenciales, utilice un cable de Categoría 5 (4 pares).<br>
+Para redes de 10 Gbps, utilice cables Ethernet de Categoría 6, Categoría 6a o Categoría 7.</p>
+
+<h3>Adaptadores de fibra con conector SC: </h3>
+<p>Retire y guarde la cubierta del conector de fibra óptica. Introduzca un conector de fibra óptica tipo SC 1000Base-SX dúplex en los puertos TX/RX del soporte del adaptador.
+
+<h3>Adaptadores de fibra con conector LC:</h3>
+<p>Retire y guarde la cubierta del conector de fibra óptica. Inserte un conector LC en el adaptador, con el cableado correcto para el adaptador. Puede utilizar cables de conversión a otros tipos de conector (como SC) si el cableado se ajusta a las especificaciones ópticas del adaptador, incluyendo las limitaciones de longitud.
+   
+<h3>Óptica acoplable SFP+: </h3>
+<p>Instale el módulo y conecte el cable según las instrucciones del fabricante del módulo.
+
+<h3>Conector CX4:</h3>
+<p>Las características físicas del cable deben satisfacer las especificaciones IEEE Std 802.3ak, cláusula 54. El conector de cable requerido es un receptáculo tipo cierre MDI, tal como lo define IEC 61076-3-113.
+<p>Inicie su PC y siga las instrucciones de instalación de los controladores que se ofrecen a continuación.
+
+<hr>
+
+<h2>Instalación de los controladores</h2>
+<h3>Sistemas operativos Microsoft* Windows*</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>NOTAS:</strong>
+      <ul>
+        <li>La instalación de los controladores requiere que se tengan derechos de administrador en el sistema operativo.</li>
+        <li>Consulte la página de requisitos de sistema del manual del adaptador para obtener información sobre los sistemas operativos compatibles.</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>El adaptador se detectará como hardware nuevo cuando se inicie Windows. Para instalar el controlador correcto:</p>
+<ol>
+  <li>Descargue el paquete de controladores más reciente de <a href="https://www.intel.la/content/www/xl/es/support.html">https://www.intel.la/content/www/xl/es/support.html</a>. </li>
+  <li>Si se inicia el asistente <b>Se encontró nuevo hardware</b>, pulse el botón Cancelar.</li>
+  <li>Inicie el programa de ejecución automática <b>Conexiones de red Intel&reg;</b> del paquete de controladores. </li>
+  <li>Haga clic en el botón <b>Instalar los controladores y el software</b>.</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>Para construir un paquete binario RPM* de este controlador, ejecute 'rpmbuild -tb &lt;nombrearchivo.tar.gz&gt;'. Sustituya &lt;nombrearchivo.tar.gz&gt; por el nombre de archivo específico del controlador.</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>NOTAS:</b> 
+	<ul>
+		<li>Para que la creación funcione correctamente, el kernel en ejecución DEBE coincidir con la versión y configuración de las fuentes instaladas del kernel. Si acaba de recompilar el kernel, reinicie el sistema.</li>
+		<li>El funcionamiento de RPM solo se ha probado con las distribuciones Red Hat.</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>Mueva el archivo con la extensión tar del controlador base al directorio que seleccione. Por ejemplo, utilice '/home/username/e1000e' o '/usr/local/src/ixgb'. </li>
+  <li>Descomprima el archivo tar o unzip, donde &lt;x.x.x&gt; es el número de versión del archivo tar del controlador: 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>Vaya al directorio src del controlador. donde &lt;x.x.x&gt; es el número de versión del archivo tar del controlador: 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/  </code>
+  </blockquote></li>
+  <li>Compile el módulo del controlador: 
+  <blockquote>
+    <code>make install  </code>
+  </blockquote>
+  <p>El binario se instalará como:</p>
+  <blockquote>
+    <code>/lib/modules/&lt;versión_kernel&gt;/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>Las ubicaciones de instalación descritas anteriormente son las predeterminadas, y es posible que no sean correctas para determinadas distribuciones de Linux. </p></li>
+  <li>Instale el módulo: 
+  <blockquote>
+    <code>modprobe e1000e &lt;parámetro&gt;=&lt;valor&gt;  </code>
+  </blockquote></li>
+  <li>Asigne una dirección IP a la interfaz. Para ello, escriba lo siguiente, donde &lt;x&gt; es el número de interfaz: 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;dirección_IP&gt;  </code>
+  </blockquote>
+  </li>
+  <li>Compruebe que funcione la interfaz. Escriba lo siguiente, donde &lt;dirección_IP&gt; es la dirección IP de otra máquina en la misma subred donde se encuentra la interfaz que se está probando: 
+  <blockquote>
+    <code>ping &lt;dirección_IP&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>Este controlador ha sido desarrollado para utilizarse con las versiones 4.8 y posteriores del kernel FreeBSD.</p>
+<table class="note">
+  <tr>
+    <td valign="top">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>NOTA:</b> debe contar con los recursos de kernel ya instalados para poder compilar el módulo de controlador.</td>
+  </tr>
+</table>
+
+<p>En las instrucciones que encontrará a continuación, x.x.x es la versión del controlador según se indica en el nombre del archivo tar del controlador.</p>
+
+<ol>
+  <li>Mueva el archivo con la extensión tar del controlador base al directorio que seleccione. Por ejemplo, utilice /home/username/ixgb o /usr/local/src/ixgb.</li>
+  
+  <li>Descomprima el archivo tar o zip:
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>Esto creará un directorio <code>ixgb-x.x.x</code>.</li>
+  
+  <li> Para instalar una página man:
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>Para cargar el controlador en un sistema en ejecución, realice los pasos siguientes:
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>O BIEN</p>
+    <blockquote>
+     	<code>cd ixgb-x.x.x/src<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>Para asignar una dirección IP a la interfaz, escriba lo siguiente: 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;núm_de_interfaz&gt; &lt;dirección_IP&gt;&nbsp;</code>
+	</blockquote></li>
+    
+	<li>Compruebe que funcione la interfaz. Escriba lo siguiente, donde &lt;dirección_IP&gt; es la dirección IP de otra máquina en la misma subred donde se encuentra la interfaz que se está probando:
+    <blockquote>
+    	<code>ping &lt;dirección_IP&gt;</code>
+    </blockquote></li>
+    
+	<li>Si desea que el controlador se cargue automáticamente cuando se inicie el sistema:
+	<blockquote>
+    	<code>cd ixgb-x.x.x/src<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>Modifique /boot/loader.conf, y agregue la siguiente línea:</p>
+    <blockquote>
+		<code>if_ixgb_load="YES"</code>
+	</blockquote>
+    <p>O BIEN</p>
+    <p>compile el controlador en el kernel (vea el punto 8). Edite /etc/rc.conf y cree la entrada correspondiente de ifconfig_ixgb&lt;núm_interfaz&gt;:</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;núm_interfaz&gt;="&lt;configuración_ifconfig&gt;"</code>
+    </blockquote>
+	<p>Ejemplo:</p>
+    <blockquote>
+		<code>ifconfig_ixgb0="inet 192.168.10.1 netmask 255.255.255.0"</code>
+    </blockquote>
+	</li>
+	
+	<li>Si desea compilar el controlador en el kernel, teclee:
+    <blockquote>
+		<code>cd ixgb-x.x.x/src<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>Edite el archivo /usr/src/sys/conf/files.i386 y añada la línea siguiente:</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_ee.c optional ixgb<br>
+        dev/ixgb/if_ixgb.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>Elimine las líneas siguientes del archivo /usr/src/sys/conf/files.i386, si existen:</p>
+    <blockquote>
+    	<code>/dev/ixgb/if_ixgb_fx_hw.c optional ixgb<br>
+        /dev/ixgb/if_ixgb_phy.c optional ixgb
+		</code>
+    </blockquote>
+	<p>Edite el archivo de configuración de kernel (o sea, GENERIC o MYKERNEL) en/usr/src/sys/i386/conf, y compruebe que existe la línea siguiente:</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>Compile e instale el kernel. Debe reiniciarse el sistema para que tengan efecto las actualizaciones del kernel.</p></li>
+</ol>
+
+<p>Para obtener información adicional acerca de cómo compilar el kernel, consulte la documentación del sistema operativo FreeBSD.</p>
+
+<h2>Más información </h2>
+<p>Para obtener más información, consulte la <i>Guía de usuario del adaptador </i>en el sitio web de asistencia de Intel: <a href="http://www.intel.la/content/www/xl/es/support.html" class=NoIndex target=_blank>http://www.intel.la/content/www/xl/es/support.html</a>.</p>
+
+<hr>
+<h2>Instale Intel&reg; PROSet (solo Windows)</h2>
+<p>Intel&reg; PROSet se instala siguiendo el mismo proceso que se usa para instalar controladores. Seleccione Intel&reg; PROSet y Servicios avanzados de red en el diálogo Opciones de configuración del asistente de instalación.</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*Información legal</a></p>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Schnellinstallationsanleitung für Intel(R) Netzwerkadapter</title>
+</head>
+<body>
+
+<h1>Installation von Intel<sup>&reg;</sup> Netzwerkadaptern</h1>
+<hr>
+
+<h2>Installation des Intel<sup>&reg;</sup> Ethernet-Adapters</h2>
+
+<h3>Installation eines Adapters</h3>
+    <ol>
+      <li>Schalten Sie den Computer aus und ziehen Sie den Netzstecker aus der Steckdose. Wenn Sie eine Hot-Plug-Installation ausführen, lesen Sie zuerst die Serverdokumentation.</li>
+      <li>Entfernen Sie die Computerabdeckung und die Blende des Adaptersteckplatzes, der für Ihren Adapter passt. Sie können ohne negative Folgen einen Steckplatz benutzen, der länger ist als der Anschluss Ihres Adapters; versuchen Sie jedoch nicht, den Adapter in einem Steckplatz zu installieren, der kürzer ist als der Anschluss.</li>
+      <li>Setzen Sie den Adapter fest in den Steckplatz ein und befestigen Sie die Halterung.</li>
+      <li>Bringen Sie die Computerabdeckung wieder an. Stecken Sie die Netzverbindung ein.</li>
+    </ol>
+
+<h3>Installation einer Mezzanine-Erweiterungskarte</h3>
+<ol>
+      <li>Schalten Sie den Computer aus und ziehen Sie den Netzstecker aus der Steckdose. </li>
+      <li>Entfernen Sie die Computerabdeckung. </li>
+      <li>Richten Sie den PCIe-Anschluss der Mezzanine-Erweiterungskarte mit dem Anschluss und den vier Abstandhaltern aus Kunststoff am Mainboard aus.</li>
+      <li>Drücken Sie den Adapter in den Anschluss der Mezzanine-Karte, bis er fest sitzt und in den vier Abstandhaltern eingerastet ist. </li>
+      <li>Bringen Sie die Computerabdeckung wieder an. Stecken Sie die Netzverbindung ein. </li>
+</ol>
+
+
+<h2>Schließen Sie das Netzwerkkabel an</h2>
+<h3>Kupferadapter:</h3>
+
+<p>Verwenden Sie für 10-Mbit/s-Netzwerke TPE(Twisted Pair Ethernet)-Netzwerkkabel der Kategorie 3, 4 oder 5.<br>
+Verwenden Sie für 100/1000-Mbit/s-Netzwerke sowie für Netzwerke in Privathaushalten Kategorie-5-Kabel (4 Leitungspaare).<br>
+Verwenden Sie für 10-Gbit/s-Netzwerke Ethernetkabel der Kategorie 6, 6a oder 7.</p>
+
+<h3>Glasfaseradapter mit SC-Steckverbinder: </h3>
+<p>Entfernen Sie die Abdeckung des Glasfaseranschlusses und bewahren Sie sie gut auf. Stecken Sie den Duplex-SC-Steckverbinder eines 1000 Base-SX-Glasfaserkabels in die TX/RX-Anschlüsse der Adapterklammer.
+
+<h3>Glasfaseradapter mit LC-Steckverbinder:</h3>
+<p>Entfernen Sie die Abdeckung des Glasfaseranschlusses und bewahren Sie sie gut auf. Befestigen Sie am Adapter eine LC-Steckverbindung mit den korrekten Kabeln für Ihren Adaptertyp. Sie können Kabel anderer Verbindungstypen (wie SC) verwenden, wenn die Kabel den optischen Spezifikationen des Adapters, einschließlich der Längenbegrenzung, entsprechen.
+   
+<h3>Anschließbares SFP+-Optics-Modul: </h3>
+<p>Installieren Sie das Modul und schließen Sie das Kabel entsprechend den Herstelleranweisungen für das Modul an.
+
+<h3>CX4-Anschluss:</h3>
+<p>Die Kabel müssen den Spezifikationen des IEEE-Standards 802.3ak, Klausel 54 entsprechen. Der erforderliche Kabelanschluss ist ein aufklappbarer MDI-Steckplatz wie in IEC 61076-3-113 definiert.
+<p>Starten Sie den Computer und folgen Sie nachfolgenden Anweisungen zur Treiberinstallation.
+
+<hr>
+
+<h2>Treiber installieren</h2>
+<h3>Microsoft* Windows*-Betriebssysteme</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>HINWEISE:</strong>
+      <ul>
+        <li>Für die Installation von Treibern sind Administratorrechte für das Betriebssystem erforderlich.</li>
+        <li>Die unterstützten Betriebssysteme finden Sie auf der Seite "Systemanforderungen" im Adapter-Handbuch.</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>Beim Start von Windows wird der Adapter als neue Hardware erkannt. So installieren Sie den Treiber richtig:</p>
+<ol>
+  <li>Laden Sie von <a href="http://www.intel.com/p/de_DE/support">http://www.intel.com/p/de_DE/support</a> das aktuelle Treiberpaket herunter. </li>
+  <li>Klicken Sie bei Start des Assistenten für das <b>Suchen neuer Hardware</b> auf die Schaltfläche "Abbrechen".</li>
+  <li>Starten Sie das Autorun-Programm <b>Intel Netzwerkanschlüsse</b> aus dem Treiberpaket. </li>
+  <li>Klicken Sie auf die Schaltfläche <b>Treiber und Software installieren</b>.</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>Um ein binäres RPM*-Paket dieses Treibers zu erstellen, führen Sie&nbsp;'rpmbuild -tb &lt;dateiname.tar.gz&gt;' aus. Ersetzen Sie &lt;dateiname.tar.gz&gt; durch den Dateinamen des Treibers.</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>HINWEISE:</b> 
+	<ul>
+		<li>Damit das erstellte Paket ordnungsgemäß funktioniert, MUSS der gegenwärtig ausgeführte Kernel mit der Version und der Konfiguration der installierten Kernelquellen übereinstimmen. Wenn Sie den Kernel gerade neu kompiliert haben, führen Sie jetzt einen Systemneustart aus.</li>
+		<li>Die RPM-Funktionalität wurde bisher nur in Red Hat-Verteilungen getestet.</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>Verschieben Sie die Basistreiber-Tardatei in ein Verzeichnis Ihrer Wahl. Verwenden Sie beispielsweise '/home/username/e1000e' oder '/usr/local/src/ixgb'. </li>
+  <li>Dekomprimieren Sie das Archiv, wobei &lt;x.x.x&gt; die Versionsnummer für die Treibertardatei ist: 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>Wechseln Sie durch folgende Eingabe zum src-Verzeichnis des Treibers über, wobei &lt;x.x.x&gt; die Versionsnummer des Treibertars ist: 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/  </code>
+  </blockquote></li>
+  <li>Kompilieren Sie das Treibermodul: 
+  <blockquote>
+    <code>make install  </code>
+  </blockquote>
+  <p>Die Binärdatei wird installiert als:</p>
+  <blockquote>
+    <code>/lib/modules/&lt;kernel_version&gt;/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>Die oben aufgeführten Installationsverzeichnisse sind die Standardverzeichnisse. Sie sind möglicherweise für bestimmte Linux-Distributionen nicht richtig. </p></li>
+  <li>Installieren Sie das Modul: 
+  <blockquote>
+    <code>modprobe e1000e &lt;parameter&gt;=&lt;value&gt;  </code>
+  </blockquote></li>
+  <li>Weisen Sie der Schnittstelle durch folgende Eingabe eine IP-Adresse zu, wobei &lt;x&gt; für die Schnittstellennummer steht: 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;IP_address&gt;  </code>
+  </blockquote>
+  </li>
+  <li>Prüfen Sie, ob die Schnittstelle funktioniert. Geben Sie Folgendes ein, wobei &lt;IP-Adresse&gt; die IP-Adresse eines anderen Gerätes auf demselben Subnet wie die Schnittstelle, die getestet wird, ist: 
+  <blockquote>
+    <code>ping &lt;IP_address&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>Dieser Treiber wurde für die Verwendung mit FreeBSD-Kernel Version 4.8 oder höher entwickelt.</p>
+<table class="note">
+  <tr>
+    <td valign="top">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>HINWEIS:</b> Sie müssen Kernelquellen installiert haben, damit Sie das Treibermodul kompilieren können.</td>
+  </tr>
+</table>
+
+<p>Bei den untenstehenden Anleitungen ist x.x.x die Treiberversion, wie sie im Namen der Treibertardatei angegeben ist.</p>
+
+<ol>
+  <li>Verschieben Sie die Basistreiber-Tardatei in ein Verzeichnis Ihrer Wahl. Verwenden Sie beispielsweise /home/username/ixgb oder /usr/local/src/ixgb .</li>
+  
+  <li>Dekomprimieren Sie das Archiv:
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>Hierdurch wird das Verzeichnis <code>ixgb-x.x.x</code> erstellt.</li>
+  
+  <li> So installieren Sie die man-Seite:
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>Um den Treiber in einem laufenden System zu laden, führen Sie die folgenden Schritte aus:
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>ODER</p>
+    <blockquote>
+     	<code>cd ixgb-x.x.x/src<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>Um der Schnittstelle eine IP-Adresse zuzuweisen, geben Sie Folgendes ein: 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;interface_num&gt; &lt;IP_address&gt;</code>
+	</blockquote></li>
+    
+	<li>Prüfen Sie, ob die Schnittstelle funktioniert. Geben Sie Folgendes ein, wobei &lt;IP_address&gt; die IP-Adresse eines anderen Gerätes auf demselben Subnetz wie die Schnittstelle, die getestet wird, ist:
+    <blockquote>
+    	<code>ping &lt;IP_address&gt;</code>
+    </blockquote></li>
+    
+	<li>Wenn Sie möchten, dass der Treiber beim Hochfahren des Systems automatisch geladen wird, führen Sie Folgendes aus:
+	<blockquote>
+    	<code>cd ixgb-x.x.x/src<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>Bearbeiten Sie /boot/loader.conf und fügen Sie folgende Zeile hinzu:</p>
+    <blockquote>
+		<code>if_ixgb_load="YES"</code>
+	</blockquote>
+    <p>ODER</p>
+    <p>kompilieren Sie den Treiber in den Kernel (siehe Punkt&nbsp;8). Bearbeiten Sie /etc/rc.conf und erstellen Sie den geeigneten Eintrag für ifconfig_ixgb&lt;interface_num&gt;:</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;interface_num&gt;="&lt;ifconfig_settings&gt;"</code>
+    </blockquote>
+	<p>Anwendungsbeispiel:</p>
+    <blockquote>
+		<code>ifconfig_ixgb0="inet 192.168.10.1 netmask 255.255.255.0"</code>
+    </blockquote>
+	</li>
+	
+	<li>Wenn Sie den Treiber in den Kernel kompilieren möchten, geben Sie Folgendes ein:
+    <blockquote>
+		<code>cd ixgb-x.x.x/src<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>Bearbeiten Sie die Datei /usr/src/sys/conf/files.i386 und fügen Sie folgende Zeile hinzu:</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_ee.c optional ixgb<br>
+        dev/ixgb/if_ixgb.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>Entfernen Sie ggf. die folgenden Zeilen aus der Datei /usr/src/sys/conf/files.i386:</p>
+    <blockquote>
+    	<code>/dev/ixgb/if_ixgb_fx_hw.c optional ixgb<br>
+        /dev/ixgb/if_ixgb_phy.c optional ixgb
+		</code>
+    </blockquote>
+	<p>Entfernen Sie die Kernelkonfigurationsdatei (GENERIC oder MYKERNEL) aus /usr/src/sys/i386/conf und stellen Sie sicher, dass die folgende Zeile vorhanden ist:</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>Kompilieren Sie und installieren Sie den Kernel. Damit die Kernel-Aktualisierungen wirksam werden, ist ein Systemneustart erforderlich.</p></li>
+</ol>
+
+<p>Weitere Informationen über das Kompilieren des Kernels finden Sie in der Dokumentation über das FreeBSD-Betriebssystem.</p>
+
+<h2>Weitere Informationen </h2>
+<p>Weitere Informationen finden Sie im <i>Adapter-Benutzerhandbuch</i> auf der Intel Support-Website: <a href="http://www.intel.com/p/de_DE/support/" class=NoIndex target=_blank>http://www.intel.com/p/de_DE/support/</a>.</p>
+
+<hr>
+<h2>Intel&reg; PROSet installieren (nur Windows)</h2>
+<p>Intel&reg; PROSet wird auf dieselbe Weise wie Treiber installiert. Wählen Sie "Intel&reg; PROSet and Advanced Network Services" im Dialogfeld "Setupoptionen" des Installationsassistenten.</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*Rechtliche Hinweise</a></p>
+
+</body>
+</html>

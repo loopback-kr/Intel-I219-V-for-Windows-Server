@@ -1,0 +1,241 @@
+<HTML>
+
+<HEAD>
+
+<meta name="keywords" contents="diagnostic, diagnostics, test, configuration, responder" />
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<TITLE>Test the Adapter</TITLE>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</HEAD>
+
+<BODY>
+
+<A name="top"></A>
+<h1>Intel Adapter Test Utilities</h1>
+<ul>
+  <li>
+    <p class="contents"><a href="#Starting the Test Utilities">Starting the Test Utilities</a></p></li>
+<li>
+    <p class="contents"><a href="#View Adapter Configuration">View Adapter Configuration</a></p></li>
+  <li>
+    <p class="contents"><a href="#Test Adapter Menu">Test Adapter Menu</a></p></li>
+	<li>
+    <p class="contents"><a href="#Set Up as Responder">Set Up as Responder</a></p></li>
+</ul>
+<P align="left">Intel's diagnostic software lets you test the adapter to see if 
+there are any problems with the adapter hardware, the cabling, or the network 
+connection. You can also use diagnostics to isolate problems during 
+troubleshooting. There are four test programs documented here. Both test Intel<sup>&reg;</sup> adapters, and operate 
+identically. </P>
+<ul>
+  <li>
+    <p align="left" class="inentry"><b>DIAGS.EXE</b> runs under MS-DOS* v6.22
+    or later. (It will not run from a Windows Command Prompt within any version 
+	of the Microsoft* Windows* operating system or in any other non MS-DOS 
+	operating system..)</p></li>
+  <li>
+    <p align="left" class="inentry"><b>DIAGS64.EFI</b> for the EFI 
+	environment in Itanium&#174-based systems.</p></li>
+	<li>
+    <p align="left" class="inentry"><b>DIAGES64E.EFI</b> for  
+  platforms based on the Intel&reg; 
+	  64 Architecture</p>
+  </li>
+</ul>
+<P align="left">These utilities are designed to test hardware
+operation and confirm the adapter's ability to
+communicate with another adapter in the same network. They are not throughput measurement tools.&nbsp;</P>
+<P align="left"><span id="lbDetails">The
+</span>utilities <span id="lbDetails">can test the adapter whether or not there 
+is a responder present. In order to do a thorough test, however, you should set 
+a responder system prior to starting the test. If there are hot keys, the 
+letters will be highlighted</span>.</P>
+
+<h2 align="left"><a name="Starting the Test Utilities">Starting the Test Utilities</a></h2>
+<table border="0" cellpadding="6" cellspacing="0">
+  <tr>
+    <td valign="top"><img border="0" src="note.gif" width="28" height="21" /></td>
+    <td valign="top"><b><i>NOTE</i></b>: If there is an MS-DOS network driver
+      present, such as NDIS2 or DOS-ODI, the test utility and/or the network
+      driver could become unstable.
+      You should reboot and ensure that there are no network drivers
+      loaded.&nbsp;</td>
+  </tr>
+</table>
+<h3>Starting Under MS-DOS</h3>
+<OL>
+  <LI>
+	<P align="left" class="inentry">Boot to MS-DOS.&nbsp; </p></LI>
+	<li>
+	<p align="left" class="inentry">Navigate to the \APPS\TOOLS
+    directory.&nbsp;</p></li>
+	<li>
+	<p align="left" class="inentry">Type <b>DIAGS</b>, and press &lt;Enter&gt;<br /><br />The test utility program automatically scans the hardware 
+    and lists all Intel-based adapters. They are listed in the following manner: 
+	</p><ul><li>
+	<p class="numlst">If you have only one network connection in your 
+    system, this screen will be bypassed.</p></li><li>
+	<p class="numlst">If you have a dual- or quad-port 
+    adapter, each port is listed separately starting with <span id="lbDetails">Port A, then Port B, etc. You can find the port information on the bracket 
+    label.
+    </span>
+    </p></li></ul><br /><img border="0" src="diag1004.gif" /> <br />Select the
+    adapter you want to test by moving the highlight and pressing &lt;Enter&gt;.&nbsp;&nbsp;<br />
+	</li><li>
+	<p align="left" class="inentry">The test utility  displays its
+    main menu:</p></li>
+</ol>
+<blockquote>
+    <P align="left"><img border="0" src="diag1005.gif" />
+
+</p></blockquote>
+
+<h3>Starting Under the EFI Shell</h3>
+<OL>
+  <LI>
+	<P align="left" class="inentry">Boot to the EFI shell.&nbsp; </p></LI>
+	<li>
+	<p align="left" class="inentry">Navigate to the \TOOLS\EFI64\EndUser
+    directory.&nbsp;</p></li>
+	<li>
+	<p align="left" class="inentry">Type <b>DIAGS64</b> or <b>
+	DIAGS64E</b> and press &lt;Enter&gt;</p></li>
+
+
+    <br /><br />The test utility program automatically scans the hardware 
+    and lists all Intel-based adapters. They are listed in the following manner: 
+	<ul><li>
+	<p class="numlst">If you have only one network connection in your 
+    system, this screen will be bypassed.</p></li><li>
+	<p class="numlst">If you have a dual- or quad-port 
+    adapter, each port is listed separately starting with <span id="lbDetails">Port A, then Port B, etc. You can find the port information on the bracket 
+    label.
+    </span>
+    </p></li></ul><br /><img border="0" src="diag1004.gif" /> <br />Select the
+    adapter you want to test by moving the highlight and pressing &lt;Enter&gt;.&nbsp;&nbsp;<br />
+	<li>
+	<p align="left" class="inentry">The test utility  displays its
+    main menu:</p></li>
+</ol>
+<blockquote>
+    <P align="left"><img border="0" src="diag1005.gif" />
+
+</p></blockquote>
+
+<h2 align="left"><a name="View Adapter Configuration">View Adapter Configuration</a></h2>
+<P align="left">Selecting &quot;View Adapter Configuration&quot; will bring up
+the adapter configuration screen. This screen describes various properties of
+the adapter.</P>
+<blockquote>
+<P align="left"><img border="0" src="diag1006.gif" /></P>
+</blockquote>
+<p align="left">Press &lt;F5&gt; to view additional information on the PCI slot occupied by
+the adapter. This is primarily used for troubleshooting
+by  technical support.&nbsp;</p>
+<blockquote>
+<P align="left"><img border="0" src="diag1007.gif" /></P>
+</blockquote>
+<P align="left">Press any key to return to Adapter Configuration.</P>
+<h2 align="left"><a name="Test Adapter Menu">Test Adapter Menu</a></h2>
+<P align="left">Selecting &quot;Test Adapter&quot; from the Main Menu brings up
+the Test Menu. This allows you to test the adapter, select which tests to
+perform, or perform networking test. </P>
+<blockquote>
+<pre><img border="0" src="diag1009.gif" /></pre>
+</blockquote>
+<h3 align="left">Begin Adapter Tests</h3>
+<P align="left">Selecting this option brings up the test screen. While tests are
+being performed, a rotating spinner is shown letting the user know that the
+application is still &quot;alive.&quot; The results of the tests are displayed as each
+test is performed. If multiple test passes are selected, then the results
+contain a count of test failures. A list containing zeros means that all tests have
+passed.
+Single tests will display &quot;Passed&quot; or &quot;Failed&quot; for each pass.</p><blockquote>
+<P align="left"><img border="0" src="diag1010.gif" />
+</p></blockquote>
+
+<h3 align="left"><a name="Change Test Options">Change Test Options</a></h3>
+<P align="left">The test setup screen allows you to configure
+and select the specific tests desired. Each option is toggled by moving the 
+cursor with the arrow keys and pressing &lt;Enter&gt; to change the option. The number of tests is simply
+entered from the keyboard in the appropriate box. <span id="lbDetails2">If there 
+is a gap in the menu, that means the test is not supported by your adapter.</span> 
+By default, local diagnostics run automatically, while network diagnostics are 
+disabled.</P>
+<table border="0" cellpadding="6" cellspacing="0">
+  <tr>
+    <td valign="top"><img border="0" src="note.gif" width="28" height="21" /></td>
+    <td valign="top"><b><i>NOTE</i></b>: The test program will test attributes that are applicable
+to your adapter. Only supported tests are displayed. The screen shown here is an example of the types of tests
+performed.&nbsp;</td>
+  </tr>
+</table>
+<blockquote>
+  <PRE><img border="0" src="diag1011.gif" /></PRE>
+</blockquote>
+  <p><b>Device Registers</b> - Test patterns are written, read and verified 
+  through the adapter's
+  device registers to ensure proper functionality. </p>
+  <p><b>FIFOs</b> - This <span id="lbDetails0">utility </span>will write test bit patterns to
+  the adapter's FIFO buffers, to make sure the FIFOs are
+  working properly. <span id="lbDetails1">Not all adapters have FIFO, so it will 
+  not appear in all test lists.</span></p>
+  <p><b>EEPROM</b> - Tests both the readability of the EEPROM as well
+  as the integrity of the data stored in the EEPROM. It reads the EEPROM and
+  calculates the checksum. This checksum is then compared to the checksum stored
+  in the EEPROM. If values are not the same, the test reports failure.</p>
+  <p><b>Interrupt</b> - This  tests the adapter's ability to
+  generate an interrupt. On EFI, interrupts are not supported. Therefore, this 
+	test sets the interrupt cause register and reads the interrupt set register, 
+	verifying the card internally registered an interrupt.</p>
+  <p><b>MAC Loopback</b> and <b>PHY Loopback</b> - There are two internal loopback tests. These tests set the adapter in
+  the appropriate loopback mode and send packets back through the adapter's
+  receive circuitry and logic. These tests are chipset dependant and may not be 
+	selectable.</p>
+  <p><b>Link</b> - This checks to see if the
+  adapter has link or does not have link.</p>
+  <p><b>Network Test</b> - The Network Test looks for a responder, and then 
+  sends  packets. If no responder is found, then the test reports failure.
+  <span id="lbDetails3">If no link is found, it will also report a failure.
+  </span>&nbsp;If packets are received back from the responder, the test 
+  reports success.</p>
+
+<table border="0" cellpadding="6" cellspacing="0">
+  <tr>
+    <td valign="top"><img border="0" src="note.gif" width="28" height="21" /></td>
+    <td valign="top"><b><i>NOTE</i></b>: In some cases, the network test will fail 
+    if the adapter is connected to a switch with Spanning Tree Protocol (STP) enabled.</td>
+  </tr>
+</table>
+
+<h2>Networking Menu</h2>
+<p>The networking menu contains network specific tests such as Spanning Tree 
+detection and Network test responder.</p>
+<p></p><blockquote><img border="0" src="network.gif" /></blockquote>
+<h3><a name="Set Up as Responder">Set Up as Responder</a></h3>
+<P>This allows the user to set up the adapter as a responder so
+a connected system can perform the network test portion of the diagnostics tests. 
+Although you can use a variety of adapters as the responder and connect directly 
+or through a switch, the best results are obtained with a cross-over cable and a 
+same-type adapter. </P>
+<blockquote>
+<P align="left"><img border="0" src="diag1016.gif" /></P>
+</blockquote>
+<p>When you press &lt;Esc&gt;,&nbsp; the
+responder operation is cancelled and control is immediately returned to the 
+Networking
+menu.</p>
+<h3>Detect Spanning Tree</h3>
+<p>Spanning trees can be troublesome in a networking configuration. 
+The Detect Spanning Tree option attempts to detect if a spanning tree exists on 
+the network. This is done by resetting the link and listening for spanning tree 
+packets.</p>
+<blockquote><p><img border="0" src="diag1017.gif" /></p></blockquote>
+<p>&nbsp;</p>
+
+
+<hr color="#00b0b0" size="1" />
+<p class="small"><code>Last modified on <!--$$Modtime:--> 11/22/10 4:07p <!-- $--> Revision <!-- $$Revision: 1.1 $--></code></p>
+
+</body>
+</HTML>

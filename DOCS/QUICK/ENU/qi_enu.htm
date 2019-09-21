@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><HTML>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Intel(R) Network Adapters Quick Installation Guide</title>
+</head>
+<body>
+
+<h1>Intel<sup>&reg;</sup> Network Adapter Installation</h1>
+<hr>
+
+<h2>Install the  Intel<sup>&reg;</sup> Ethernet Adapter</h2>
+
+<h3>Installing an Adapter</h3>
+    <ol>
+      <li>Turn off the computer and unplug the power cord.
+        If performing a &quot;hot plug&quot; install, see your server documentation first.</li>
+      <li>Remove the computer cover and the adapter slot cover from the slot that matches your adapter.    
+        You may utilize a slot that is longer than your adapter&rsquo;s connector with no harm, but do not attempt to install in a slot that is shorter than the connector.</li>
+      <li>Firmly place the adapter into the slot and secure the bracket.</li>
+      <li>Replace the computer cover. 
+      Plug in the power cord.</li>
+    </ol>
+
+<h3>Installing a Mezzanine Card</h3>
+<ol>
+      <li>Turn off the computer and unplug the power cord. </li>
+      <li>Remove the computer cover. </li>
+      <li>Align the PCIe connector on the mezzanine board with the connector and four plastic standoffs on the motherboard.</li>
+      <li>Press the adapter until it is fully inserted into the MB connector and snaps into the four standoffs. </li>
+      <li>Replace the computer cover. 
+      Plug in the power cord. </li>
+</ol>
+
+
+<h2>Attach the Network Cable</h2>
+<h3>Copper Adapters:</h3>
+
+<p>For 10 Mbps networks, use Category 3, 4, or 5 Twisted Pair Ethernet (TPE) network cable.<br>
+For 100 or 1000 Mbps networks,and for any residential networks, use Category 5 (4 pair) cable.<br>
+For 10 Gbps networks,  use  Category 6, Category 6a, or Category 7 Ethernet cabling.</p>
+
+<h3>Fiber Adapters with SC Connector: </h3>
+<p>Remove and save the fiber optic connector cover. 
+Insert a 1000Base-SX duplex type SC fiber optic connector into the TX/RX ports on the adapter bracket.
+
+<h3>Fiber adapters with LC connector:</h3>
+<p>Remove and save the fiber optic connector cover.
+Insert an LC connector into the adapter, with correct cabling for your adapter. 
+Conversion cables to other connector types (such as SC) may be used if the cabling matches the optical specifications of the adapter, including length limitations.
+   
+<h3>SFP+ Pluggable Optics: </h3>
+<p>Install the module and attach the cable according to the module manufacturer&rsquo;s directions.
+
+<h3>CX4 Connector:</h3>
+<p>Physical cabling must meet IEEE Std 802.3ak, Clause 54 specifications. 
+The required cable connector is an MDI latch-type receptacle, as defined by IEC 61076-3-113.
+<p>Start your computer and follow the driver installation instructions below.
+
+<hr>
+
+<h2>Install the Drivers</h2>
+<h3>Microsoft* Windows* Operating Systems</h3>
+<table class="note">
+  <tr>
+    <td valign="top"><img src="note.gif" alt="" width="28" height="21" border="0"></td>
+    <td valign="top"><strong>NOTES:</strong>
+      <ul>
+        <li>Installing drivers requires administrator rights to the operating system.</li>
+        <li>See the System Requirements page in the Adapter Guide for supported operating systems.</li>
+      </ul></td>
+  </tr>
+</table>
+
+<p>The adapter will be detected as new hardware when Windows starts. 
+To install the correct driver:</p>
+<ol>
+  <li>Download the latest driver package from <a href="http://support.intel.com">http://support.intel.com</a>. </li>
+  <li>If the <b>Found New Hardware</b> wizard starts, press the Cancel button.</li>
+  <li>Start the <b>Intel Network Connections</b> autorun program from the driver package. </li>
+  <li>Click the <b>Install Drivers and Software</b> button.</li>
+</ol>
+
+
+<h3>Linux*</h3>
+<p>To build a binary RPM* package of this driver, run&nbsp;'rpmbuild -tb &lt;filename.tar.gz&gt;'. 
+Replace &lt;filename.tar.gz&gt; with the&nbsp;specific file name of the driver.</p>
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111"  >
+  <tr>
+    <td width="13" valign="top" align="center">
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td><b>NOTES:</b> 
+	<ul>
+		<li>For the build to work properly, the currently running kernel MUST match the version and configuration of the installed kernel sources. 
+    	If you have just recompiled the kernel reboot the system now.</li>
+		<li>RPM functionality has been tested only in Red Hat distributions.</li>
+	</ul></td>
+  </tr>
+  </table>
+  
+<ol>
+  <li>Move the base driver tar file to the directory of your choice. 
+  For example, use '/home/username/e1000e' or '/usr/local/src/ixgb'. </li>
+  <li>Untar/unzip the archive, where &lt;x.x.x&gt; is the version number for the driver tar file: 
+  <blockquote>
+    	<code>tar zxf e1000e-&lt;x.x.x&gt;.tar.gz</code> 
+  </blockquote></li>
+  <li>Change to the driver src directory, where &lt;x.x.x&gt; is the version number for the driver tar: 
+  <blockquote>
+    <code>cd e1000e-&lt;x.x.x&gt;/src/ </code>
+  </blockquote></li>
+  <li>Compile the driver module: 
+  <blockquote>
+    <code>make install </code>
+  </blockquote>
+  <p>The binary will be installed as:</p>
+  <blockquote>
+    <code>/lib/modules/&lt;kernel_version&gt;/kernel/drivers/net/e1000e.o</code>
+  </blockquote>
+  	<p>The install locations listed above are the default locations. 
+    They might not be correct for certain Linux distributions. </p></li>
+  <li>Install the module: 
+  <blockquote>
+    <code>modprobe e1000e &lt;parameter&gt;=&lt;value&gt; </code>
+  </blockquote></li>
+  <li>Assign an IP address to the interface by entering the following, where &lt;x&gt; is the interface number: 
+  <blockquote>
+    <code>ifconfig eth&lt;x&gt; &lt;IP_address&gt; </code>
+  </blockquote>
+  </li>
+  <li>Verify that the interface works. 
+  Enter the following, where &lt;IP_address&gt; is the IP address for another machine on the same subnet as the interface that is being tested: 
+  <blockquote>
+    <code>ping &lt;IP_address&gt;</code>
+  </blockquote>
+  </li>
+</ol>
+
+<h3>FreeBSD*</h3>
+
+<p>This driver has been developed for use with FreeBSD kernel, versions 4.8 and later.</p>
+<table class="note">
+  <tr>
+    <td valign="top" >
+	<img border="0" src="note.gif" width="28" height="21"></td>
+    <td valign="top"><b>NOTE:</b> You must have kernel sources installed in order to compile the driver module.</td>
+  </tr>
+</table>
+
+<p>In the instructions below, x.x.x is the driver version as indicated in the name of the driver tar file.</p>
+
+<ol>
+  <li>Move the base driver tar file to the directory of your choice. 
+  For example, use /home/username/ixgb or /usr/local/src/ixgb.</li>
+  
+  <li>Untar/unzip the archive:
+	<blockquote>
+		<code>tar xfz ixgb-x.x.x.tar.gz</code>
+	</blockquote>
+  <p>This will create an <code>ixgb-x.x.x</code> directory.</li>
+  
+  <li> To install man page:
+  <blockquote>
+	<code>cd ixgb-x.x.x<br>
+	gzip -c ixgb.4 &gt; /usr/share/man/man4/ixgb.4.gz</code>
+  </blockquote></li>
+  
+   <li>To load the driver onto a running system, perform the following steps:
+	<blockquote>
+    	<code>cd ixgb-x.x.x<br>
+        make</code>
+     </blockquote>
+     <p>OR</p>
+    <blockquote>
+     	<code>cd ixgb-x.x.x/src<br>
+        make load</code>
+  	</blockquote></li>
+  
+	<li>To assign an IP address to the interface, enter the following: 
+    <blockquote>
+    	<code>ifconfig ixgb&lt;interface_num&gt; &lt;IP_address&gt;</code>
+	</blockquote></li>
+    
+	<li>Verify that the interface works. 
+    Enter the following, where &lt;IP_address>is the IP address for another machine on the same subnet as the interface	that is being tested:
+    <blockquote>
+    	<code>ping &lt;IP_address&gt;</code>
+    </blockquote></li>
+    
+	<li>If you want the driver to load automatically when the system is booted:
+	<blockquote>
+    	<code>cd ixgb-x.x.x/src<br>
+        make load<br>
+        cp if_ixgb.ko /modules</code>
+    </blockquote>
+	<p>Edit /boot/loader.conf, and add the following line:</p>
+    <blockquote>
+		<code>if_ixgb_load=&quot;YES&quot;</code>
+	</blockquote>
+    <p>OR</p>
+    <p>compile the driver into the kernel (see item 8). 
+    Edit /etc/rc.conf, and create the appropriate ifconfig_ixgb&lt;interface_num&gt; entry:</p>
+    
+    <blockquote>
+    	<code>ifconfig_ixgb&lt;interface_num&gt;=&quot;&lt;ifconfig_settings&gt;&quot;</code>
+    </blockquote>
+	<p>Example usage:</p>
+    <blockquote>
+		<code>ifconfig_ixgb0=&quot;inet 192.168.10.1 netmask 255.255.255.0&quot;</code>
+    </blockquote>
+	</li>
+	
+	<li>If you want to compile the driver into the kernel, enter:
+    <blockquote>
+		<code>cd ixgb-x.x.x/src<br>
+		mkdir /usr/src/sys/dev/ixgb<br>
+        cp if_ixgb* /usr/src/sys/dev/ixgb<br>
+		cp ixgb* /usr/src/sys/dev/ixgb <br>
+        cp Makefile.kernel /usr/src/sys/modules/ixgb/Makefile<br>
+		</code>
+    </blockquote>
+	
+    <p>Edit the /usr/src/sys/conf/files.i386 file, and add the following line:</p>
+    
+	<blockquote>
+        <code>dev/ixgb/ixgb_hw.c optional ixgb<br>
+        dev/ixgb/ixgb_ee.c optional ixgb<br>
+        dev/ixgb/if_ixgb.c optional ixgb<br>
+		</code>
+	</blockquote>
+    <p>Remove the following lines from the /usr/src/sys/conf/files.i386 file, if they exist:</p>
+    <blockquote>
+    	<code>/dev/ixgb/if_ixgb_fx_hw.c optional ixgb<br>
+        /dev/ixgb/if_ixgb_phy.c optional ixgb
+		</code>
+    </blockquote>
+	<p>Edit the kernel configuration file (i.e., GENERIC or MYKERNEL) in /usr/src/sys/i386/conf, and ensure the following line is present:</p>
+	<blockquote>
+    	<code>device ixgb</code>
+    </blockquote>
+    <p>Compile and install the kernel. 
+    The system must be reboot for the kernel updates to take affect.</p></li>
+</ol>
+
+<p>For additional information on compiling the kernel, consult the FreeBSD operating system documentation.</p>
+
+<h2>More Information </h2>
+<p>For more information, see the <i>Adapter User Guide</i> on the Intel support web site: <a href="http://www.intel.com/p/en_US/support" class=NoIndex target=_blank>http://www.intel.com/support</a>.</p>
+
+<hr>
+<h2>Install Intel&reg; PROSet (Windows only)</h2>
+<p>Intel&reg; PROSet is installed with the same process used to install drivers. Select Intel&reg; PROSet and Advanced Network Services on the Setup Options dialog of the Install Wizard.</p>
+<hr>
+<p class="legaldis"><a href="legaldis.htm">*Legal Information</a></p>
+
+</body>
+</html>
