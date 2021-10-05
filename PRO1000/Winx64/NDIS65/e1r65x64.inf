@@ -1,6 +1,6 @@
 ;******************************************************************************
 ;**                                                                          **
-;**  Copyright 2007-2019 Intel Corporation All Rights Reserved.              **
+;**  Copyright 2007-2020 Intel Corporation All Rights Reserved.              **
 ;**                                                                          **
 ;**  The material contained or described herein and all documents related    **
 ;**  to such material ("Material") is owned by Intel Corporation or its      **
@@ -38,7 +38,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = e1r65x64.cat
-DriverVer = 07/04/2019,12.15.184.5
+DriverVer = 02/23/2021,12.16.4.1
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.10.0, NTamd64.10.0.1
@@ -57,8 +57,9 @@ ExcludeFromSelect = *
 %E1521HPNCT2.DeviceDesc%        = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_339E103C 
 %E1523HPNCB2.DeviceDesc%        = E1522.10.0.1,         PCI\VEN_8086&DEV_1523&SUBSYS_18D1103C 
 %E1523HPNCM4.DeviceDesc%        = E1522.10.0.1,         PCI\VEN_8086&DEV_1523&SUBSYS_339F103C 
-%E1521NCOCP4P.DeviceDesc%       = E1521PM.10.0.1,       PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
-%E1521NCOCP4P.DeviceDesc%       = E1521PM.10.0.1,       PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
+%E1521NCOCP4P.DeviceDesc%       = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
+%E1521NCOCP4P.DeviceDesc%       = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
+%E1521NCOCP4PLN.DeviceDesc%     = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_00AA8086 
 %E1521HPNCR4.DeviceDesc%        = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_17D1103C 
 %E1523HPNC3I.DeviceDesc%        = E1522.10.0.1,         PCI\VEN_8086&DEV_1523&SUBSYS_1989103C 
 %E1521HPNC7I.DeviceDesc%        = E1521PM.10.0.1,       PCI\VEN_8086&DEV_1521&SUBSYS_2003103C 
@@ -126,8 +127,9 @@ ExcludeFromSelect = *
 %E1521HPNCT2.DeviceDesc%        = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_339E103C 
 %E1523HPNCB2.DeviceDesc%        = E1522,               PCI\VEN_8086&DEV_1523&SUBSYS_18D1103C 
 %E1523HPNCM4.DeviceDesc%        = E1522,               PCI\VEN_8086&DEV_1523&SUBSYS_339F103C 
-%E1521NCOCP4P.DeviceDesc%       = E1521PM,             PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
-%E1521NCOCP4P.DeviceDesc%       = E1521PM,             PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
+%E1521NCOCP4P.DeviceDesc%       = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
+%E1521NCOCP4P.DeviceDesc%       = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
+%E1521NCOCP4PLN.DeviceDesc%     = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_00AA8086 
 %E1521HPNCR4.DeviceDesc%        = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_17D1103C 
 %E1523HPNC3I.DeviceDesc%        = E1522,               PCI\VEN_8086&DEV_1523&SUBSYS_1989103C 
 %E1521HPNC7I.DeviceDesc%        = E1521PM,             PCI\VEN_8086&DEV_1521&SUBSYS_2003103C 
@@ -207,12 +209,14 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DelReg             = WakeOnPort.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -247,6 +251,7 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -281,6 +286,7 @@ AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -315,6 +321,7 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -349,6 +356,7 @@ AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -382,6 +390,7 @@ AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS4Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -415,6 +424,7 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS4Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -448,6 +458,7 @@ AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS4Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -481,6 +492,7 @@ AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS2Q.reg
+AddReg             = IntelANSVlanID.reg
 AddReg             = EEE.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -517,14 +529,16 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DelReg             = WakeOnPort.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = SRIOV.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -562,8 +576,9 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -599,9 +614,10 @@ AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = SRIOV.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -636,8 +652,9 @@ AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -672,9 +689,10 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = SRIOV.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -710,9 +728,10 @@ AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = SRIOV.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -747,9 +766,10 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VMQ.reg, VlanId.reg
+AddReg             = LLI.reg, VMQ.reg
 AddReg             = SRIOV.reg
 AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -783,8 +803,9 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VlanId.reg
+AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS4Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = EEE.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
@@ -819,8 +840,9 @@ AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VlanId.reg
+AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS4Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -854,8 +876,9 @@ AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
 AddReg             = DCA.reg
-AddReg             = LLI.reg, VlanId.reg
+AddReg             = LLI.reg
 AddReg             = RSS.reg, RSS4Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
 AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = UninstallW2.reg
@@ -1285,15 +1308,19 @@ HKR,,                                                   WakeOnSlot,             
 [WakeOnPort.reg]
 HKR,,                                                   WakeOnPort,             0x00010001, 0
 
-[VlanId.reg]
+[NDISVlanId.reg]
 ; VlanId
-HKR, Ndi\params\VlanId,                                 ParamDesc,              0, %VlanID%
-HKR, Ndi\params\VlanId,                                 default,                0, "0"
-HKR, Ndi\params\VlanId,                                 type,                   0, "DWORD"
-HKR, Ndi\params\VlanId,                                 min,                    0, "0"
-HKR, Ndi\params\VlanId,                                 max,                    0, "4094"
-HKR, Ndi\params\VlanId,                                 step,                   0, "1"
-HKR, Ndi\params\VlanId,                                 base,                   0, "10"
+HKR, Ndi\params\VlanId,     ParamDesc,       0, %VlanID%
+HKR, Ndi\params\VlanId,     default,         0, "0"
+HKR, Ndi\params\VlanId,     type,            0, "DWORD"
+HKR, Ndi\params\VlanId,     min,             0, "0"
+HKR, Ndi\params\VlanId,     max,             0, "4094"
+HKR, Ndi\params\VlanId,     step,            0, "1"
+HKR, Ndi\params\VlanId,     base,            0, "10"
+
+[IntelANSVlanID.reg]
+; Intel ANS Vland ID
+HKR,,                                           IntelANSVlanID,          0x00010000, ""
 
 [MSIX3.reg]
 HKR, "Interrupt Management", 0x00000010
@@ -1352,9 +1379,13 @@ ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
 ServiceBinary   = %12%\e1r65x64.sys
 LoadOrderGroup  = NDIS
 AddReg             = Service_AddReg
+AddReg             = DmaRemapping.reg
 
 [Service_AddReg]
 HKR,, BootFlags, 0x00010001, 0x1
+
+[DMARemapping.reg]
+HKR, Parameters, DmaRemappingCompatible, 0x00010001, 2
 
 ;-------------------------------------------------------------------------------
 ; Common base for all drivers for Eventlog and TextModeFlags
@@ -1369,11 +1400,11 @@ HKR, , TypesSupported,   0x00010001, 7
 
 ;-------------- Coinstaller installation
 [CoInstaller_CopyFiles]
-NicCo4.dll,,,           0x00000010 ;don't overwrite
+NicCo5.dll,,,           0x00000010 ;don't overwrite
 NicInE1R.dll
 
 [CoInstaller_AddReg]
-HKR,, CoInstallers32,   0x00010000, "NicCo4.dll,NicCoInstallerEntry"
+HKR,, CoInstallers32,   0x00010000, "NicCo5.dll,NicCoInstallerEntry"
 HKR,, NicCoPlugins,     0x00010000, "NicInE1R.dll,NicCoInstallerEntry"
 
 [MessageDll.CopyFiles]
@@ -1386,9 +1417,6 @@ HKR,,                                          CoInstallFlag,      0x00010001, 0
 HKR,,                                          CoInstallFlag,      0x00010001, 0x80281041
 
 [CoInKMPQuadNIC.reg]
-HKR,,                                          CoInstallFlag,      0x00010001, 0x80281441
-
-[CoInKMPWDualNIC.reg]
 HKR,,                                          CoInstallFlag,      0x00010001, 0x80281441
 
 ;-------------------------------------------------------------------------------
@@ -1413,7 +1441,7 @@ MessageDll.CopyFiles          = 11
 ;
 e1rmsg.dll = 1,,
 NicInE1R.dll = 1,,
-NicCo4.dll  = 1,,
+NicCo5.dll  = 1,,
 e1r65x64.din = 1,,
 e1r65x64.sys = 1,, ; on distribution disk 1
 
@@ -1424,6 +1452,10 @@ HKR, Ndi\Params
 HKR, PROSetNdi\Params
 HKR, PROSetNdi\NdiExt
 HKR,, LinkNegotiationProcess
+
+[WakeOnPort.DelReg]
+HKR,, WakeOnPort
+HKR,, CoInstallFlag
 
 ;-----------------------------------------------------------------------------
 ; Localizable Strings
@@ -1536,6 +1568,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -1695,6 +1728,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -1801,11 +1835,11 @@ Bytes4088                       ="4088 ¶Ï§∏≤’"
 Bytes9014                       ="9014 ¶Ï§∏≤’"
 LAA                             ="•ª¶a∫ﬁ≤z¶Ïß}"
 JumboPacket                     ="∂W§j´¨´ •]"
-WakeOnMagicPacket               ="≥ÍøÙØ´©_´ •]"
+WakeOnMagicPacket               ="¶¨®Ï Magic ´ •]Æ…≥ÍøÙ"
 Enable_PME                      ="±“•Œ PME"
-Forced                          ="±j≠¢"
-WakeOnLinkSettings              ="≥ÍøÙ≥sµ≤≥]©w"
-WakeOnPattern                   ="ºÀ¶°§ÒπÔ≥ÍøÙ"
+Forced                          ="±j®Ó"
+WakeOnLinkSettings              ="≥sµ≤≥ÍøÙ≥]©w"
+WakeOnPattern                   ="º“¶°§ÒπÔ¨€≤≈Æ…≥ÍøÙ"
 LogLinkState                    ="µnø˝≥sµ≤™¨∫A®∆•Û"
 InterruptModeration             ="ß√¬_Ω’∏`"
 InterruptThrottleRate           ="ß√¬_∏`¨yª÷≥t≤v"
@@ -1815,8 +1849,8 @@ Minimal                         ="≥ÃßC"
 High                            ="∞™"
 Medium                          ="§§"
 Low                             ="ßC"
-GigabitMasterMode               ="±j≠¢•Dæ˜º“¶°"
-GigabitSlaveMode                ="±j≠¢±qƒ›º“¶°"
+GigabitMasterMode               ="±j®Ó•D≠nº“¶°"
+GigabitSlaveMode                ="±j®Ó±qƒ›º“¶°"
 MasterSlaveMode                 ="Gigabit •D±qº“¶°"
 WaitAutoNegComplete             ="µ•´›≥sµ≤"
 EnableDca                       ="™Ω±µß÷®˙¶s®˙"
@@ -1824,7 +1858,7 @@ EnableLLI                       ="ßC©µøß√¬_"
 LLIPorts                        ="ßC©µøß√¬_≥s±µ∞"
 LLIPortBased                    ="≥s±µ∞¨∞∞Ú¬¶"
 LLIPSHBased                     ="PSH ∫X∏π¨∞∞Ú¬¶"
-EEELinkAdvertisement            ="¶≥Ø‡∑ΩÆƒ≤v™∫§A§”∫Ù∏Ù"
+EEELinkAdvertisement            ="∏`Ø‡§A§”∫Ù∏Ù"
 EEE_Disabled                    ="√ˆ≥¨"
 EEE_Enabled_AWAKE               ="¶p™G®t≤Œ¶b≥ÍøÙ™¨∫A°A´h∂}±“"
 EnableDMACoalescing             ="DMA ªE¶X"
@@ -1854,6 +1888,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2013,6 +2048,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2172,6 +2208,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2255,7 +2292,7 @@ ReceiveBuffers                  ="Tampons de rÈception"
 PriorityVLANTag2                ="PrioritÈ des paquets et VLAN"
 VMQ                             ="Files d'attente d'ordinateurs virtuels"
 SRIOV                           ="SR-IOV"
-RSS                             ="Receive Side Scaling"
+RSS                             ="Partage du trafic entrant (RSS)"
 NumRssQueues2                   ="Nombre maximum de files d'attente RSS"
 RSSProfile                      ="Profil d'Èquilibrage de la charge RSS"
 Closest_Processor               ="Processeur le plus proche"
@@ -2331,6 +2368,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2422,7 +2460,7 @@ Closest_Processor_Static        ="Processore statico pi˘ vicino"
 NUMA_Scaling                    ="Scaling NUMA"
 NUMA_Scaling_Static             ="Scaling statico NUMA"
 Conservative_Scaling            ="Scaling conservativo"
-RssBaseProcNumber               ="Numero di processori di base RSS"
+RssBaseProcNumber               ="Numero processori base RSS"
 NumaNodeId                      ="Nodo NUMA preferito"
 MaxRssProcessors                ="Numero massimo di processori RSS"
 1queue                          ="1 coda"
@@ -2490,6 +2528,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2568,8 +2607,8 @@ PriorityVlanDisabled2           ="ÉpÉPÉbÉgóDêÊìxÇ∆ VLAN ñ≥å¯"
 PriorityEnabled2                ="ÉpÉPÉbÉgóDêÊìxóLå¯"
 VlanEnabled                     ="VLAN óLå¯"
 PriorityVlanEnabled2            ="ÉpÉPÉbÉgóDêÊìxÇ∆ VLAN óLå¯"
-TransmitBuffers                 ="ëóêMÉoÉbÉtÉ@"
-ReceiveBuffers                  ="éÛêMÉoÉbÉtÉ@"
+TransmitBuffers                 ="ëóêMÉoÉbÉtÉ@Å["
+ReceiveBuffers                  ="éÛêMÉoÉbÉtÉ@Å["
 PriorityVLANTag2                ="ÉpÉPÉbÉgóDêÊìxÇ∆ VLAN"
 VMQ                             ="âºëzÉ}ÉVÉìÉLÉÖÅ["
 SRIOV                           ="SR-IOV"
@@ -2649,6 +2688,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2755,11 +2795,11 @@ Bytes4088                       ="4088πŸ¿Ã∆Æ"
 Bytes9014                       ="9014πŸ¿Ã∆Æ"
 LAA                             ="∑Œƒ√ ∞¸∏Æ ¡÷º“"
 JumboPacket                     ="¡°∫∏ ∆–≈∂"
-WakeOnMagicPacket               ="Wake on Magic Packet"
+WakeOnMagicPacket               ="Wake on ∏≈¡˜ ∆–≈∂"
 Enable_PME                      ="PME »∞º∫»≠"
 Forced                          ="∞≠¡¶"
 WakeOnLinkSettings              ="∏µ≈© º≥¡§ Ω√ ±˙øÏ±‚"
-WakeOnPattern                   ="Wake on Pattern Match"
+WakeOnPattern                   ="Wake on ∆–≈œ ¿œƒ°"
 LogLinkState                    ="∏µ≈© ªÛ≈¬ ¿Ã∫•∆Æ ±‚∑œ"
 InterruptModeration             ="¿Œ≈Õ∑¥∆Æ ¡∂¿˝"
 InterruptThrottleRate           ="¿Œ≈Õ∑¥∆Æ ¡∂¿˝ º”µµ"
@@ -2808,6 +2848,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2876,12 +2917,12 @@ UDPChksumOffv6                  ="Descarga de Checksum UDP (IPv6)"
 LsoV2IPv4                       ="Descarga de envio grande V2 (IPv4)"
 LsoV2IPv6                       ="Descarga de envio grande V2 (IPv6)"
 ChksumOffTxRx                   ="Rx e TX habilitadas"
-ChksumOffTx                     ="Tx habilitada"
-ChksumOffRx                     ="Rx habilitada"
+ChksumOffTx                     ="Tx habilitado"
+ChksumOffRx                     ="Rx habilitado"
 FlowControl                     ="Controle de fluxo"
-FlowControl_TxOnly              ="Tx habilitada"
-FlowControl_RxOnly              ="Rx habilitada"
-FlowControl_Full                ="Rx e Tx habilitadas"
+FlowControl_TxOnly              ="Tx habilitado"
+FlowControl_RxOnly              ="Rx habilitado"
+FlowControl_Full                ="Rx e Tx habilitados"
 PriorityVlanDisabled2           ="Prioridade de pacotes e VLAN desabilitadas"
 PriorityEnabled2                ="Prioridade de pacotes habilitada"
 VlanEnabled                     ="VLAN habilitada"
@@ -2909,7 +2950,7 @@ MaxRssProcessors                ="N∫ m·x. de processadores de RSS"
 On                              ="Ligado"
 Off                             ="Desligado"
 Enabled                         ="Habilitado"
-Disabled                        ="Desabilitada"
+Disabled                        ="Desabilitado"
 Bytes4088                       ="4088 Bytes"
 Bytes9014                       ="9014 Bytes"
 LAA                             ="EndereÁo administrado localmente (LAA)"
@@ -2967,6 +3008,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3073,11 +3115,11 @@ Bytes4088                       ="4088 ¶Ï§∏≤’"
 Bytes9014                       ="9014 ¶Ï§∏≤’"
 LAA                             ="•ª¶a∫ﬁ≤z¶Ïß}"
 JumboPacket                     ="∂W§j´¨´ •]"
-WakeOnMagicPacket               ="≥ÍøÙØ´©_´ •]"
+WakeOnMagicPacket               ="¶¨®Ï Magic ´ •]Æ…≥ÍøÙ"
 Enable_PME                      ="±“•Œ PME"
-Forced                          ="±j≠¢"
-WakeOnLinkSettings              ="≥ÍøÙ≥sµ≤≥]©w"
-WakeOnPattern                   ="ºÀ¶°§ÒπÔ≥ÍøÙ"
+Forced                          ="±j®Ó"
+WakeOnLinkSettings              ="≥sµ≤≥ÍøÙ≥]©w"
+WakeOnPattern                   ="º“¶°§ÒπÔ¨€≤≈Æ…≥ÍøÙ"
 LogLinkState                    ="µnø˝≥sµ≤™¨∫A®∆•Û"
 InterruptModeration             ="ß√¬_Ω’∏`"
 InterruptThrottleRate           ="ß√¬_∏`¨yª÷≥t≤v"
@@ -3087,8 +3129,8 @@ Minimal                         ="≥ÃßC"
 High                            ="∞™"
 Medium                          ="§§"
 Low                             ="ßC"
-GigabitMasterMode               ="±j≠¢•Dæ˜º“¶°"
-GigabitSlaveMode                ="±j≠¢±qƒ›º“¶°"
+GigabitMasterMode               ="±j®Ó•D≠nº“¶°"
+GigabitSlaveMode                ="±j®Ó±qƒ›º“¶°"
 MasterSlaveMode                 ="Gigabit •D±qº“¶°"
 WaitAutoNegComplete             ="µ•´›≥sµ≤"
 EnableDca                       ="™Ω±µß÷®˙¶s®˙"
@@ -3096,7 +3138,7 @@ EnableLLI                       ="ßC©µøß√¬_"
 LLIPorts                        ="ßC©µøß√¬_≥s±µ∞"
 LLIPortBased                    ="≥s±µ∞¨∞∞Ú¬¶"
 LLIPSHBased                     ="PSH ∫X∏π¨∞∞Ú¬¶"
-EEELinkAdvertisement            ="¶≥Ø‡∑ΩÆƒ≤v™∫§A§”∫Ù∏Ù"
+EEELinkAdvertisement            ="∏`Ø‡§A§”∫Ù∏Ù"
 EEE_Disabled                    ="√ˆ≥¨"
 EEE_Enabled_AWAKE               ="¶p™G®t≤Œ¶b≥ÍøÙ™¨∫A°A´h∂}±“"
 EnableDMACoalescing             ="DMA ªE¶X"
@@ -3126,6 +3168,7 @@ DISKNAME                        = "Intel(R) Driver Disk"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"

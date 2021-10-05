@@ -58,6 +58,7 @@ v1q65x64.sys,,,1
 [CoInstaller.DelFiles]
 v1qmsg.dll,,,1
 NicCo4.dll,,,1
+NicCo5.dll,,,1
 NicInVQ.dll,,,1
 
 [UnInstall.DelFiles]

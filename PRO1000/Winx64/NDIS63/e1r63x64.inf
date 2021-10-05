@@ -38,7 +38,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = e1r63x64.cat
-DriverVer = 08/07/2019,12.14.7.4
+DriverVer = 11/14/2019,12.14.8.5
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.6.2, NTamd64.6.2.1, NTamd64.6.3
@@ -1707,11 +1707,11 @@ HKR, , TypesSupported,   0x00010001, 7
 
 ;-------------- Coinstaller installation
 [CoInstaller_CopyFiles]
-NicCo36.dll,,,           0x00000010 ;don't overwrite
+NicCo5.dll,,,           0x00000010 ;don't overwrite
 NicInE1R.dll
 
 [CoInstaller_AddReg]
-HKR,, CoInstallers32,   0x00010000, "NicCo36.dll,NicCoInstallerEntry"
+HKR,, CoInstallers32,   0x00010000, "NicCo5.dll,NicCoInstallerEntry"
 HKR,, NicCoPlugins,     0x00010000, "NicInE1R.dll,NicCoInstallerEntry"
 
 [MessageDll.CopyFiles]
@@ -1751,7 +1751,7 @@ MessageDll.CopyFiles          = 11
 ;
 e1rmsg.dll = 1,,
 NicInE1R.dll = 1,,
-NicCo36.dll  = 1,,
+NicCo5.dll  = 1,,
 e1r63x64.din = 1,,
 e1r63x64.sys = 1,, ; on distribution disk 1
 
@@ -3268,12 +3268,12 @@ UDPChksumOffv6                  ="Descarga de Checksum UDP (IPv6)"
 LsoV2IPv4                       ="Descarga de envio grande V2 (IPv4)"
 LsoV2IPv6                       ="Descarga de envio grande V2 (IPv6)"
 ChksumOffTxRx                   ="Rx e TX habilitadas"
-ChksumOffTx                     ="Tx habilitada"
-ChksumOffRx                     ="Rx habilitada"
+ChksumOffTx                     ="Tx habilitado"
+ChksumOffRx                     ="Rx habilitado"
 FlowControl                     ="Controle de fluxo"
-FlowControl_TxOnly              ="Tx habilitada"
-FlowControl_RxOnly              ="Rx habilitada"
-FlowControl_Full                ="Rx e Tx habilitadas"
+FlowControl_TxOnly              ="Tx habilitado"
+FlowControl_RxOnly              ="Rx habilitado"
+FlowControl_Full                ="Rx e Tx habilitados"
 PriorityVlanDisabled2           ="Prioridade de pacotes e VLAN desabilitadas"
 PriorityEnabled2                ="Prioridade de pacotes habilitada"
 VlanEnabled                     ="VLAN habilitada"
@@ -3301,8 +3301,8 @@ MaxRssProcessors                ="Nº máx. de processadores de RSS"
 8queues                         ="8 Filas"
 On                              ="Ligado"
 Off                             ="Desligado"
-Enabled                         ="Habilitada"
-Disabled                        ="Desabilitada"
+Enabled                         ="Habilitado"
+Disabled                        ="Desabilitado"
 Bytes4088                       ="4088 Bytes"
 Bytes9014                       ="9014 Bytes"
 LAA                             ="Endereço administrado localmente (LAA)"

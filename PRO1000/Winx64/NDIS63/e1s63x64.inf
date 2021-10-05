@@ -38,7 +38,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = e1s63x64.cat
-DriverVer   = 06/05/2015,12.13.27.0
+DriverVer   = 11/19/2020,12.13.27.2
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.6.2, NTamd64.6.2.1, NTamd64.6.3
@@ -626,12 +626,12 @@ HKR, , TypesSupported,   0x00010001, 7
 
 ;-------------- Coinstaller installation
 [CoInstaller_CopyFiles]
-NicCo36.dll,,,           0x00000010 ;don't overwrite
+NicCo5.dll,,,           0x00000010 ;don't overwrite
 NicInE1S.dll
 e1smsg.dll
 
 [CoInstaller_AddReg]
-HKR,, CoInstallers32,   0x00010000, "NicCo36.dll,NicCoInstallerEntry"
+HKR,, CoInstallers32,   0x00010000, "NicCo5.dll,NicCoInstallerEntry"
 HKR,, NicCoPlugins,     0x00010000, "NicInE1S.dll,NicCoInstallerEntry"
 
 [CoInKSQuadLOM.reg]
@@ -658,7 +658,7 @@ CoInstaller_CopyFiles          = 11
 ;
 e1smsg.dll = 1,,
 NicInE1S.dll = 1,,
-NicCo36.dll  = 1,,
+NicCo5.dll  = 1,,
 e1s63x64.din = 1,,
 e1s63x64.sys = 1,, ; on distribution disk 1
 

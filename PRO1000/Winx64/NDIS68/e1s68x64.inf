@@ -38,7 +38,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = e1s68x64.cat
-DriverVer = 10/08/2018,12.15.184.1
+DriverVer = 11/19/2020,12.15.184.4
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.10.0, NTamd64.10.0.1

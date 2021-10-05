@@ -62,6 +62,7 @@ e1r64x64.sys,,,1
 [CoInstaller.DelFiles]
 e1rmsg.dll,,,1
 NicCo36.dll,,,1
+NicCo5.dll,,,1
 NicInE1R.dll,,,1
 
 [UnInstall.DelFiles]

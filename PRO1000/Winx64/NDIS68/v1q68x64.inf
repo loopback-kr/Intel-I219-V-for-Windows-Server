@@ -2,7 +2,7 @@
 ;**                                                                           **
 ;**                            INTEL CONFIDENTIAL                             **
 ;**                                                                           **
-;**        Copyright 2007-2018 Intel Corporation All Rights Reserved.         **
+;**        Copyright 2007-2019 Intel Corporation All Rights Reserved.         **
 ;**                                                                           **
 ;**  The material contained or described herein and all documents related     **
 ;**  to such material ("Material") are owned by Intel Corporation or its      **
@@ -35,7 +35,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = v1q68x64.cat
-DriverVer = 10/10/2018,1.4.6.2
+DriverVer = 09/10/2019,1.4.7.3
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.10.0

@@ -1,6 +1,6 @@
 ;******************************************************************************
 ;**                                                                          **
-;**  Copyright 2007-2015 Intel Corporation All Rights Reserved.              **
+;**  Copyright 2007-2018 Intel Corporation All Rights Reserved.              **
 ;**                                                                          **
 ;**  The material contained or described herein and all documents related    **
 ;**  to such material ("Material") is owned by Intel Corporation or its      **
@@ -38,7 +38,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = e1s65x64.cat
-DriverVer   = 08/04/2016,12.15.184.0
+DriverVer = 11/19/2020,12.15.184.4
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.10.0, NTamd64.10.0.1
@@ -65,7 +65,7 @@ ExcludeFromSelect = *
 ;===============================================================================
 ;
 
-;               WINDOWS 10 for 64-bit EXTENDED PLATFORMS
+;                        Windows Server 2016
 
 ;
 ;===============================================================================
@@ -602,6 +602,7 @@ e1s65x64.din,,,2
 ;
 [win10.CopyFiles]
 e1s65x64.sys,,,2
+e1smsg.dll
 
 [win10.Service]
 DisplayName     = %E1SExpress.Service.DispName%
@@ -628,12 +629,11 @@ HKR, , TypesSupported,   0x00010001, 7
 
 ;-------------- Coinstaller installation
 [CoInstaller_CopyFiles]
-NicCo4.dll,,,           0x00000010 ;don't overwrite
+NicCo5.dll,,,           0x00000010 ;don't overwrite
 NicInE1S.dll
-e1smsg.dll
 
 [CoInstaller_AddReg]
-HKR,, CoInstallers32,   0x00010000, "NicCo4.dll,NicCoInstallerEntry"
+HKR,, CoInstallers32,   0x00010000, "NicCo5.dll,NicCoInstallerEntry"
 HKR,, NicCoPlugins,     0x00010000, "NicInE1S.dll,NicCoInstallerEntry"
 
 [CoInKSQuadLOM.reg]
@@ -658,10 +658,10 @@ CoInstaller_CopyFiles          = 11
 ;
 ; filename_on_source = diskID[, [subdir][, size]]
 ;
-e1smsg.dll = 1,,
 NicInE1S.dll = 1,,
-NicCo4.dll  = 1,,
+NicCo5.dll  = 1,,
 e1s65x64.din = 1,,
+e1smsg.dll = 1,,
 e1s65x64.sys = 1,, ; on distribution disk 1
 
 ;-------------------------------------------------------------------------------
