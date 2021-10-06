@@ -16,10 +16,10 @@
 * Modified *.inf files for installation in Windows Server.
 
 ### Supported operating systems by each directory
-* PRO1000/NDIS63: Windows Server 2012
-* PRO1000/NDIS64: Windows Server 2012 R2
-* PRO1000/NDIS65: Windows Server 2016
-* PRO1000/NDIS68: Windows Server 2019, Windows Server 2022
+* PRO1000/Winx64/NDIS63: Windows Server 2012
+* PRO1000/Winx64/NDIS64: Windows Server 2012 R2
+* PRO1000/Winx64/NDIS65: Windows Server 2016
+* PRO1000/Winx64/NDIS68: Windows Server 2019, Windows Server 2022
 
 ### Instructions
 1. Run `ENABLE_TESTMODE.cmd` to reboot as test signing mode.
