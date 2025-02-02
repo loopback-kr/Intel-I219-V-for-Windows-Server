@@ -1,6 +1,6 @@
 ;******************************************************************************
 ;**                                                                          **
-;**  Copyright 2007-2020 Intel Corporation All Rights Reserved.              **
+;**  Copyright 2007-2022 Intel Corporation All Rights Reserved.              **
 ;**                                                                          **
 ;**  The material contained or described herein and all documents related    **
 ;**  to such material ("Material") is owned by Intel Corporation or its      **
@@ -38,7 +38,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %Intel%
 CatalogFile = e1r68x64.cat
-DriverVer = 02/23/2021,12.18.12.1
+DriverVer = 11/15/2024,14.0.5.0
 
 [Manufacturer]
 %Intel%     = Intel, NTamd64.10.0, NTamd64.10.0.1, NTamd64.10.0...18362, NTamd64.10.0.1..18362
@@ -60,6 +60,7 @@ ExcludeFromSelect = *
 %E1521NCOCP4P.DeviceDesc%       = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
 %E1521NCOCP4P.DeviceDesc%       = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
 %E1521NCOCP4PLN.DeviceDesc%     = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_00AA8086 
+%E1521OCP4PINTL.DeviceDesc%     = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_40178086 
 %E1521HPNCR4.DeviceDesc%        = E1521.10.0.1,         PCI\VEN_8086&DEV_1521&SUBSYS_17D1103C 
 %E1523HPNC3I.DeviceDesc%        = E1522.10.0.1,         PCI\VEN_8086&DEV_1523&SUBSYS_1989103C 
 %E1521HPNC7I.DeviceDesc%        = E1521PM.10.0.1,       PCI\VEN_8086&DEV_1521&SUBSYS_2003103C 
@@ -103,6 +104,7 @@ ExcludeFromSelect = *
 %E1522SLPF2.DeviceDesc%         = E1522PM.10.0.1,       PCI\VEN_8086&DEV_1522&SUBSYS_7B19108E 
 %E1523NC.DeviceDesc%            = E1522.10.0.1,         PCI\VEN_8086&DEV_1523
 %E1524NC.DeviceDesc%            = E1524.10.0.1,         PCI\VEN_8086&DEV_1524
+%E150ELNC.DeviceDesc%           = E150EPM.10.0.1,       PCI\VEN_8086&DEV_150E&SUBSYS_11A81734
 %E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_1533 
 %E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_153315D9 
 %E1536NC.DeviceDesc%            = E1536.10.0.1,         PCI\VEN_8086&DEV_1536 
@@ -110,9 +112,13 @@ ExcludeFromSelect = *
 %E1538NC.DeviceDesc%            = E1538.10.0.1,         PCI\VEN_8086&DEV_1538 
 %E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_157B 
 %E1537NC.DeviceDesc%            = E1536.10.0.1,         PCI\VEN_8086&DEV_157C 
+%E1533DELL.DeviceDesc%          = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_07581028
+%E1533DELL.DeviceDesc%          = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_07591028
 %E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_103617AA
 %E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_103717AA
 %E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_103817AA
+%E1533NC.DeviceDesc%            = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_105917AA
+%E1533LNV.DeviceDesc%           = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_404D17AA
 %E1533NCT1.DeviceDesc%          = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_00018086
 %E1533NCT1.DeviceDesc%          = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_00028086
 %E1533HPNCT1.DeviceDesc%        = E1533.10.0.1,         PCI\VEN_8086&DEV_1533&SUBSYS_0003103C
@@ -130,6 +136,7 @@ ExcludeFromSelect = *
 %E1521NCOCP4P.DeviceDesc%       = E1521.10.0.1.19H1,         PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
 %E1521NCOCP4P.DeviceDesc%       = E1521.10.0.1.19H1,         PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
 %E1521NCOCP4PLN.DeviceDesc%     = E1521.10.0.1.19H1,         PCI\VEN_8086&DEV_1521&SUBSYS_00AA8086 
+%E1521OCP4PINTL.DeviceDesc%     = E1521.10.0.1.19H1,         PCI\VEN_8086&DEV_1521&SUBSYS_40178086 
 %E1521HPNCR4.DeviceDesc%        = E1521.10.0.1.19H1,         PCI\VEN_8086&DEV_1521&SUBSYS_17D1103C 
 %E1523HPNC3I.DeviceDesc%        = E1522.10.0.1.19H1,         PCI\VEN_8086&DEV_1523&SUBSYS_1989103C 
 %E1521HPNC7I.DeviceDesc%        = E1521PM.10.0.1.19H1,       PCI\VEN_8086&DEV_1521&SUBSYS_2003103C 
@@ -173,6 +180,7 @@ ExcludeFromSelect = *
 %E1522SLPF2.DeviceDesc%         = E1522PM.10.0.1.19H1,       PCI\VEN_8086&DEV_1522&SUBSYS_7B19108E 
 %E1523NC.DeviceDesc%            = E1522.10.0.1.19H1,         PCI\VEN_8086&DEV_1523
 %E1524NC.DeviceDesc%            = E1524.10.0.1.19H1,         PCI\VEN_8086&DEV_1524
+%E150ELNC.DeviceDesc%           = E150EPM.10.0.1.19H1,       PCI\VEN_8086&DEV_150E&SUBSYS_11A81734
 %E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533 
 %E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_153315D9 
 %E1536NC.DeviceDesc%            = E1536.10.0.1.19H1,         PCI\VEN_8086&DEV_1536 
@@ -180,9 +188,13 @@ ExcludeFromSelect = *
 %E1538NC.DeviceDesc%            = E1538.10.0.1.19H1,         PCI\VEN_8086&DEV_1538 
 %E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_157B 
 %E1537NC.DeviceDesc%            = E1536.10.0.1.19H1,         PCI\VEN_8086&DEV_157C 
+%E1533DELL.DeviceDesc%          = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_07581028
+%E1533DELL.DeviceDesc%          = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_07591028
 %E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_103617AA
 %E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_103717AA
 %E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_103817AA
+%E1533NC.DeviceDesc%            = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_105917AA
+%E1533LNV.DeviceDesc%           = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_404D17AA
 %E1533NCT1.DeviceDesc%          = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_00018086
 %E1533NCT1.DeviceDesc%          = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_00028086
 %E1533HPNCT1.DeviceDesc%        = E1533.10.0.1.19H1,         PCI\VEN_8086&DEV_1533&SUBSYS_0003103C
@@ -200,6 +212,7 @@ ExcludeFromSelect = *
 %E1521NCOCP4P.DeviceDesc%       = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
 %E1521NCOCP4P.DeviceDesc%       = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
 %E1521NCOCP4PLN.DeviceDesc%     = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_00AA8086 
+%E1521OCP4PINTL.DeviceDesc%     = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_40178086 
 %E1521HPNCR4.DeviceDesc%        = E1521,               PCI\VEN_8086&DEV_1521&SUBSYS_17D1103C 
 %E1523HPNC3I.DeviceDesc%        = E1522,               PCI\VEN_8086&DEV_1523&SUBSYS_1989103C 
 %E1521HPNC7I.DeviceDesc%        = E1521PM,             PCI\VEN_8086&DEV_1521&SUBSYS_2003103C 
@@ -249,6 +262,7 @@ ExcludeFromSelect = *
 %E1522SLPF2.DeviceDesc%         = E1522PM,             PCI\VEN_8086&DEV_1522&SUBSYS_7B19108E 
 %E1523NC.DeviceDesc%            = E1522,               PCI\VEN_8086&DEV_1523
 %E1524NC.DeviceDesc%            = E1524,               PCI\VEN_8086&DEV_1524
+%E150ELNC.DeviceDesc%           = E150EPM,             PCI\VEN_8086&DEV_150E&SUBSYS_11A81734
 %E1533NC.DeviceDesc%            = E1533,               PCI\VEN_8086&DEV_1533 
 %E1533NC.DeviceDesc%            = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_153315D9 
 %E1536NC.DeviceDesc%            = E1536,               PCI\VEN_8086&DEV_1536 
@@ -256,9 +270,12 @@ ExcludeFromSelect = *
 %E1538NC.DeviceDesc%            = E1538,               PCI\VEN_8086&DEV_1538 
 %E1533NC.DeviceDesc%            = E1533,               PCI\VEN_8086&DEV_157B 
 %E1537NC.DeviceDesc%            = E1536,               PCI\VEN_8086&DEV_157C 
+%E1533DELL.DeviceDesc%          = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_07581028
+%E1533DELL.DeviceDesc%          = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_07591028
 %E1533NC.DeviceDesc%            = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_103617AA
 %E1533NC.DeviceDesc%            = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_103717AA
 %E1533NC.DeviceDesc%            = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_103817AA
+%E1533LNV.DeviceDesc%           = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_404D17AA
 %E1533NCT1.DeviceDesc%          = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_00018086
 %E1533NCT1.DeviceDesc%          = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_00028086
 %E1533HPNCT1.DeviceDesc%        = E1533,               PCI\VEN_8086&DEV_1533&SUBSYS_0003103C
@@ -275,6 +292,7 @@ ExcludeFromSelect = *
 %E1521NCOCP4P.DeviceDesc%       = E1521.19H1,               PCI\VEN_8086&DEV_1521&SUBSYS_00A38086 
 %E1521NCOCP4P.DeviceDesc%       = E1521.19H1,               PCI\VEN_8086&DEV_1521&SUBSYS_00038086 
 %E1521NCOCP4PLN.DeviceDesc%     = E1521.19H1,               PCI\VEN_8086&DEV_1521&SUBSYS_00AA8086 
+%E1521OCP4PINTL.DeviceDesc%     = E1521.19H1,               PCI\VEN_8086&DEV_1521&SUBSYS_40178086 
 %E1521HPNCR4.DeviceDesc%        = E1521.19H1,               PCI\VEN_8086&DEV_1521&SUBSYS_17D1103C 
 %E1523HPNC3I.DeviceDesc%        = E1522.19H1,               PCI\VEN_8086&DEV_1523&SUBSYS_1989103C 
 %E1521HPNC7I.DeviceDesc%        = E1521PM.19H1,             PCI\VEN_8086&DEV_1521&SUBSYS_2003103C 
@@ -324,6 +342,7 @@ ExcludeFromSelect = *
 %E1522SLPF2.DeviceDesc%         = E1522PM.19H1,             PCI\VEN_8086&DEV_1522&SUBSYS_7B19108E 
 %E1523NC.DeviceDesc%            = E1522.19H1,               PCI\VEN_8086&DEV_1523
 %E1524NC.DeviceDesc%            = E1524.19H1,               PCI\VEN_8086&DEV_1524
+%E150ELNC.DeviceDesc%           = E150EPM.19H1,             PCI\VEN_8086&DEV_150E&SUBSYS_11A81734
 %E1533NC.DeviceDesc%            = E1533.19H1,               PCI\VEN_8086&DEV_1533 
 %E1533NC.DeviceDesc%            = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_153315D9 
 %E1536NC.DeviceDesc%            = E1536.19H1,               PCI\VEN_8086&DEV_1536 
@@ -331,9 +350,12 @@ ExcludeFromSelect = *
 %E1538NC.DeviceDesc%            = E1538.19H1,               PCI\VEN_8086&DEV_1538 
 %E1533NC.DeviceDesc%            = E1533.19H1,               PCI\VEN_8086&DEV_157B 
 %E1537NC.DeviceDesc%            = E1536.19H1,               PCI\VEN_8086&DEV_157C 
+%E1533DELL.DeviceDesc%          = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_07581028
+%E1533DELL.DeviceDesc%          = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_07591028
 %E1533NC.DeviceDesc%            = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_103617AA
 %E1533NC.DeviceDesc%            = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_103717AA
 %E1533NC.DeviceDesc%            = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_103817AA
+%E1533LNV.DeviceDesc%           = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_404D17AA
 %E1533NCT1.DeviceDesc%          = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_00018086
 %E1533NCT1.DeviceDesc%          = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_00028086
 %E1533HPNCT1.DeviceDesc%        = E1533.19H1,               PCI\VEN_8086&DEV_1533&SUBSYS_0003103C
@@ -347,6 +369,37 @@ ExcludeFromSelect = *
 ;===============================================================================
 
 ;------------------------------------------------------------------------------
+; Intel(R) Ethernet Server Adapter I340-T4
+;------------------------------------------------------------------------------
+[E150EPM.10.0.1]
+Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType            = 5    ; PCI
+Port1FunctionNumber = 0
+DelReg             = Advanced.DelReg
+DMA_DELREG
+AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
+AddReg             = EnableWakeOnManagmentOnTCO.reg
+AddReg             = Copper.reg, Copper1000.reg
+AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
+AddReg             = LLI.reg
+AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
+AddReg             = CoInKMPQuadNIC.reg
+AddReg             = UninstallW2.reg
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
+*IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
+*MediaType         = 0     ; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[E150EPM.10.0.1.Services]
+AddService = e1rexpress, 2, win10.Service, win10.EventLog
+
+[E150EPM.10.0.1.HW]
+Include            = pci.inf
+Needs              = PciSriovSupported.HW, PciIoSpaceNotRequired.HW
+AddReg             = MSIX10.reg
+
+;------------------------------------------------------------------------------
 ; Intel(R) I350 Gigabit Network Connection
 ;------------------------------------------------------------------------------
 [E1521.10.0.1]
@@ -354,6 +407,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 DelReg             = WakeOnPort.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
@@ -367,7 +421,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKSQuadLOM.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -388,6 +442,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -398,7 +453,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKSQuadLOM.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -419,6 +474,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -431,7 +487,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKMPQuadNIC.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -452,6 +508,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
@@ -462,7 +519,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKMPQuadNIC.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -483,6 +540,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -494,7 +552,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKSQuadLOM.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -514,6 +572,7 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -526,7 +585,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKS.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -546,6 +605,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -556,7 +616,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKS.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -576,6 +636,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -587,7 +648,7 @@ AddReg             = DMACoalescing.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKS.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -607,6 +668,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -618,7 +680,7 @@ AddReg             = EEE.reg
 AddReg             = ProtocolOffload.reg
 AddReg             = CoInKS.reg
 AddReg             = UninstallW2.reg
-CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+CopyFiles          = win10.CopyFiles, MessageDll.CopyFiles, UninstallProg.CopyFiles
 *IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
 *MediaType         = 0     ; NdisMedium802_3
 *PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
@@ -640,13 +702,45 @@ AddReg             = MSIX3.reg
 ;===============================================================================
 
 ;------------------------------------------------------------------------------
+; Intel(R) Ethernet Server Adapter I340-T4
+;------------------------------------------------------------------------------
+[E150EPM.10.0.1.19H1]
+Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType            = 5    ; PCI
+Port1FunctionNumber = 0
+= Advanced.DelReg
+DMA_DELREG
+AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
+AddReg             = EnableWakeOnManagmentOnTCO.reg
+AddReg             = Copper.reg, Copper1000.reg
+AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
+AddReg             = LLI.reg
+AddReg             = RSS.reg, RSS8Q.reg
+AddReg             = IntelANSVlanID.reg
+AddReg             = CoInKMPQuadNIC.reg
+AddReg             = UninstallW2.reg
+CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+*IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
+*MediaType         = 0     ; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[E150EPM.10.0.1.19H1.Services]
+AddService = e1rexpress, 2, win10.Service, win10.EventLog
+
+[E150EPM.10.0.1.19H1.HW]
+Include            = pci.inf
+Needs              = PciSriovSupported.HW, PciIoSpaceNotRequired.HW
+AddReg             = MSIX10.reg
+
+;------------------------------------------------------------------------------
 ; Intel(R) I350 Gigabit Network Connection
 ;------------------------------------------------------------------------------
 [E1521.10.0.1.19H1]
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -679,7 +773,8 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -710,7 +805,8 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -743,7 +839,8 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
@@ -774,7 +871,8 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -805,7 +903,8 @@ AddReg             = MSIX10.reg
 [E1533.10.0.1.19H1]
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -839,7 +938,8 @@ AddReg             = MSIX5.reg
 [E1536.10.0.1.19H1]
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -871,7 +971,8 @@ AddReg             = MSIX5.reg
 [E1538.10.0.1.19H1]
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -904,7 +1005,8 @@ AddReg             = MSIX5.reg
 [E1539.10.0.1.19H1]
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
-DelReg             = Advanced.DelReg
+= Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, ReduceSpeedOnPowerDown.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -940,6 +1042,39 @@ AddReg             = MSIX3.reg
 ;===============================================================================
 
 ;-------------------------------------------------------------------------------
+; Intel(R) Ethernet Server Adapter I340-T4
+;-------------------------------------------------------------------------------
+[E150EPM]
+Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType            = 5    ; PCI
+Port1FunctionNumber = 0
+DelReg             = Advanced.DelReg
+DMA_DELREG
+AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
+AddReg             = EnableWakeOnManagmentOnTCO.reg
+AddReg             = Copper.reg, Copper1000.reg
+AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
+AddReg             = DCA.reg
+AddReg             = LLI.reg, VMQ.reg
+AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
+AddReg             = ReduceSpeedOnPowerDown.reg
+AddReg             = UninstallW2.reg
+AddReg             = CoInKMPQuadNIC.reg
+CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+*IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
+*MediaType         = 0     ; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[E150EPM.Services]
+AddService = e1rexpress, 2, win10.Service, win10.EventLog
+
+[E150EPM.HW]
+Include            = pci.inf
+Needs              = PciSriovSupported.HW, PciIoSpaceNotRequired.HW
+AddReg             = MSIX10.reg
+
+;-------------------------------------------------------------------------------
 ; Intel(R) I350 Gigabit Network Connection
 ;-------------------------------------------------------------------------------
 [E1521]
@@ -947,6 +1082,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 DelReg             = WakeOnPort.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
@@ -984,6 +1120,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 DelReg             = Sriov.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
@@ -1020,6 +1157,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -1053,6 +1191,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 DelReg             = Sriov.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
@@ -1086,6 +1225,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1122,6 +1262,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
@@ -1155,6 +1296,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1188,6 +1330,7 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1222,6 +1365,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -1253,6 +1397,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1287,6 +1432,39 @@ AddReg             = MSIX5.reg
 ;===============================================================================
 
 ;-------------------------------------------------------------------------------
+; Intel(R) Ethernet Server Adapter I340-T4
+;-------------------------------------------------------------------------------
+[E150EPM.19H1]
+Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType            = 5    ; PCI
+Port1FunctionNumber = 0
+DelReg             = Advanced.DelReg
+DMA_DELREG
+AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
+AddReg             = EnableWakeOnManagmentOnTCO.reg
+AddReg             = Copper.reg, Copper1000.reg
+AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
+AddReg             = DCA.reg
+AddReg             = LLI.reg, VMQ.reg
+AddReg             = RSS.reg, RSS8Q.reg, RSSAdvanced.reg
+AddReg             = NDISVlanId.reg
+AddReg             = ReduceSpeedOnPowerDown.reg
+AddReg             = UninstallW2.reg
+AddReg             = CoInKMPQuadNIC.reg
+CopyFiles          = win10.CopyFiles, UninstallProg.CopyFiles, MessageDll.CopyFiles
+*IfType            = 6     ; IF_TYPE_ETHERNET_CSMACD
+*MediaType         = 0     ; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[E150EPM.19H1.Services]
+AddService = e1rexpress, 2, win10.Service, win10.EventLog
+
+[E150EPM.19H1.HW]
+Include            = pci.inf
+Needs              = PciSriovSupported.HW, PciIoSpaceNotRequired.HW
+AddReg             = MSIX10.reg
+
+;-------------------------------------------------------------------------------
 ; Intel(R) I350 Gigabit Network Connection
 ;-------------------------------------------------------------------------------
 [E1521.19H1]
@@ -1294,6 +1472,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1330,6 +1509,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 DelReg             = Sriov.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
@@ -1366,6 +1546,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -1399,6 +1580,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 DelReg             = Sriov.DelReg
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
@@ -1432,6 +1614,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1468,6 +1651,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnPort.reg, WakeOnLink.reg
@@ -1501,6 +1685,7 @@ Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 Port1FunctionNumber = 0
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1534,6 +1719,7 @@ AddReg             = MSIX10.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1570,6 +1756,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Powermgmt.reg, WakeOnSlot.reg, WakeOnLink.reg
@@ -1603,6 +1790,7 @@ AddReg             = MSIX5.reg
 Characteristics    = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
 BusType            = 5    ; PCI
 DelReg             = Advanced.DelReg
+DMA_DELREG
 AddReg             = e1r.reg, TcpSeg.reg, JumboPacket.reg
 AddReg             = EnableWakeOnManagmentOnTCO.reg
 AddReg             = Copper.reg, Copper1000.reg
@@ -1649,12 +1837,15 @@ Needs              = NO_DRV.Services
 HKR, Ndi\Interfaces,                                    UpperRange,             0, "ndis5"
 HKR, Ndi\Interfaces,                                    LowerRange,             0, "ethernet"
 HKR, Ndi,                                               Service,                0, "e1rexpress"
+
+; *FlowControl
 HKR, Ndi\Params\*FlowControl,                           ParamDesc,              0, %FlowControl%
 HKR, Ndi\Params\*FlowControl,                           default,                0, "3"
 HKR, Ndi\Params\*FlowControl\Enum,                      "0",                    0, %Disabled%
 HKR, Ndi\Params\*FlowControl\Enum,                      "1",                    0, %FlowControl_TxOnly%
 HKR, Ndi\Params\*FlowControl\Enum,                      "2",                    0, %FlowControl_RxOnly%
 HKR, Ndi\Params\*FlowControl\Enum,                      "3",                    0, %FlowControl_Full%
+HKR, Ndi\Params\*FlowControl\Enum,                      "4",                    0, %AutoNegotiation%
 HKR, Ndi\Params\*FlowControl,                           type,                   0, "enum"
 
 ; *TransmitBuffers
@@ -1817,13 +2008,13 @@ HKR, PROSetNdi\NdiExt\Params\*SpeedDuplex,              ExposeLevel,            
 [Copper1000.reg]
 HKR, Ndi\params\*SpeedDuplex\enum,                      "6",                    0, %1000Mb_Full_Duplex%
 
-; Gigabit Master Slave Mode
-HKR,Ndi\Params\MasterSlave,                             ParamDesc,              0, %MasterSlaveMode%
-HKR,Ndi\Params\MasterSlave,                             Type,                   0, "enum"
-HKR,Ndi\Params\MasterSlave,                             Default,                0, "0"
-HKR,Ndi\Params\MasterSlave\Enum,                        "0",                    0, %AutoDetect%
-HKR,Ndi\Params\MasterSlave\Enum,                        "1",                    0, %GigabitMasterMode%
-HKR,Ndi\Params\MasterSlave\Enum,                        "2",                    0, %GigabitSlaveMode%
+; Gigabit PHY Mode
+HKR,Ndi\Params\PrimarySecondary,                        ParamDesc,              0, %PHYMode%
+HKR,Ndi\Params\PrimarySecondary,                        Type,                   0, "enum"
+HKR,Ndi\Params\PrimarySecondary,                        Default,                0, "0"
+HKR,Ndi\Params\PrimarySecondary\Enum,                   "0",                    0, %AutoDetect%
+HKR,Ndi\Params\PrimarySecondary\Enum,                   "1",                    0, %GigabitPrimaryMode%
+HKR,Ndi\Params\PrimarySecondary\Enum,                   "2",                    0, %GigabitSecondaryMode%
 
 [ReduceSpeedOnPowerDown.reg]
 ; ReduceSpeedOnPowerDown
@@ -2002,7 +2193,7 @@ HKR,,                                                   *RSSProfile,            
 [RSS2Q.reg]
 ; NumRssQueues
 HKR, Ndi\Params\*NumRssQueues,                           ParamDesc,              0, %NumRssQueues2%
-HKR, Ndi\Params\*NumRssQueues,                           default,                0, "2"
+HKR, Ndi\Params\*NumRssQueues,                           default,                0, 2
 HKR, Ndi\Params\*NumRssQueues,                           type,                   0, "enum"
 HKR, Ndi\Params\*NumRssQueues\Enum,                      "1",                    0, %1queue%
 HKR, Ndi\Params\*NumRssQueues\Enum,                      "2",                    0, %2queues%
@@ -2129,12 +2320,15 @@ ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
 ServiceBinary   = %12%\e1r68x64.sys
 LoadOrderGroup  = NDIS
 AddReg             = Service_AddReg
-AddReg             = DmaRemapping.reg
+DelReg             = DmaRemappingCompatible.DelReg
+AddReg             = DmaRemappingCompatible.AddReg
 
 [Service_AddReg]
 HKR,, BootFlags, 0x00010001, 0x1
 
-[DMARemapping.reg]
+[DmaRemappingCompatible.DelReg]
+HKR, Parameters, DmaRemappingCompatible
+[DmaRemappingCompatible.AddReg]
 HKR, Parameters, DmaRemappingCompatible, 0x00010001, 2
 
 ;-------------------------------------------------------------------------------
@@ -2145,7 +2339,7 @@ HKR, Parameters, DmaRemappingCompatible, 0x00010001, 2
 AddReg             = win10.AddEventLog.reg
 
 [win10.AddEventLog.reg]
-HKR, , EventMessageFile, 0x00020000, %EventLogMessageDllPath%
+HKR,, EventMessageFile, 0x00020000, %EventLogMessageDllPath%
 HKR, , TypesSupported,   0x00010001, 7
 
 [MessageDll.CopyFiles]
@@ -2164,8 +2358,8 @@ HKR,,                                          CoInstallFlag,      0x00010001, 0
 ; DestinationDirs
 ;
 [DestinationDirs]
-DefaultDestDir                = 11
 win10.CopyFiles          = 12
+DefaultDestDir       = 11
 UninstallProg.CopyFiles          = 11
 MessageDll.CopyFiles          = 11
 
@@ -2267,9 +2461,9 @@ Minimal                         = "Minimal"
 High                            = "High"
 Medium                          = "Medium"
 Low                             = "Low"
-GigabitMasterMode               = "Force Master Mode"
-GigabitSlaveMode                = "Force Slave Mode"
-MasterSlaveMode                 = "Gigabit Master Slave Mode"
+GigabitPrimaryMode              = "Force Primary Mode"
+GigabitSecondaryMode            = "Force Secondary Mode"
+PHYMode                         = "Gigabit PHY Mode"
 WaitAutoNegComplete             = "Wait for Link"
 EnableDca                       = "Direct Cache Access"
 EnableLLI                       = "Low Latency Interrupts"
@@ -2310,10 +2504,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2355,6 +2551,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -2434,9 +2632,9 @@ Minimal                         ="◊Ó–°"
 High                            ="∏ﬂ"
 Medium                          ="÷–"
 Low                             ="µÕ"
-GigabitMasterMode               ="«ø÷∆÷˜ƒ£ Ω"
-GigabitSlaveMode                ="«ø÷∆¥”ƒ£ Ω"
-MasterSlaveMode                 ="«ß’◊Œª÷˜¥”ƒ£ Ω"
+GigabitPrimaryMode              ="«ø÷∆…ËŒ™÷˜ƒ£ Ω"
+GigabitSecondaryMode            ="«ø÷∆…ËŒ™∏®÷˙ƒ£ Ω"
+PHYMode                         ="«ß’◊Œª PHY ƒ£ Ω"
 WaitAutoNegComplete             ="µ»¥˝¡¥Ω”"
 EnableDca                       ="÷±Ω”ª∫¥Ê∑√Œ "
 EnableLLI                       ="µÕ—”≥Ÿ÷–∂œ"
@@ -2477,10 +2675,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2522,6 +2722,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -2601,9 +2803,9 @@ Minimal                         ="≥ÃßC"
 High                            ="∞™"
 Medium                          ="§§"
 Low                             ="ßC"
-GigabitMasterMode               ="±j®Ó•D≠nº“¶°"
-GigabitSlaveMode                ="±j®Ó±qƒ›º“¶°"
-MasterSlaveMode                 ="Gigabit •D±qº“¶°"
+GigabitPrimaryMode              ="±j®Ó®œ•Œ•D≠nº“¶°"
+GigabitSecondaryMode            ="±j®Ó®œ•Œ¶∏≠nº“¶°"
+PHYMode                         ="Gigabit πÍ≈Èºhº“¶°"
 WaitAutoNegComplete             ="µ•´›≥sµ≤"
 EnableDca                       ="™Ω±µß÷®˙¶s®˙"
 EnableLLI                       ="ßC©µøß√¬_"
@@ -2644,10 +2846,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2689,6 +2893,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -2768,9 +2974,9 @@ Minimal                         ="Minimal"
 High                            ="Hoch"
 Medium                          ="Mittel"
 Low                             ="Niedrig"
-GigabitMasterMode               ="Mastermodus erzwingen"
-GigabitSlaveMode                ="Slavemodus erzwingen"
-MasterSlaveMode                 ="Gigabit Master/Slave-Modus"
+GigabitPrimaryMode              ="Prim‰rmodus erzwingen"
+GigabitSecondaryMode            ="Sekund‰rmodus erzwingen"
+PHYMode                         ="Gigabit PHY-Modus"
 WaitAutoNegComplete             ="Auf Verbindung warten"
 EnableDca                       ="Direct Cache Access"
 EnableLLI                       ="Low Latency Interrupts (LLIs)"
@@ -2811,10 +3017,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -2856,6 +3064,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -2935,9 +3145,9 @@ Minimal                         ="MÌnimo"
 High                            ="Alto"
 Medium                          ="Medio"
 Low                             ="Bajo"
-GigabitMasterMode               ="Forzar modo maestro"
-GigabitSlaveMode                ="Forzar modo esclavo"
-MasterSlaveMode                 ="Modo maestro esclavo Gigabit"
+GigabitPrimaryMode              ="Forzar al modo primario"
+GigabitSecondaryMode            ="Forzar al modo secundario"
+PHYMode                         ="Modo PHY Gigabit"
 WaitAutoNegComplete             ="Esperar al enlace"
 EnableDca                       ="Acceso directo a cachÈ"
 EnableLLI                       ="Interrupciones de baja latencia"
@@ -2958,7 +3168,7 @@ EnableDMACoalescing             ="UniÛn DMA"
 6msec                           ="6 mseg"
 7msec                           ="7 mseg"
 8msec                           ="8 mseg"
-9msec                           ="8 mseg"
+9msec                           ="9 mseg"
 10msec                          ="10 mseg"
 ARPOffload                      ="Descarga de ARP"
 NSOffload                       ="Descarga de NS"
@@ -2978,10 +3188,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3023,6 +3235,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -3102,9 +3316,9 @@ Minimal                         ="Minime"
 High                            ="Haut"
 Medium                          ="Moyen"
 Low                             ="Faible"
-GigabitMasterMode               ="Forcer le mode MaÓtre"
-GigabitSlaveMode                ="Forcer le mode Esclave"
-MasterSlaveMode                 ="Mode MaÓtre-Esclave Gigabit"
+GigabitPrimaryMode              ="Forcer le mode Principal"
+GigabitSecondaryMode            ="Forcer le mode Secondaire"
+PHYMode                         ="Mode PHY Gigabit"
 WaitAutoNegComplete             ="Attendre la liaison"
 EnableDca                       ="AccËs direct au cache"
 EnableLLI                       ="Interruptions ‡ faible latence"
@@ -3133,11 +3347,11 @@ ReduceSpeedOnPowerDown          ="RÈduire la vitesse ‡ la mise hors tension"
 VlanID                          ="ID du VLAN"
 PtpHardwareTimestamp            ="Horodatage matÈriel PTP"
 SoftwareTimestamp               ="Horodatage logiciel"
-SoftwareTimestampRxAll          ="RxAll"
-SoftwareTimestampTxAll          ="TxAll"
-SoftwareTimestampRxAllTxAll     ="RxAll et TxAll"
-SoftwareTimestampTaggedTx       ="TaggedTx"
-SoftwareTimestampRxAllTaggedTx  ="RxAll et TaggedTx"
+SoftwareTimestampRxAll          ="Toutes Rx"
+SoftwareTimestampTxAll          ="Toutes Tx"
+SoftwareTimestampRxAllTxAll     ="Toutes Rx et toutes Tx"
+SoftwareTimestampTaggedTx       ="Tx ÈtiquetÈes"
+SoftwareTimestampRxAllTaggedTx  ="Toutes Rx et les Tx ÈtiquetÈes"
 Intel                           = "Intel"
 EventLogMessageDllPath          = "%SystemRoot%\System32\netevent.dll;%SystemRoot%\System32\e1rmsg.dll"
 E1RExpress.Service.DispName     = "Intel(R) PCI Express Network Connection Driver R"
@@ -3145,10 +3359,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3190,6 +3406,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -3269,9 +3487,9 @@ Minimal                         ="Minimale"
 High                            ="Alto"
 Medium                          ="Medio"
 Low                             ="Basso"
-GigabitMasterMode               ="Imponi modalit‡ master"
-GigabitSlaveMode                ="Imponi modalit‡ slave"
-MasterSlaveMode                 ="Modalit‡ master slave Gigabit"
+GigabitPrimaryMode              ="Imponi modalit‡ primaria"
+GigabitSecondaryMode            ="Imponi modalit‡ secondaria"
+PHYMode                         ="Modalit‡ Gigabit PHY"
 WaitAutoNegComplete             ="Attesa per il collegamento"
 EnableDca                       ="Accesso diretto alla cache"
 EnableLLI                       ="Interrupt a bassa latenza"
@@ -3312,10 +3530,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3357,6 +3577,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -3436,9 +3658,9 @@ Minimal                         ="ç≈è¨"
 High                            ="çÇ"
 Medium                          ="íÜ"
 Low                             ="í·"
-GigabitMasterMode               ="É}ÉXÉ^Å[ÉÇÅ[ÉhÇ…ã≠êß"
-GigabitSlaveMode                ="ÉXÉåÅ[ÉuÉÇÅ[ÉhÇ…ã≠êß"
-MasterSlaveMode                 ="ÉMÉKÉrÉbÉg É}ÉXÉ^Å[ ÉXÉåÅ[Éu ÉÇÅ[Éh"
+GigabitPrimaryMode              ="ÉvÉâÉCÉ}ÉäÅ[ÅEÉÇÅ[ÉhÇ…ã≠êß"
+GigabitSecondaryMode            ="ÉZÉJÉìÉ_ÉäÅ[ÅEÉÇÅ[ÉhÇ…ã≠êß"
+PHYMode                         ="ÉMÉKÉrÉbÉg PHY ÉÇÅ[Éh"
 WaitAutoNegComplete             ="ÉäÉìÉNÇë“ã@"
 EnableDca                       ="É_ÉCÉåÉNÉg ÉLÉÉÉbÉVÉÖ ÉAÉNÉZÉX"
 EnableLLI                       ="í·ÉåÉCÉeÉìÉVÅ[äÑÇËçûÇ›"
@@ -3479,10 +3701,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3524,6 +3748,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -3603,9 +3829,9 @@ Minimal                         ="√÷º“"
 High                            ="≥Ù¿Ω"
 Medium                          ="¡ﬂ∞£"
 Low                             ="≥∑¿Ω"
-GigabitMasterMode               ="∞≠¡¶ ∏≈Ω∫≈Õ ∏µÂ"
-GigabitSlaveMode                ="∞≠¡¶ ΩΩ∑π¿Ã∫Í ∏µÂ"
-MasterSlaveMode                 ="±‚∞°∫Ò∆Æ ∏≈Ω∫≈Õ ΩΩ∑π¿Ã∫Í ∏µÂ"
+GigabitPrimaryMode              ="±‚∫ª ∏µÂ ∞≠¡¶ ¿˚øÎ"
+GigabitSecondaryMode            ="∫∏¡∂ ∏µÂ ∞≠¡¶ ¿˚øÎ"
+PHYMode                         ="±‚∞°∫Ò∆Æ PHY ∏µÂ"
 WaitAutoNegComplete             ="∏µ≈© ¥Î±‚"
 EnableDca                       ="¡˜¡¢ ƒ≥Ω√ æ◊ººΩ∫"
 EnableLLI                       ="≥∑¿∫ ¥Î±‚ Ω√∞£ ¿Œ≈Õ∑¥∆Æ"
@@ -3646,10 +3872,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3691,6 +3919,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -3770,9 +4000,9 @@ Minimal                         ="MÌnimo"
 High                            ="Alto"
 Medium                          ="MÈdio"
 Low                             ="Baixo"
-GigabitMasterMode               ="ForÁar Modo Master"
-GigabitSlaveMode                ="ForÁar Modo Slave"
-MasterSlaveMode                 ="Modo Master Slave Gigabit"
+GigabitPrimaryMode              ="ForÁar o modo prim·rio"
+GigabitSecondaryMode            ="ForÁar o modo secund·rio"
+PHYMode                         ="Modo Gigabit PHY"
 WaitAutoNegComplete             ="Aguardar pelo link"
 EnableDca                       ="Acesso direto ao cache"
 EnableLLI                       ="InterrupÁıes de baixa latÍncia"
@@ -3813,10 +4043,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -3858,6 +4090,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"
@@ -3937,9 +4171,9 @@ Minimal                         ="≥ÃßC"
 High                            ="∞™"
 Medium                          ="§§"
 Low                             ="ßC"
-GigabitMasterMode               ="±j®Ó•D≠nº“¶°"
-GigabitSlaveMode                ="±j®Ó±qƒ›º“¶°"
-MasterSlaveMode                 ="Gigabit •D±qº“¶°"
+GigabitPrimaryMode              ="±j®Ó®œ•Œ•D≠nº“¶°"
+GigabitSecondaryMode            ="±j®Ó®œ•Œ¶∏≠nº“¶°"
+PHYMode                         ="Gigabit πÍ≈Èºhº“¶°"
 WaitAutoNegComplete             ="µ•´›≥sµ≤"
 EnableDca                       ="™Ω±µß÷®˙¶s®˙"
 EnableLLI                       ="ßC©µøß√¬_"
@@ -3980,10 +4214,12 @@ DISKNAME                        = "Intel(R) Driver Disk"
 
 ;; Brandnames.str
 ;------------------------------------------------------------------------------
+E150ELNC.DeviceDesc             = "Intel(R) 82580 Gigabit Network Connection"
 E1521NC.DeviceDesc              = "Intel(R) I350 Gigabit Network Connection"
 E1521NCC.DeviceDesc             = "Cisco 1GigE I350 LOM"
 E1521NCOCP4P.DeviceDesc         = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1521NCOCP4PLN.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
+E1521OCP4PINTL.DeviceDesc       = "Intel(R) Ethernet Network Adapter I350-T4 for OCP NIC 3.0"
 E1522NC.DeviceDesc              = "Intel(R) I350 Gigabit Fiber Network Connection"
 E1523NC.DeviceDesc              = "Intel(R) I350 Gigabit Backplane Connection"
 E1524NC.DeviceDesc              = "Intel(R) I350 Gigabit Connection"
@@ -4025,6 +4261,8 @@ E1533NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
 E1536NC.DeviceDesc              = "Intel(R) I210 Gigabit Fiber Network Connection"
 E1537NC.DeviceDesc              = "Intel(R) I210 Gigabit Backplane Connection"
 E1538NC.DeviceDesc              = "Intel(R) I210 Gigabit Network Connection"
+E1533LNV.DeviceDesc             = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
+E1533DELL.DeviceDesc            = "Intel(R) I210 PCIe 1Gb 1-Port RJ45 LOM"
 E1533NCT1.DeviceDesc            = "Intel(R) Ethernet Server Adapter I210-T1"
 E1533HPNCT1.DeviceDesc          = "Intel(R) Ethernet I210-T1 GbE NIC"
 E1539NC.DeviceDesc              = "Intel(R) I211 Gigabit Network Connection"

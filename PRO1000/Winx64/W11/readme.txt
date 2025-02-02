@@ -1,13 +1,11 @@
-PRO1000 Winx64 NDIS68 README
-****************************
+PRO1000 Winx64 Windows 11 README
+********************************
 
 The driver package files in this folder can be used to install drivers
 for Intel(R) Ethernet Gigabit Adapters on the following operating
 systems:
 
-* Microsoft* Windows* 10
-
-* Microsoft* Windows Server* 2019
+* Microsoft* Windows* 11
 
 Note:
 
@@ -20,5 +18,7 @@ The driver package supports devices based on the following
 controllers:
 
 * Intel(R) I210 Gigabit Ethernet Controller
+
+* Intel(R) Ethernet Connection I219
 
 * Intel(R) I350 Gigabit Ethernet Controller

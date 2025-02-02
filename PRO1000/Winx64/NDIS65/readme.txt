@@ -1,12 +1,24 @@
-The driver package files in this folder can be used to install drivers for Intel(R) Ethernet Gigabit Adapters and Connections on the following Operating Systems:
-  *  Microsoft* Windows* 10 (x64 Edition)
-  *  Microsoft Windows Server* 2016 (x64 Edition)
+PRO1000 Winx64 NDIS65 README
+****************************
 
-NDIS 6.2 introduced new RSS data structures and interfaces. Because of this, you cannot enable RSS on teams that contain a mix of adapters that support NDIS 6.2 RSS and adapters that do not. The e1e6232 driver does not support NDIS 6.2 RSS. If you team one of these devices with a device supported by another driver, the operating system will warn you about the RSS incompatibility. This applies to the following devices:
-  *  Intel(R) PRO/1000 EB and EB1 Network Connections
-  *  Intel(R) PRO/1000 PF Network Connections and Adapters
-  *  Intel(R) PRO/1000 PT Network Connections and Adapters
-  *  Intel(R) Gigabit PT Quad Port Server ExpressModule
-  *  Network Connections based on the Intel(R) 82566 Controller
-  *  Intel(R) PRO/1000 PB Dual Port Server Connection
-  *  Intel(R) PRO/1000 PB Server Connection
+The driver package files in this folder can be used to install drivers
+for Intel(R) Ethernet Gigabit Adapters on the following operating
+systems:
+
+* Microsoft* Windows* 10
+
+* Microsoft* Windows Server* 2016
+
+Note:
+
+  * See "Supported Operating Systems" in the Intel(R) Ethernet
+    Adapters and Devices User Guide for the versions of Microsoft
+    Windows supported in this release. You can access the user guide
+    at https://cdrdv2.intel.com/v1/dl/getContent/705831.
+
+The driver package supports devices based on the following
+controllers:
+
+* Intel(R) I210 Gigabit Ethernet Controller
+
+* Intel(R) I350 Gigabit Ethernet Controller
